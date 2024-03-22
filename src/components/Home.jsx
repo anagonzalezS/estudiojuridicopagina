@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaBalanceScale, FaGavel, FaBriefcase, FaEnvelope, FaPhone } from 'react-icons/fa';
+import './Home.css'; 
 
 const Home = () => {
     return (
@@ -31,17 +32,16 @@ const Home = () => {
                     </div>
                 </div>
             </nav>
-  
-           {/* Portada con imagen mejorada */}
-<div id="inicio" className="container-fluid position-relative p-0">
-    <div className="position-absolute top-0 start-0 w-100 h-100" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}></div>
-    <img src="/portada.png" alt="Portada del Estudio" className="img-fluid w-100" style={{ objectFit: 'cover', minHeight: '100vh' }} />
-    <div className="position-absolute top-50 start-50 translate-middle text-center text-light">
-        <h1 className="display-1">Estudio Jurídico Saenz & Asociados</h1>
-        <p className="lead">Somos un estudio de abogacía profesionales comprometidos con la justicia la verdad y a la disposición de nuestros clientes.</p>
-        <a href="#contacto" className="btn btn-primary btn-lg">Contactar</a>
-    </div>
+     {/* Portada con imagen */}
+     <div id="inicio" className="container-fluid position-relative p-0" style={{ backgroundImage: 'url("/portada.png")', minHeight: '100vh' }}>
+                <div className="position-absolute top-0 start-0 w-100 h-100" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}></div>
+                <div className="position-absolute top-50 start-50 translate-middle text-center text-light">
+                    <h1 className="display-1">Estudio Jurídico Saenz & Asociados</h1>
+                    <p className="lead">Somos un estudio de abogacía profesionales comprometidos con la justicia la verdad y a la disposición de nuestros clientes.</p>
+                    <a href="#contacto" className="btn btn-primary btn-lg">Contactar</a>
+                </div>
             </div>
+        
         {/* seccion nosotros */}
 
 {/* seccion nosotros */}
@@ -56,8 +56,9 @@ const Home = () => {
       <div className="text-center">
         <h2 className="mb-4">Nosotros</h2>
       </div>
-      <p className="lead mb-4">Equipo responsable, inspirados en brindar soluciones legales efectivas.</p>
-      <p className="text-muted">
+      <p className="lead mb-4">Equipo responsable</p>
+      <p className="text-muted justify-text"> {/* Agrega la clase justify-text aquí */}
+
         Somos un equipo de abogados comprometidos con la excelencia en la prestación de servicios legales. Nos enfocamos en brindar soluciones efectivas y personalizadas a nuestros clientes, tanto empresas como particulares, en diversas áreas del derecho. Nuestra experiencia y dedicación nos permiten ofrecer asesoramiento jurídico integral, representación legal en litigios y gestión de trámites legales de forma eficiente y ética.
       </p>
     </div>
@@ -71,7 +72,7 @@ const Home = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12 text-center mb-4">
-                        <h2>SERVICIOS</h2>
+                        <h2>Servicios</h2>
                         <h3>Áreas de trabajo</h3>
                     </div>
                 </div>
