@@ -1,9 +1,13 @@
 import React from 'react';
 import { FaBalanceScale, FaGavel, FaBriefcase, FaEnvelope, FaPhone } from 'react-icons/fa';
+import WhatsappIcon from './WhatsappIcon'; // Importamos el componente WhatsappIcon
+
 import './Home.css'; 
 
 const Home = () => {
     return (
+       
+   
         <div>
             {/* Navbar con logo y portada */}
             <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: 'white' }}>
@@ -32,12 +36,18 @@ const Home = () => {
                     </div>
                 </div>
             </nav>
+           
      {/* Portada con imagen */}
      <div id="inicio" className="container-fluid position-relative p-0" style={{ backgroundImage: 'url("/portada.png")', minHeight: '100vh' }}>
                 <div className="position-absolute top-0 start-0 w-100 h-100" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}></div>
                 <div className="position-absolute top-50 start-50 translate-middle text-center text-light">
-                    <h1 className="display-1">Estudio Jurídico Saenz & Asociados</h1>
-                    <p className="lead">Somos un estudio de abogacía profesionales comprometidos con la justicia la verdad y a la disposición de nuestros clientes.</p>
+                <h1 id="typing-effect" class="display-1">Estudio Saenz & Asociados</h1>
+
+                    <hr className="divider my-4" />
+
+                    <p className="lead">Juridico Contable.</p>
+                     {/* Línea HR */}
+           
                     <a href="#contacto" className="btn btn-primary btn-lg">Contactar</a>
                 </div>
             </div>
@@ -175,7 +185,10 @@ const Home = () => {
         </div>
     </div>
 </footer>
+ {/* Renderiza el componente WhatsappIcon */}
+ <WhatsappIcon />
         </div>
+    
     );
 }
 

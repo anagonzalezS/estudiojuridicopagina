@@ -71,3 +71,61 @@
       color: #FFF;
     }
   }
+  .whatsapp-float {
+    display: block;
+    width: 70px;
+    height: 70px;
+    color: #fff;
+    background-color: #25D366; /* Color característico de WhatsApp */
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 50%;
+    line-height: 70px; /* Igual al height para centrar verticalmente */
+    text-align: center;
+    z-index: 99999;
+}
+
+
+
+/* Media query para ajustar el tamaño del icono en dispositivos móviles */
+@media (max-width: 768px) {
+  .whatsapp-float {
+      bottom: 10px; /* Ajusta la distancia desde la parte inferior */
+      right: 10px; /* Ajusta la distancia desde la derecha */
+  }
+}
+.divider {
+  max-width: 3.25rem;
+  border-width: 0.2rem;
+  border-color: var(--color-primario); /* Puedes ajustar este color según tus necesidades */
+}
+/* Estilos para la etiqueta <hr> */
+hr {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+  margin-top: 1rem; /* Margen superior de 1 rem */
+  margin-bottom: 1rem; /* Margen inferior de 1 rem */
+  border-top: 1px solid rgba(0, 0, 0, 0.1); /* Línea horizontal de 1 píxel con color RGBA */
+}
+hr.divider {
+  max-width: 3.25rem;
+  border-width: 0.2rem;
+  border-color: var(--color-primario);
+}
+/* Estilo para el cursor de escritura */
+.typing-cursor {
+  display: inline-block;
+  width: 0.15em;
+  height: 1.1em;
+  background-color: black;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+/* Animación para el cursor de escritura */
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: black; }
+}
