@@ -4,6 +4,7 @@ import { faPhone, faEnvelope, faMapMarker } from '@fortawesome/free-solid-svg-ic
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import './Contact.css';
 import WOW from 'wowjs';
+import 'animate.css/animate.min.css'
 
 function Contact() {
   useEffect(() => {

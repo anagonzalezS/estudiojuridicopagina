@@ -4,7 +4,6 @@ import { FaWhatsapp, FaPhone, FaInstagram } from 'react-icons/fa';
 function Header() {
   return (
     <header style={{
-      background: '#444444', // Fondo gris oscuro
       color: '#FFFFFF', // Texto en blanco para mejor contraste
       fontFamily: 'Open Sans, sans-serif',
       fontWeight: 300,

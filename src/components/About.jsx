@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { FaWhatsapp, FaBalanceScale, FaHandshake } from 'react-icons/fa';
-
-import './About.css';
-import WOW from 'wowjs';
+import './About.css'; // Archivo de estilos personalizados
+import WOW from 'wowjs'; // Importación de la biblioteca wow.js
+import 'animate.css/animate.min.css'
 
 function About() {
   const [presentesVisible, setPresentesVisible] = useState(false);
 
   useEffect(() => {
-    new WOW.WOW().init();
+    new WOW.WOW().init(); // Inicialización de wow.js
 
     const timeout = setTimeout(() => {
-      setPresentesVisible(true);
+      setPresentesVisible(true); // Cambio de estado después de un retraso
     }, 600);
 
-    return () => clearTimeout(timeout);
+    return () => clearTimeout(timeout); // Limpieza del timeout en la limpieza del efecto
   }, []);
 
   return (
@@ -22,9 +22,9 @@ function About() {
       <div className="container">
         <div className="row">
           <div className="col-md-12 mb-4">
-          <h2 className="text-center text-white font-weight-bold mt-4">NOSOTROS</h2>
-
+            <h2 className="text-center text-white font-weight-bold mt-4">NOSOTROS</h2>
           </div>
+          {/* Primer elemento con animación */}
           <div className={`col-md-4 col-sm-6 mb-4 wow fadeInLeft animated ${presentesVisible ? 'fadeInLeftVisible' : ''}`} data-wow-offset="50" data-wow-delay="0.6s">
             <div className="media">
               <div className="media-object mr-3">
@@ -38,6 +38,7 @@ function About() {
               </div>
             </div>
           </div>
+          {/* Segundo elemento con animación */}
           <div className="col-md-4 col-sm-6 mb-4 wow fadeInUp animated" data-wow-offset="50" data-wow-delay="0.9s">
             <div className="media">
               <div className="media-object mr-3">
@@ -51,6 +52,7 @@ function About() {
               </div>
             </div>
           </div>
+          {/* Tercer elemento con animación */}
           <div className="col-md-4 col-sm-6 mb-4 wow fadeInRight animated" data-wow-offset="50" data-wow-delay="0.6s">
             <div className="media">
               <div className="media-object mr-3">

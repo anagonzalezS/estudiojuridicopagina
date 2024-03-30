@@ -47,7 +47,7 @@ function Home() {
           <div style={{ textAlign: 'center', maxWidth: '600px', margin: 'auto' }}> {/* Contenedor centrado */}
             <h1 id="typing-effect" className="display-1 mb-4 wow fadeIn" style={{ fontSize: '52px', fontFamily: 'inherit' }}>SAENZ & ASOCIADOS</h1>
             <p className="lead mb-4">{typedText}</p>
-            <a href="#contacto" className="btn btn-outline-light btn-lg mt-3">Contactar</a> {/* Añade un poco de margen arriba (mt-3) */}
+            <a href="#contact" className="btn btn-outline-light btn-lg mt-3">Contactar</a> {/* Añade un poco de margen arriba (mt-3) */}
           </div>
         </div>
       </div>

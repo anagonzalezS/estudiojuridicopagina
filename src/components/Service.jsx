@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWrench, faBank, faBook, faUsers } from '@fortawesome/free-solid-svg-icons';
 import './Service.css';
 import WOW from 'wowjs';
+import 'animate.css/animate.min.css'
 
 function Service() {
   useEffect(() => {
