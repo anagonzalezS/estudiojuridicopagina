@@ -129,3 +129,79 @@ hr.divider {
   from, to { border-color: transparent; }
   50% { border-color: black; }
 }
+.typed-text-container {
+  position: absolute; /* Hace que el contenedor se posicione de manera absoluta */
+  bottom: 0; /* Lo posiciona en la parte inferior del contenedor padre */
+  left: 50%; /* Lo posiciona en el centro horizontal del contenedor padre */
+  transform: translateX(-50%); /* Ajusta la posición horizontal para centrarlo correctamente */
+}
+/* Servicios.css */
+
+/* Servicios.css */
+
+.servicio-item {
+  background-color: #f8f9fa; /* Fondo blanco */
+  padding: 20px;
+  border-radius: 10px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.servicio-item:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Efecto de sombra al pasar el ratón */
+}
+
+.servicio-item .icon {
+  color: #343a40; /* Color de iconos */
+}
+
+.servicio-item .card-title {
+  color: #343a40; /* Color de títulos */
+  margin-top: 20px;
+}
+
+.servicio-item .card-text {
+  color: #6c757d; /* Color de texto */
+  font-size: 16px;
+  line-height: 1.6;
+}
+.nav-link-custom {
+  height: 45px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 35px;
+  color: #777;
+}
+.navbar-nav .nav-link {
+  text-transform: uppercase;
+  color: #777;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #28a7e9 !important; /* Importante para sobrescribir los estilos de Bootstrap */
+}
+.fade-in-out {
+  animation: fadeInOut 3s ease-in-out forwards;
+}
+
+.fade-in-out-typed {
+  animation: fadeInOutTyped 6s ease-in-out forwards;
+}
+
+
+.navbar-nav .nav-link {
+  color: #000; /* Cambia el color del texto a negro */
+  text-decoration: none; /* Elimina cualquier subrayado */
+}
+.nav-link {
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

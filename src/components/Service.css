@@ -1,0 +1,45 @@
+#service h4 {
+    color: #28a7e9;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 14px;
+}
+h2 span {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+h2 {
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 40px;
+}
+
+
+body {
+    background: #303030;
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+}
+#service h2 {
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 40px;
+    color: #FFFFFF; /* Establece el color del texto "NUESTROS" como blanco */
+
+
+}
+
+#service  span {
+    color: #28a7e9; /* Establece el color del texto "SERVICIOS" dentro del <span> como #28a7e9 */
+}
+#service h2 span {
+    color: #eaeff1; /* Establece el color del texto "SERVICIOS" dentro del <span> como #28a7e9 */
+}
+.service-item:hover {
+    transform: scale(1.05);
+
+  }
+  
+  

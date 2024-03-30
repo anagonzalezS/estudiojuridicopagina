@@ -3,7 +3,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 const WhatsappIcon = () => {
     const phoneNumber = "5491137780506"; // Reemplaza con tu número de teléfono, incluyendo el código de país
-    const message = encodeURIComponent("Hola somos Saenz & Asociacion, ¿cómo puedo ayudarte? ");
+    const message = encodeURIComponent("Gracias por comunicarte con Estudio Sáenz & Asociados ¿Cómo podemos ayudarte? ");
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
 
     return (

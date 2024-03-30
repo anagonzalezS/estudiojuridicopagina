@@ -1,0 +1,56 @@
+/* about.css */
+
+.wow {
+    visibility: visible;
+  }
+  
+  .bounceIn {
+    animation-delay: 0.3s;
+    animation-name: bounceIn;
+  }
+  .fadeInLeftVisible {
+    visibility: visible;
+    animation-delay: 0.6s;
+    animation-name: fadeInLeft;
+  }
+  /* About.css */
+
+  #about .media-heading-wrapper h3 {
+    font-size: 24px; /* Modifica el tamaño de fuente según sea necesario */
+    padding-top: 30px; /* Ajusta el relleno superior según sea necesario */
+}
+
+
+.media-heading {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #28a7e9; /* Establece el color del texto "SERVICIOS" dentro del <span> como #28a7e9 */
+
+}
+/* About.css */
+
+.media-body,
+.media-left,
+.media-right {
+    display: table-cell;
+    vertical-align: top;
+}
+/* About.css */
+
+#about .col-md-4:nth-child(2) {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+/* About.css */
+#service,
+#contact {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.text-celeste {
+    color: #28a7e9; /* Cambia el color según tu preferencia */
+  }
+  
