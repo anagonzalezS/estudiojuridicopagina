@@ -7,7 +7,6 @@ import Service from './components/Service';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsappIcon from './components/WhatsappIcon'; // Importa el componente WhatsappIcon
-
 function App() {
   return (
     <div>
