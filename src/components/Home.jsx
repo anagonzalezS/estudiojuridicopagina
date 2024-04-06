@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import './Home.css';
-import WOW from 'wowjs';
-import 'animate.css/animate.min.css';
+import './Home.css'; // Importa tus estilos personalizados aquí
+import 'animate.css/animate.min.css'; // Importa la animación CSS si es necesario
 
 function Home() {
-  const textoVisible = "Haga su consulta estudio juridico contable";
+  const textoVisible = "Haga su consulta Estudio Jurídico Saenz & Asociados";
   const [typedText, setTypedText] = useState('');
   const typingDelay = 100; // Delay entre cada letra
   const erasingDelay = 50; // Delay entre el borrado de letras
 
   useEffect(() => {
-    new WOW.WOW().init(); // Inicializar la biblioteca WOW
-
     let currentIndex = 0;
     let isTyping = true;
 
@@ -36,7 +33,6 @@ function Home() {
     };
 
     typeAndErase();
-
   }, []);
 
   return (
@@ -44,10 +40,13 @@ function Home() {
       <div id="inicio" className="container-fluid position-relative p-0" style={{ backgroundImage: 'url("/portada.png")', minHeight: '100vh' }}>
         <div className="position-absolute top-0 start-0 w-100 h-100" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}></div>
         <div className="position-absolute top-50 start-50 translate-middle text-center text-light">
-          <div style={{ textAlign: 'center', maxWidth: '600px', margin: 'auto' }}> {/* Contenedor centrado */}
-            <h1 id="typing-effect" className="display-1 mb-4 wow fadeIn" style={{ fontSize: '52px', fontFamily: 'inherit' }}>SAENZ & ASOCIADOS</h1>
-            <p className="lead mb-4">{typedText}</p>
-            <a href="#contact" className="btn btn-outline-light btn-lg mt-3">Contactar</a> {/* Añade un poco de margen arriba (mt-3) */}
+          <div className="d-flex flex-column justify-content-center align-items-center" style={{ minHeight: '80vh', minWidth: '320px' }}> {/* Tamaño mínimo para evitar cambios bruscos */}
+            {/* Contenedor centrado verticalmente */}
+            <h1 className="display-1 mb-4 wow fadeIn" style={{ fontSize: '52px', fontFamily: 'inherit', marginBottom: '0', minHeight: '52px' }}>SAENZ & ASOCIADOS</h1>
+            <div className="typed-text-container" style={{ position: 'relative', width: '100%', textAlign: 'center', marginBottom: '20px', minHeight: '50px' }}> {/* Tamaño fijo para el contenedor */}
+              <p className="lead" style={{ fontSize: '20px', margin: '0' }}>{typedText}</p> {/* Reducir el tamaño de la fuente */}
+            </div>
+            <a href="#contact" className="btn btn-outline-light btn-lg mt-3" style={{ minHeight: '50px', lineHeight: '1' }}>Contactar</a>
           </div>
         </div>
       </div>

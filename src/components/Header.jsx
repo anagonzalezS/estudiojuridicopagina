@@ -15,7 +15,7 @@ function Header() {
             <p><FaWhatsapp className="whatsapp-icon" /><span className="header-text" style={{ paddingLeft: '10px' }}> Línea Whatsapp</span><a href="tel:11-3147-1363" className="header-text" style={{ color: '#28a7e9' }}>11-3147-1363</a></p>
           </div>
           <div className="col-md-3 col-sm-4 col-12">
-            <p><FaPhone className="phone-icon" /><span className="header-text" style={{ paddingLeft: '10px' }}> Teléfono</span><a href="tel:(011) 3778-0506" className="header-text" style={{ color: '#28a7e9' }}>(011) 5357-3961</a></p>
+            <p><FaPhone className="phone-icon" /><span className="header-text" style={{ paddingLeft: '10px' }}> Teléfono</span><a href="tel:(011) 3147-1363" className="header-text" style={{ color: '#28a7e9' }}>(011) 5357-3961</a></p>
           </div>
           <div className="col-md-6 col-sm-4 col-12 text-right">
             <ul className="list-inline">

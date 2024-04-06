@@ -1,5 +1,5 @@
 #service h4 {
-    color: #28a7e9;
+    color: #ffffff;
     font-weight: 600;
     padding-top: 10px;
     padding-bottom: 14px;
@@ -31,15 +31,26 @@ body {
 
 }
 
-#service  span {
-    color: #28a7e9; /* Establece el color del texto "SERVICIOS" dentro del <span> como #28a7e9 */
-}
-#service h2 span {
-    color: #eaeff1; /* Establece el color del texto "SERVICIOS" dentro del <span> como #28a7e9 */
-}
-.service-item:hover {
-    transform: scale(1.05);
 
+
+
+  
+.icon-text-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
   }
+  
+  .icon {
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+  }
+  
+  .service-text {
+    margin: 0; /* Elimina el margen del texto para evitar espacios */
+    display: inline-block; /* Permite alinear verticalmente el texto */
+    vertical-align: middle; /* Alinea verticalmente el texto */
+  }
+  
+  
+  
   
   
