@@ -1,22 +1,26 @@
 import React from 'react';
-import { FaWhatsapp, FaPhone, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaWhatsapp, FaPhone, FaInstagram } from 'react-icons/fa';
 
-const Header = () => {
+function Header() {
   return (
-    <header>
+    <header style={{
+      color: '#FFFFFF', // Texto en blanco para mejor contraste
+      fontFamily: 'Open Sans, sans-serif',
+      fontWeight: 300,
+      marginTop: '20px' // Ajusta el espacio superior según tus necesidades
+    }}>
       <div className="container">
         <div className="row">
-          <div className="col-md-3 col-sm-4 col-xs-12">
-            <p><FaWhatsapp /> Línea Whatsapp <a href="#">11-3147-1363</a></p>
+          <div className="col-md-3 col-sm-4 col-12">
+            <p><FaWhatsapp className="whatsapp-icon" /><span className="header-text" style={{ paddingLeft: '10px' }}> Línea Whatsapp</span><a href="tel:11-3147-1363" className="header-text" style={{ color: '#28a7e9' }}>11-3147-1363</a></p>
           </div>
-          <div className="col-md-3 col-sm-4 col-xs-12">
-            <p><FaPhone /> Teléfono <a href="#">(011) 5357-3961</a></p>
+          <div className="col-md-3 col-sm-4 col-12">
+            <p><FaPhone className="phone-icon" /><span className="header-text" style={{ paddingLeft: '10px' }}> Teléfono</span><a href="tel:(011) 3147-1363" className="header-text" style={{ color: '#28a7e9' }}>(011) 5357-3961</a></p>
           </div>
-          <div className="col-md-5 col-sm-4 col-xs-12">
-            <ul className="social-icon">
-              <li><span>Síganos</span></li>
-              <li><a href="https://www.facebook.com/Litigar-Estudio-Jurídico%C3%ADdico-208353225674/" target="_blank" rel="noopener noreferrer"><FaFacebook /></a></li>
-              <li><a href="https://www.instagram.com/estudiolitigar/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a></li>
+          <div className="col-md-6 col-sm-4 col-12 text-right">
+            <ul className="list-inline">
+              <li className="list-inline-item">Síganos:</li>
+              <li className="list-inline-item"><a href="https://www.instagram.com/estudio.saenz/"><FaInstagram style={{ color: '#28a7e9' }} /></a></li>
             </ul>
           </div>
         </div>

@@ -1,96 +1,217 @@
 /* styles.css */
 
 #inicio {
-    background-size: cover;
-    min-height: 100vh;
+  background-size: cover;
+  min-height: 100vh;
 
-  }
-  .justify-text {
-    font-family: 'Noto Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 141.7%;
-    text-align: justify;
-    color: #868686;
-  }
-
-  #servicios {
-    padding-top: 96px;
-  }
-
-  #nosotros img {
-    display: block;
-    height: auto;
-    width: 100%;
-  }
-
-
-  #nosotros .lead {
-    font-family: 'Merriweather';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 141.7%;
-    color: #000000;
-    margin-bottom: 36px;
-  }
-
-  #nosotros .lead.mb-4 {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 141.7%;
-    color: #000000;
-    margin-bottom: 36px;
-  }
-  #nosotros .mb-4{
+}
+.justify-text {
   font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 141.7%;
+  text-align: justify;
+  color: #868686;
+}
+
+#servicios {
+  padding-top: 96px;
+}
+
+#nosotros img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+
+#nosotros .lead {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 141.7%;
+  color: #000000;
+  margin-bottom: 36px;
+}
+
+#nosotros .lead.mb-4 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 141.7%;
+  color: #000000;
+  margin-bottom: 36px;
+}
+#nosotros .mb-4{
+font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 141.7%;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  /* color: #195B97; */
+  margin-bottom: 24px;
+}
+
+.lead {
+  text-align: justify;
+}
+
+@media (max-width: 1240px) {
+  .display-1 {
+    font-size: 32px;
+    font-family: 'Roboto', sans-serif;
+
     font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: 400;
     line-height: 141.7%;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    /* color: #195B97; */
-    margin-bottom: 24px;
+    color: #FFF;
   }
-
-  .lead {
-    text-align: justify;
-  }
-
-  @media (max-width: 1240px) {
-    .display-1 {
-      font-size: 32px;
-      font-family: 'Roboto', sans-serif;
-
-      font-style: normal;
-      font-weight: 400;
-      line-height: 141.7%;
-      color: #FFF;
-    }
-  }
-  /* Dentro de Home.css */
-.floating-whatsapp {
+}
+.whatsapp-float {
+  display: block;
+  width: 70px;
+  height: 70px;
+  color: #fff;
+  background-color: #25D366; /* Color característico de WhatsApp */
   position: fixed;
-  bottom: 20px;
   right: 20px;
-  z-index: 1000;
-}
-
-.btn-floating-whatsapp {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
-  height: 60px;
-  background-color: #25D366;
+  bottom: 20px;
   border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
+  line-height: 70px; /* Igual al height para centrar verticalmente */
+  text-align: center;
+  z-index: 99999;
 }
 
-.btn-floating-whatsapp:hover {
-  background-color: #128C7E;
+
+
+/* Media query para ajustar el tamaño del icono en dispositivos móviles */
+@media (max-width: 768px) {
+.whatsapp-float {
+    bottom: 10px; /* Ajusta la distancia desde la parte inferior */
+    right: 10px; /* Ajusta la distancia desde la derecha */
+}
+}
+.divider {
+max-width: 3.25rem;
+border-width: 0.2rem;
+border-color: var(--color-primario); /* Puedes ajustar este color según tus necesidades */
+}
+/* Estilos para la etiqueta <hr> */
+hr {
+border-top: 1px solid rgba(0, 0, 0, 0.1);
+box-sizing: content-box;
+height: 0;
+overflow: visible;
+margin-top: 1rem; /* Margen superior de 1 rem */
+margin-bottom: 1rem; /* Margen inferior de 1 rem */
+border-top: 1px solid rgba(0, 0, 0, 0.1); /* Línea horizontal de 1 píxel con color RGBA */
+}
+hr.divider {
+max-width: 3.25rem;
+border-width: 0.2rem;
+border-color: var(--color-primario);
+}
+/* Estilo para el cursor de escritura */
+.typing-cursor {
+display: inline-block;
+width: 0.15em;
+height: 1.1em;
+background-color: black;
+animation: blink-caret 0.75s step-end infinite;
+}
+
+/* Animación para el cursor de escritura */
+@keyframes blink-caret {
+from, to { border-color: transparent; }
+50% { border-color: black; }
+}
+.typed-text-container {
+position: absolute; /* Hace que el contenedor se posicione de manera absoluta */
+bottom: 0; /* Lo posiciona en la parte inferior del contenedor padre */
+left: 50%; /* Lo posiciona en el centro horizontal del contenedor padre */
+transform: translateX(-50%); /* Ajusta la posición horizontal para centrarlo correctamente */
+}
+/* Servicios.css */
+
+/* Servicios.css */
+
+.servicio-item {
+background-color: #f8f9fa; /* Fondo blanco */
+padding: 20px;
+border-radius: 10px;
+height: 100%;
+transition: all 0.3s ease;
+}
+
+.servicio-item:hover {
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Efecto de sombra al pasar el ratón */
+}
+
+.servicio-item .icon {
+color: #343a40; /* Color de iconos */
+}
+
+.servicio-item .card-title {
+color: #343a40; /* Color de títulos */
+margin-top: 20px;
+}
+
+.servicio-item .card-text {
+color: #6c757d; /* Color de texto */
+font-size: 16px;
+line-height: 1.6;
+}
+.nav-link-custom {
+height: 45px;
+padding-top: 5px;
+padding-bottom: 5px;
+line-height: 35px;
+color: #777;
+}
+.navbar-nav .nav-link {
+text-transform: uppercase;
+color: #777;
+}
+
+.navbar-nav .nav-link:hover {
+color: #28a7e9 !important; /* Importante para sobrescribir los estilos de Bootstrap */
+}
+.fade-in-out {
+animation: fadeInOut 3s ease-in-out forwards;
+}
+
+.fade-in-out-typed {
+animation: fadeInOutTyped 6s ease-in-out forwards;
+}
+
+
+.navbar-nav .nav-link {
+color: #000; /* Cambia el color del texto a negro */
+text-decoration: none; /* Elimina cualquier subrayado */
+}
+.nav-link {
+cursor: pointer;
+}
+
+@keyframes fadeIn {
+from {
+  opacity: 0;
+}
+to {
+  opacity: 1;
+}
+}
+@keyframes typing {
+from { width: 0; }
+to { width: 100%; }
+}
+
+.typing-effect {
+overflow: hidden; /* Evita que el texto sobresalga */
+white-space: nowrap; /* Evita saltos de línea */
+animation: typing 3s steps(30, end); /* Duración y efecto de tipeo */
 }
