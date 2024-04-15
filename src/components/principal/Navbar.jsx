@@ -22,6 +22,9 @@ function Navbar() {
           <a className="nav-link font-weight-bold" href="#service">SERVICIOS</a>
         </li>
         <li className="nav-item">
+          <a className="nav-link font-weight-bold" href="#turno">TURNO</a>
+        </li>
+        <li className="nav-item">
           <a className="nav-link font-weight-bold" href="#contact">CONTACTO</a>
         </li>
       </ul>

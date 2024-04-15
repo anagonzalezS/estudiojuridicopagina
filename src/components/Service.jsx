@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import './Service.css'; // Archivo de estilos personalizados
 import WOW from 'wowjs';
 import 'animate.css/animate.min.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretRight } from '@fortawesome/free-solid-svg-icons'; // Icono de triángulo
+import { FaGavel, FaBalanceScale, FaUserFriends, FaHeart, FaBook, FaRegBuilding, FaFileSignature, FaGripHorizontal, FaHome, FaUser, FaHandshake, FaHandHoldingUsd } from 'react-icons/fa'; // Iconos de Font Awesome
 
 function Service() {
   useEffect(() => {
@@ -18,29 +17,87 @@ function Service() {
   }, []);
 
   return (
-    <section id="service" className="container">
-      <div className="row">
+    <section id="service" className="container mt-5">
+      <div className="row justify-content-center">
         <div className="col-md-12">
           <h2 className="wow fadeInDown text-center mb-4">SERVICIOS</h2>
         </div>
-        <div className="col-md-6">
-          <div className="service-item wow fadeInLeft" data-wow-duration="1s">
-            <FontAwesomeIcon icon={faCaretRight} size="lg" className="icon" />
-            <h4 className="service-text">Divorcios-Sucesiones</h4>
-          </div>
-          <div className="service-item wow fadeInLeft" data-wow-duration="1s">
-            <FontAwesomeIcon icon={faCaretRight} size="lg" className="icon" />
-            <h4 className="service-text">Familia y Penal</h4>
+      </div>
+      <div className="row justify-content-center">
+        <div className="col-md-3 text-center mb-4">
+          <div className="service-item wow fadeInUp" data-wow-duration="1s">
+            <FaGavel className="icon" size={36} />
+            <h4 className="service-text mt-3">Derecho Civil</h4>
           </div>
         </div>
-        <div className="col-md-6">
-          <div className="service-item wow fadeInRight" data-wow-duration="1s">
-            <FontAwesomeIcon icon={faCaretRight} size="lg" className="icon" />
-            <h4 className="service-text">Comercial</h4>
+        <div className="col-md-3 text-center mb-4">
+          <div className="service-item wow fadeInUp" data-wow-duration="1s">
+            <FaBalanceScale className="icon" size={36} />
+            <h4 className="service-text mt-3">Derecho Penal</h4>
           </div>
-          <div className="service-item wow fadeInRight" data-wow-duration="1s">
-            <FontAwesomeIcon icon={faCaretRight} size="lg" className="icon" />
-            <h4 className="service-text">Laboral</h4>
+        </div>
+        <div className="col-md-3 text-center mb-4">
+          <div className="service-item wow fadeInUp" data-wow-duration="1s">
+            <FaUserFriends className="icon" size={36} />
+            <h4 className="service-text mt-3">Derecho Laboral</h4>
+          </div>
+        </div>
+        <div className="col-md-3 text-center mb-4">
+          <div className="service-item wow fadeInUp" data-wow-duration="1s">
+            <FaHome className="icon" size={36} />
+            <h4 className="service-text mt-3">Usucapión</h4>
+          </div>
+        </div>
+      </div>
+      <div className="row justify-content-center">
+        <div className="col-md-3 text-center mb-4">
+          <div className="service-item wow fadeInUp" data-wow-duration="1s">
+            <FaUser className="icon" size={36} />
+            <h4 className="service-text mt-3">Derecho de Familia</h4>
+          </div>
+        </div>
+        <div className="col-md-3 text-center mb-4">
+          <div className="service-item wow fadeInUp" data-wow-duration="1s">
+            <FaGripHorizontal className="icon" size={36} />
+            <h4 className="service-text mt-3">Régimen de visitas</h4>
+          </div>
+        </div>
+        <div className="col-md-3 text-center mb-4">
+          <div className="service-item wow fadeInUp" data-wow-duration="1s">
+            <FaFileSignature className="icon" size={36} />
+            <h4 className="service-text mt-3">Divorcios unilaterales</h4>
+          </div>
+        </div>
+        <div className="col-md-3 text-center mb-4">
+          <div className="service-item wow fadeInUp" data-wow-duration="1s">
+            <FaRegBuilding className="icon" size={36} />
+            <h4 className="service-text mt-3">Divorcios presentación conjunta</h4>
+          </div>
+        </div>
+      </div>
+      <div className="row justify-content-center">
+        <div className="col-md-3 text-center mb-4">
+          <div className="service-item wow fadeInUp" data-wow-duration="1s">
+            <FaHandshake className="icon" size={36} />
+            <h4 className="service-text mt-3">Divorcios celebrados en el exterior</h4>
+          </div>
+        </div>
+        <div className="col-md-3 text-center mb-4">
+          <div className="service-item wow fadeInUp" data-wow-duration="1s">
+            <FaHeart className="icon" size={36} />
+            <h4 className="service-text mt-3">Sucesiones Abintestato</h4>
+          </div>
+        </div>
+        <div className="col-md-3 text-center mb-4">
+          <div className="service-item wow fadeInUp" data-wow-duration="1s">
+            <FaBook className="icon" size={36} />
+            <h4 className="service-text mt-3">Testamentarias</h4>
+          </div>
+        </div>
+        <div className="col-md-3 text-center mb-4">
+          <div className="service-item wow fadeInUp" data-wow-duration="1s">
+            <FaHandHoldingUsd className="icon" size={36} />
+            <h4 className="service-text mt-3">Ampliación de Declaratoria Herederos</h4>
           </div>
         </div>
       </div>
