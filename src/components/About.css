@@ -53,4 +53,57 @@
 .text-celeste {
     color: #28a7e9; /* Cambia el color según tu preferencia */
   }
+  #about {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semi-transparente */
+    color: white; /* Texto blanco */
+  }
   
+  #about h2 {
+    color: #dcdcdc; /* Un gris claro para los títulos */
+  }
+  
+  #about p {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente para mejorar la lectura del texto negro */
+    color: #333; /* Texto oscuro para contraste */
+    padding: 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  /* Estilos para la sección About con colores cálidos y grises */
+#about {
+  background-color: #f3f3f3; /* Fondo gris claro */
+  color: #6d6d6d; /* Texto gris oscuro para contraste */
+}
+
+#about h2 {
+  color: #a8797e; /* Título en tono rosado cálido */
+}
+
+#about p {
+  background-color: #ffffff; /* Fondo blanco */
+  color: #444444; /* Texto gris oscuro */
+  padding: 15px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+}
+/* Estilos para la imagen en la sección About */
+.about-img {
+  max-width: 100%; /* Establece el ancho máximo para la imagen */
+  height: auto; /* Permite que la altura se ajuste automáticamente */
+}
+
+
+/* Media Queries para pantallas de menos de 768px (dispositivos móviles) */
+@media (max-width: 767px) {
+  .row {
+    flex-direction: column-reverse; /* Coloca el texto arriba y la imagen debajo en móviles */
+  }
+
+  .col-md-6 {
+    width: 100%; /* Ocupa el 100% del ancho del contenedor en móviles */
+    margin-bottom: 20px; /* Añade un margen en la parte inferior para separar texto e imagen */
+  }
+
+  .about-img {
+    max-width: 80%; /* Reduce el tamaño de la imagen en dispositivos móviles */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+  }
+}
