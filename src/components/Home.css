@@ -14,6 +14,9 @@
   text-align: justify;
   color: #868686;
 }
+.uppercase-text {
+  text-transform: uppercase;
+}
 
 #servicios {
   padding-top: 96px;

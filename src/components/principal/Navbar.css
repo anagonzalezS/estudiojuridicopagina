@@ -1,0 +1,13 @@
+.navbar-toggler-label {
+    display: none; /* Oculta por defecto el texto */
+    margin-left: 10px; /* Espacio entre el icono y el texto */
+    font-size: 18px; /* Tamaño del texto */
+  }
+  
+  /* Muestra el texto solo en móviles */
+  @media (max-width: 992px) {
+    .navbar-toggler-label {
+      display: inline; /* Muestra el texto en dispositivos móviles */
+    }
+  }
+  
