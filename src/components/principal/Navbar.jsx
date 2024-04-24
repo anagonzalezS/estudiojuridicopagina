@@ -10,7 +10,8 @@ function Navbar() {
         </a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
-          <span className="navbar-toggler-label">Menú</span> {/* Texto adicional para móviles */}
+          <span className="navbar-toggler-label" style={{ marginLeft: '5px' }}>Menú</span>
+
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
@@ -27,8 +28,15 @@ function Navbar() {
               <a className="nav-link font-weight-bold" href="#turno">TURNO</a>
             </li>
             <li className="nav-item">
+              <a className="nav-link font-weight-bold" href="#tarifa">TARIFA</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link font-weight-bold" href="#planificacion">PLANIFICACION FINANCIERA</a>
+            </li>
+            <li className="nav-item">
               <a className="nav-link font-weight-bold" href="#contact">CONTACTO</a>
             </li>
+            
           </ul>
         </div>
       </div>

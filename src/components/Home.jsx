@@ -3,7 +3,7 @@ import './Home.css'; // Importa tus estilos personalizados aquí
 import 'animate.css/animate.min.css'; // Importa la animación CSS si es necesario
 
 function Home() {
-  const textoVisible = "Estudio Jurídico Saenz & Asociados";
+  const textoVisible = "Estudio Jurídico Sáenz & Asociados";
   const [typedText, setTypedText] = useState('');
   const typingDelay = 100; // Delay entre cada letra
   const erasingDelay = 50; // Delay entre el borrado de letras

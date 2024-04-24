@@ -10,4 +10,10 @@
       display: inline; /* Muestra el texto en dispositivos móviles */
     }
   }
+  /* Navbar.css */
+.navbar-toggler-label {
+    display: none; /* Oculto por defecto */
+  }
+  
+  
   
