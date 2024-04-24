@@ -15,5 +15,9 @@
     display: none; /* Oculto por defecto */
   }
   
+  .navbar-light {
+    background-color: #ffffff !important; /* Color de fondo blanco */
+    color: #333333 !important; /* Color de texto oscuro */
+  }
   
   
