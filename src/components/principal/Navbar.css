@@ -19,5 +19,85 @@
     background-color: #ffffff !important; /* Color de fondo blanco */
     color: #333333 !important; /* Color de texto oscuro */
   }
+  /* Navbar.css */
+
+/* Estilos generales */
+.navbar {
+    background-color: #ffffff; /* Color de fondo */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+  }
   
+  /* Estilos para el botón del menú desplegable */
+  .navbar-toggler {
+    border: none; /* Eliminar borde */
+    outline: none; /* Eliminar contorno */
+  }
+  
+  .navbar-toggler .navbar-toggler-icon {
+    background-color: #333333; /* Color del icono del botón */
+  }
+  
+  /* Estilos para el texto "Menú" en el botón del menú desplegable */
+  .navbar-toggler-label {
+    display: none; /* Ocultar texto en pantallas grandes */
+  }
+  
+  /* Estilos para el menú desplegable en dispositivos móviles */
+  @media (max-width: 768px) {
+    .navbar-toggler-label {
+      display: inline-block; /* Mostrar texto solo en pantallas pequeñas */
+      margin-left: 5px; /* Ajustar margen */
+    }
+  
+    .navbar-collapse {
+      background-color: #ffffff; /* Color de fondo del menú desplegable */
+      border-top: 1px solid #dddddd; /* Borde superior */
+    }
+  
+    .navbar-nav {
+      text-align: center; /* Centrar elementos del menú */
+    }
+  
+    .nav-item {
+      margin-bottom: 10px; /* Espaciado entre elementos del menú */
+    }
+  
+    .nav-link {
+      color: #333333; /* Color del texto del enlace */
+      font-weight: bold; /* Negrita */
+      text-transform: uppercase; /* Mayúsculas */
+    }
+  }
+  
+  /* Navbar.css */
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    /* Ajustar estilos del menú desplegable */
+    .navbar-nav {
+      text-align: center; /* Centrar elementos del menú */
+      background-color: #ffffff; /* Color de fondo del menú desplegable */
+      border-top: 1px solid #dddddd; /* Borde superior */
+      padding-top: 10px; /* Espaciado superior */
+    }
+  
+    .nav-item {
+      margin-bottom: 10px; /* Espaciado entre elementos del menú */
+    }
+  
+    .nav-link {
+      color: #333333; /* Color del texto del enlace */
+      font-weight: bold; /* Negrita */
+      text-transform: uppercase; /* Mayúsculas */
+      font-size: 16px; /* Tamaño de fuente */
+      display: block; /* Mostrar como bloque para ocupar todo el ancho */
+      padding: 10px 15px; /* Espaciado interno */
+      transition: background-color 0.3s ease; /* Transición suave */
+    }
+  
+    /* Estilos al pasar el ratón sobre los enlaces */
+    .nav-link:hover {
+      background-color: #f8f9fa; /* Color de fondo al pasar el ratón */
+    }
+  }
   

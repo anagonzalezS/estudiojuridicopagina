@@ -1,8 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Turno.css'; // Archivo de estilos personalizados
+import WOW from 'wowjs';
+import 'animate.css/animate.min.css';
 
 function Turno() {
   const [modalVisible, setModalVisible] = useState(false);
+
+  useEffect(() => {
+    const wow = new WOW.WOW({
+      boxClass: 'wow', // Clase CSS aplicada a elementos WOW
+      animateClass: 'animated', // Clase CSS para las animaciones de WOW
+      offset: 0, // Distancia en píxeles para activar la animación
+      mobile: false, // Desactiva las animaciones en dispositivos móviles
+      live: true // Detecta cambios en el DOM y activa las animaciones
+    });
+    wow.init();
+  }, []);
 
   const handleOpenModal = () => {
     setModalVisible(true);
@@ -14,11 +27,11 @@ function Turno() {
   };
 
   return (
-    <section className="mt-3">
-      <div className="container" style={{ backgroundColor: 'white', padding: '20px', borderRadius: '10px' }}>
+    <section className="turno-section" style={{ backgroundColor: 'white', padding: '20px', borderRadius: '10px' }}>
+      <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-8">
-            <div className="card p-3 shadow-lg">
+            <div className="card p-3 shadow-lg wow fadeInUp">
               <div className="card-body">
                 <h2 className="card-title text-center">Reservas de Turnos</h2>
                 <p className="card-text text-center">¿Necesita un turno? Haga clic en el botón a continuación para reservar su turno en el calendario de Google.</p>
@@ -28,18 +41,18 @@ function Turno() {
               </div>
             </div>
           </div>
-        </div> {/* Cierre del primer bloque de row y col */}
+        </div>
 
         {/* Modal */}
-        <div className={`modal ${modalVisible ? 'd-block' : 'd-none'}`} tabIndex="-1" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
+        <div className={`modal ${modalVisible ? 'd-block' : 'd-none'}`} tabIndex="-1">
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">Información Importante</h5>
                 <button type="button" className="btn-close" onClick={() => setModalVisible(false)}></button>
               </div>
-              <div className="modal-body" style={{ color: 'black' }}>
-              <p>Estás queriendo agendar un turno. Recuerda que el valor de CABA es de:</p>
+              <div className="modal-body">
+                <p>Estás queriendo agendar un turno. Recuerda que el valor de CABA es de:</p>
                 <ul>
                   <li>Consultas verbales: 0,5 uma</li>
                   <li>Consultas con informe: 1 uma</li>
@@ -70,15 +83,15 @@ function Turno() {
                 <h2 className="card-title text-center">Consulte el Cuadro Tarifario</h2>
                 <p className="card-text text-center">Consulte el cuadro tarifario de consultas según su jurisdicción.</p>
                 <div className="text-center">
-              <a href="https://www.cajaabogados.org.ar/noticia.php?n=24" className="btn btn-primary me-2">Ver Cuadro Tarifario Provincia</a>
-              <a href="https://www.cpacf.org.ar/noticia/5201/valores-uma-pjn-ley-27423" className="btn btn-primary">Ver Cuadro Tarifario CABA</a>
-            </div>
-
+                  <a href="https://www.cajaabogados.org.ar/noticia.php?n=24" className="enlace-tarifario">Ver Cuadro Tarifario Provincia</a>
+                  <span className="enlace-separator"> | </span> {/* Separador */}
+                  <a href="https://www.cpacf.org.ar/noticia/5201/valores-uma-pjn-ley-27423" className="enlace-tarifario">Ver Cuadro Tarifario CABA</a>
+                </div>
               </div>
             </div>
           </div>
-        </div> {/* Cierre del segundo bloque de row y col */}
-      </div> {/* Cierre del contenedor con fondo blanco */}
+        </div>
+      </div>
     </section>
   );
 }

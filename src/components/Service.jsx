@@ -17,7 +17,9 @@ function Service() {
   }, []);
 
   return (
-    <section id="service" className="container mt-5">
+
+    <section id="service" className="container mt-5 service-section">
+
       <div className="row justify-content-center">
         <div className="col-md-12">
           <h2 className="wow fadeInDown text-center mb-4">SERVICIOS</h2>
@@ -26,78 +28,102 @@ function Service() {
       <div className="row justify-content-center">
         <div className="col-md-3 text-center mb-4">
           <div className="service-item wow fadeInUp" data-wow-duration="1s">
-            <FaGavel className="icon" size={36} />
-            <h4 className="service-text mt-3">Derecho Civil</h4>
+            <div className="service-card service-card-hover"> {/* Agrega la clase service-card-hover */}
+              <FaGavel className="icon" size={36} />
+              <h4 className="service-text mt-3">Derecho Civil</h4>
+            </div>
           </div>
         </div>
         <div className="col-md-3 text-center mb-4">
           <div className="service-item wow fadeInUp" data-wow-duration="1s">
-            <FaBalanceScale className="icon" size={36} />
-            <h4 className="service-text mt-3">Derecho Penal</h4>
+            <div className="service-card service-card-hover"> {/* Agrega la clase service-card-hover */}
+              <FaBalanceScale className="icon" size={36} />
+              <h4 className="service-text mt-3">Derecho Penal</h4>
+            </div>
           </div>
         </div>
         <div className="col-md-3 text-center mb-4">
           <div className="service-item wow fadeInUp" data-wow-duration="1s">
-            <FaUserFriends className="icon" size={36} />
-            <h4 className="service-text mt-3">Derecho Laboral</h4>
+            <div className="service-card service-card-hover"> {/* Agrega la clase service-card-hover */}
+              <FaUserFriends className="icon" size={36} />
+              <h4 className="service-text mt-3">Derecho Laboral</h4>
+            </div>
           </div>
         </div>
         <div className="col-md-3 text-center mb-4">
           <div className="service-item wow fadeInUp" data-wow-duration="1s">
-            <FaHome className="icon" size={36} />
-            <h4 className="service-text mt-3">Usucapión</h4>
-          </div>
-        </div>
-      </div>
-      <div className="row justify-content-center">
-        <div className="col-md-3 text-center mb-4">
-          <div className="service-item wow fadeInUp" data-wow-duration="1s">
-            <FaUser className="icon" size={36} />
-            <h4 className="service-text mt-3">Derecho de Familia</h4>
-          </div>
-        </div>
-        <div className="col-md-3 text-center mb-4">
-          <div className="service-item wow fadeInUp" data-wow-duration="1s">
-            <FaGripHorizontal className="icon" size={36} />
-            <h4 className="service-text mt-3">Régimen de visitas</h4>
-          </div>
-        </div>
-        <div className="col-md-3 text-center mb-4">
-          <div className="service-item wow fadeInUp" data-wow-duration="1s">
-            <FaFileSignature className="icon" size={36} />
-            <h4 className="service-text mt-3">Divorcios unilaterales</h4>
-          </div>
-        </div>
-        <div className="col-md-3 text-center mb-4">
-          <div className="service-item wow fadeInUp" data-wow-duration="1s">
-            <FaRegBuilding className="icon" size={36} />
-            <h4 className="service-text mt-3">Divorcios presentación conjunta</h4>
+            <div className="service-card service-card-hover"> {/* Agrega la clase service-card-hover */}
+              <FaHome className="icon" size={36} />
+              <h4 className="service-text mt-3">Usucapión</h4>
+            </div>
           </div>
         </div>
       </div>
       <div className="row justify-content-center">
         <div className="col-md-3 text-center mb-4">
           <div className="service-item wow fadeInUp" data-wow-duration="1s">
-            <FaHandshake className="icon" size={36} />
-            <h4 className="service-text mt-3">Divorcios celebrados en el exterior</h4>
+            <div className="service-card service-card-hover"> {/* Agrega la clase service-card-hover */}
+              <FaUser className="icon" size={36} />
+              <h4 className="service-text mt-3">Derecho de Familia</h4>
+            </div>
           </div>
         </div>
         <div className="col-md-3 text-center mb-4">
           <div className="service-item wow fadeInUp" data-wow-duration="1s">
-            <FaHeart className="icon" size={36} />
-            <h4 className="service-text mt-3">Sucesiones Abintestato</h4>
+            <div className="service-card service-card-hover"> {/* Agrega la clase service-card-hover */}
+              <FaGripHorizontal className="icon" size={36} />
+              <h4 className="service-text mt-3">Régimen de visitas</h4>
+            </div>
           </div>
         </div>
         <div className="col-md-3 text-center mb-4">
           <div className="service-item wow fadeInUp" data-wow-duration="1s">
-            <FaBook className="icon" size={36} />
-            <h4 className="service-text mt-3">Testamentarias</h4>
+            <div className="service-card service-card-hover"> {/* Agrega la clase service-card-hover */}
+              <FaFileSignature className="icon" size={36} />
+              <h4 className="service-text mt-3">Divorcios unilaterales</h4>
+            </div>
           </div>
         </div>
         <div className="col-md-3 text-center mb-4">
           <div className="service-item wow fadeInUp" data-wow-duration="1s">
-            <FaHandHoldingUsd className="icon" size={36} />
-            <h4 className="service-text mt-3">Ampliación de Declaratoria Herederos</h4>
+            <div className="service-card service-card-hover"> {/* Agrega la clase service-card-hover */}
+              <FaRegBuilding className="icon" size={36} />
+              <h4 className="service-text mt-3">Divorcios presentación conjunta</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="row justify-content-center">
+        <div className="col-md-3 text-center mb-4">
+          <div className="service-item wow fadeInUp" data-wow-duration="1s">
+            <div className="service-card service-card-hover"> {/* Agrega la clase service-card-hover */}
+              <FaHandshake className="icon" size={36} />
+              <h4 className="service-text mt-3">Divorcios celebrados en el exterior</h4>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-3 text-center mb-4">
+          <div className="service-item wow fadeInUp" data-wow-duration="1s">
+            <div className="service-card service-card-hover"> {/* Agrega la clase service-card-hover */}
+              <FaHeart className="icon" size={36} />
+              <h4 className="service-text mt-3">Sucesiones Abintestato</h4>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-3 text-center mb-4">
+          <div className="service-item wow fadeInUp" data-wow-duration="1s">
+            <div className="service-card service-card-hover"> {/* Agrega la clase service-card-hover */}
+              <FaBook className="icon" size={36} />
+              <h4 className="service-text mt-3">Testamentarias</h4>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-3 text-center mb-4">
+          <div className="service-item wow fadeInUp" data-wow-duration="1s">
+            <div className="service-card service-card-hover"> {/* Agrega la clase service-card-hover */}
+              <FaHandHoldingUsd className="icon" size={36} />
+              <h4 className="service-text mt-3">Ampliación de Declaratoria Herederos</h4>
+            </div>
           </div>
         </div>
       </div>

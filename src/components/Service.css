@@ -1,84 +1,102 @@
+/* Estilos para h4 dentro de #service */
 #service h4 {
-    color: #ffffff;
-    font-weight: 600;
-    padding-top: 10px;
-    padding-bottom: 14px;
+  color: #ffffff;
+  font-weight: 600;
+  padding-top: 10px;
+  padding-bottom: 14px;
 }
+
+/* Estilos para h2 span */
 h2 span {
-    color: #FFFFFF;
-    font-weight: bold;
+  color: #FFFFFF;
+  font-weight: bold;
 }
+
+/* Estilos para h2 */
 h2 {
-    text-align: center;
-    font-size: 40px;
-    padding-bottom: 40px;
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 40px;
 }
 
-
+/* Estilos generales del cuerpo */
 body {
-    background: #303030;
-    color: #FFFFFF;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    overflow-x: hidden;
+  background: #303030;
+  color: #FFFFFF;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
 }
+
+/* Estilos específicos para #service h2 */
 #service h2 {
-    text-align: center;
-    font-size: 40px;
-    padding-bottom: 40px;
-    color: #FFFFFF; /* Establece el color del texto "NUESTROS" como blanco */
-
-
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 40px;
+  color: #FFFFFF; /* Establece el color del texto "NUESTROS" como blanco */
 }
 
-
-
-
-  
+/* Contenedor de ícono y texto */
 .icon-text-container {
-    display: flex;
-    align-items: center; /* Centra verticalmente */
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+}
+
+/* Estilos para el ícono */
+.icon {
+  margin-right: 10px; /* Espacio entre el ícono y el texto */
+}
+
+/* Estilos para el texto del servicio */
+.service-text {
+  margin: 0; /* Elimina el margen del texto para evitar espacios */
+  display: inline-block; /* Permite alinear verticalmente el texto */
+  vertical-align: middle; /* Alinea verticalmente el texto */
+}
+
+/* Estilos para los elementos de servicio */
+.service-item {
+  position: relative;
+}
+
+/* Estilos para el ícono en los elementos de servicio */
+.icon {
+  position: absolute;
+  top: -20px; /* Ajusta esta propiedad según sea necesario para alinear el icono con el texto */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Espacio entre el ícono y el texto en los elementos de servicio */
+.service-text {
+  margin-top: 20px; /* Ajusta esta propiedad para dar espacio entre el icono y el texto */
+}
+
+/* Animación fadeInUp */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .icon {
-    margin-right: 10px; /* Espacio entre el ícono y el texto */
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .service-text {
-    margin: 0; /* Elimina el margen del texto para evitar espacios */
-    display: inline-block; /* Permite alinear verticalmente el texto */
-    vertical-align: middle; /* Alinea verticalmente el texto */
-  }
-  
-  
-  .service-item {
-    position: relative;
-  }
-  
-  .icon {
-    position: absolute;
-    top: -20px; /* Ajusta esta propiedad según sea necesario para alinear el icono con el texto */
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .service-text {
-    margin-top: 20px; /* Ajusta esta propiedad para dar espacio entre el icono y el texto */
-  }
-  
-  
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .wow.fadeInUp {
-    animation-name: fadeInUp;
-  }
-  
+}
+
+/* Aplicar animación fadeInUp a elementos con clase wow.fadeInUp */
+.wow.fadeInUp {
+  animation-name: fadeInUp;
+}
+/* Estilos para el card de servicio */
+.service-card {
+  background-color: rgba(255, 255, 255, 0.1); /* Color de fondo del card con transparencia */
+  border-radius: 10px; /* Bordes redondeados */
+  overflow: hidden; /* Oculta el contenido que excede el tamaño del card */
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo */
+}
+
+/* Estilos cuando se pasa el mouse sobre el card */
+.service-card:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Cambia el color de fondo al pasar el mouse */
+}

@@ -7,6 +7,7 @@ import Service from './components/Service';
 import Contact from './components/Contact';
 import Turno from './components/Turno';
 import Footer from './components/Footer';
+import Planificacion from './components/Planificacion';
 import WhatsappIcon from './components/WhatsappIcon'; // Importa el componente WhatsappIcon
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <About />
       <Service />
       <Turno />
-
+      <Planificacion/>
       <Contact />
       <Footer />
       <WhatsappIcon /> {/* Agrega el ícono flotante WhatsappIcon aquí */}

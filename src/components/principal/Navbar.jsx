@@ -14,24 +14,26 @@ function Navbar() {
 
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ml-auto">
+        <ul class="navbar-nav">
+
+
             <li className="nav-item">
-              <a className="nav-link font-weight-bold" href="#top">INICIO</a>
+              <a className="nav-link " href="#top">INICIO</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link font-weight-bold" href="#about">NOSOTROS</a>
+              <a className="nav-link " href="#about">NOSOTROS</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link font-weight-bold" href="#service">SERVICIOS</a>
+              <a className="nav-link " href="#service">SERVICIOS</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link font-weight-bold" href="#turno">TURNO</a>
+              <a className="nav-link " href="#turno">TURNO</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link font-weight-bold" href="#tarifa">TARIFA</a>
+              <a className="nav-link " href="#tarifa">TARIFA</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link font-weight-bold" href="#planificacion">PLANIFICACION FINANCIERA</a>
+              <a className="nav-link " href="#planificacion">PLANIFICACION FINANCIERA</a>
             </li>
             <li className="nav-item">
               <a className="nav-link font-weight-bold" href="#contact">CONTACTO</a>
@@ -43,5 +45,11 @@ function Navbar() {
     </nav>
   );
 }
-
+// Agregar el código JavaScript al final del componente Navbar
+document.addEventListener("DOMContentLoaded", function () {
+  // Activar el menú desplegable al hacer clic en el botón del menú
+  document.querySelector(".navbar-toggler").addEventListener("click", function () {
+    document.querySelector("#navbarSupportedContent").classList.toggle("show");
+  });
+});
 export default Navbar;

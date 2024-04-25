@@ -107,3 +107,25 @@
     margin: 0 auto; /* Centra la imagen horizontalmente */
   }
 }
+/* En tu archivo About.css */
+
+/* Estilos para la sección #about */
+#about {
+  background-color: #f8f8f8; /* Color de fondo cálido */
+  padding: 60px 0; /* Ajusta el espaciado según sea necesario */
+}
+
+/* Estilos para la imagen */
+.about-img {
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilos para el texto */
+#about h2 {
+  color: #333; /* Color del título */
+}
+
+#about p {
+  color: #666; /* Color del texto */
+}

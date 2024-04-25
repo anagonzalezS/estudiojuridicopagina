@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faClock } from '@fortawesome/free-solid-svg-icons';
-
-import './Contact.css';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 import WOW from 'wowjs';
 import 'animate.css/animate.min.css';
 
@@ -38,11 +38,15 @@ function Contact() {
     fontSize: '16px',
     fontWeight: 'bold',
     cursor: 'pointer',
-    marginTop: '10px', // Añadido para separar el botón del resto del formulario
+    marginTop: '10px',
   };
 
   const formContainerStyle = {
-    marginBottom: '20px', // Añadido para separar el formulario de la dirección
+    marginBottom: '40px',
+  };
+
+  const inputStyle = {
+    marginBottom: '15px',
   };
 
   const [formData, setFormData] = useState({
@@ -53,6 +57,8 @@ function Contact() {
   });
 
   const [formError, setFormError] = useState('');
+  const [showModal, setShowModal] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -68,10 +74,19 @@ function Contact() {
     const { nombre, email, mensaje, politicaPrivacidad } = formData;
     if (!nombre || !email || !mensaje || !politicaPrivacidad) {
       setFormError('Por favor completa todos los campos obligatorios.');
+      setShowAlert(true);
       return;
     }
-    setFormError('');
-    // Aquí puedes enviar el formulario si todos los campos están completos
+    setShowModal(true);
+    setTimeout(() => {
+      setShowModal(false);
+      setFormData({
+        nombre: '',
+        email: '',
+        mensaje: '',
+        politicaPrivacidad: false,
+      });
+    }, 5000); // Aumentar el tiempo de visualización del modal a 5 segundos
   };
 
   return (
@@ -86,18 +101,18 @@ function Contact() {
           <div className="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.9s" style={formContainerStyle}>
             <h3 style={{ color: '#ffffff' }}>¡Déjanos tu consulta y te responderemos cuanto antes!</h3>
             <form onSubmit={handleSubmit}>
-              {formError && <div style={{ color: 'red' }}>{formError}</div>}
-              <div className="form-group">
+              {showAlert && <div style={{ color: 'red', marginBottom: '10px' }}>{formError}</div>}
+              <div className="form-group" style={inputStyle}>
                 <label htmlFor="nombre">Nombre</label>
-                <input type="text" className="form-control" id="nombre" name="nombre" required onChange={handleInputChange} />
+                <input type="text" className="form-control" id="nombre" name="nombre" value={formData.nombre} required onChange={handleInputChange} />
               </div>
-              <div className="form-group">
+              <div className="form-group" style={inputStyle}>
                 <label htmlFor="email">Email</label>
-                <input type="email" className="form-control" id="email" name="email" required onChange={handleInputChange} />
+                <input type="email" className="form-control" id="email" name="email" value={formData.email} required onChange={handleInputChange} />
               </div>
-              <div className="form-group">
+              <div className="form-group" style={inputStyle}>
                 <label htmlFor="mensaje">Mensaje</label>
-                <textarea className="form-control" id="mensaje" name="mensaje" rows="4" required onChange={handleInputChange}></textarea>
+                <textarea className="form-control" id="mensaje" name="mensaje" rows="4" value={formData.mensaje} required onChange={handleInputChange}></textarea>
               </div>
               <div className="form-check">
                 <input type="checkbox" className="form-check-input" id="politicaPrivacidad" name="politicaPrivacidad" required onChange={handleInputChange} />
@@ -105,7 +120,7 @@ function Contact() {
               </div>
               <button type="submit" className="btn" style={buttonStyle}>Enviar</button>
             </form>
-            {formError && <div style={{ color: 'red' }}>{formError}</div>}
+            {showAlert && <div style={{ color: 'red' }}>{formError}</div>}
           </div>
           <div className="col-md-6 col-sm-6 col-xs-12 wow fadeInRight" data-wow-offset="50" data-wow-delay="0.6s">
             <address>
@@ -117,6 +132,17 @@ function Contact() {
           </div>
         </div>
       </div>
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>¡Gracias por tu consulta!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body style={{ color: 'black' }}>Gracias por su consulta Te responderemos a la brevedad.</Modal.Body> {/* Ajustar el color del texto en el modal */}
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </section>
   );
 }

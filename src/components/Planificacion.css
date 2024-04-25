@@ -1,0 +1,12 @@
+/* Estilos para los enlaces */
+.enlace-destacado {
+    color: #007bff; /* Color celeste */
+    text-decoration: underline; /* Subrayado */
+    transition: color 0.3s ease; /* Transición suave del color */
+  }
+  
+  .enlace-destacado:hover {
+    color: #0056b3; /* Color celeste más oscuro al pasar el mouse */
+    text-decoration: none; /* Eliminar subrayado al pasar el mouse */
+  }
+  
