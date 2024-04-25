@@ -91,13 +91,15 @@ function Contact() {
 
   return (
     <section id="contact" className="wow fadeIn contact-section" style={sectionStyle}>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <h2 className="wow bounceIn" data-wow-offset="100" data-wow-delay="0.5s">
-              <span style={textStyle}>CONTACTANOS</span>
-            </h2>
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12">
+          <h2 className="wow bounceIn text-center" data-wow-offset="100" data-wow-delay="0.5s" style={{ marginTop: '20px', marginBottom: '20px', color: '#ffffff', fontSize: '24px', fontWeight: 'bold' }}>
+            <span style={textStyle}>CONTACTANOS</span>
+          </h2>
           </div>
+          </div>
+          <div className="row">
           <div className="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.9s" style={formContainerStyle}>
             <h3 style={{ color: '#ffffff' }}>¡Déjanos tu consulta y te responderemos cuanto antes!</h3>
             <form onSubmit={handleSubmit}>
@@ -122,11 +124,16 @@ function Contact() {
             </form>
             {showAlert && <div style={{ color: 'red' }}>{formError}</div>}
           </div>
+          </div>
+
+          <div className="row">
+
           <div className="col-md-6 col-sm-6 col-xs-12 wow fadeInRight" data-wow-offset="50" data-wow-delay="0.6s">
             <address>
               <p className="address-title" style={{ ...textStyle, ...titleStyle }}><FontAwesomeIcon icon={faMapMarkerAlt} /> Ubicación</p>
               <span style={textStyle}>CABA- Bs As</span>
               <p className="address-title" style={{ ...textStyle, ...titleStyle }}><FontAwesomeIcon icon={faClock} /> Horarios</p>
+
               <span style={textStyle}>Lunes a Viernes de 8 a 16 hs</span>
             </address>
           </div>
