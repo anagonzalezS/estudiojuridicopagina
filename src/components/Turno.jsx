@@ -27,7 +27,7 @@ function Turno() {
   };
 
   return (
-    <section className="turno-section" style={{ backgroundColor: 'white', padding: '20px', borderRadius: '10px' }}>
+    <section id="turno" className="turno-section" style={{ backgroundColor: 'white', padding: '20px', borderRadius: '10px' }}>
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-8">
@@ -74,30 +74,30 @@ function Turno() {
               </div>
             </div>
           </div>
-        </div> {/* Cierre del primer bloque de row y col */}
+        </div> {/* Cierre del modal */}
 
-        <div className="container mt-5">
-        <div className="row justify-content-center">
-
-          <div className="col-md-8">
-            <div className="card p-3 shadow-lg">
-              <div className="card-body">
-                <h2 className="card-title text-center">Consulte el Cuadro Tarifario</h2>
-                <p className="card-text text-center">Consulte el cuadro tarifario de consultas según su jurisdicción.</p>
-                <div className="text-center">
-                  <a href="https://www.cajaabogados.org.ar/noticia.php?n=24" className="enlace-tarifario">Ver Cuadro Tarifario Provincia</a>
-                  <span className="enlace-separator"> | </span> {/* Separador */}
-                  <a href="https://www.cpacf.org.ar/noticia/5201/valores-uma-pjn-ley-27423" className="enlace-tarifario">Ver Cuadro Tarifario CABA</a>
+        {/* Sección de Tarifa */}
+        <section id="tarifa" className="tarifa-section">
+          <div className="container mt-5">
+            <div className="row justify-content-center">
+              <div className="col-md-8">
+                <div className="card p-3 shadow-lg">
+                  <div className="card-body">
+                    <h2 className="card-title text-center">Consulte el Cuadro Tarifario</h2>
+                    <p className="card-text text-center">Consulte el cuadro tarifario de consultas según su jurisdicción.</p>
+                    <div className="text-center">
+                      <a href="https://www.cajaabogados.org.ar/noticia.php?n=24" className="enlace-tarifario">Ver Cuadro Tarifario Provincia</a>
+                      <span className="enlace-separator"> {/* Separador */} | </span>
+                      <a href="https://www.cpacf.org.ar/noticia/5201/valores-uma-pjn-ley-27423" className="enlace-tarifario">Ver Cuadro Tarifario CABA</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          </div>
-          </div>
-
+        </section> 
       </div>
-    </section>
-  );
-}
+    </section> 
+)}
 
 export default Turno;

@@ -102,10 +102,13 @@
     margin-bottom: 20px; /* Añade un margen en la parte inferior para separar texto e imagen */
   }
 
-  .about-img {
-    max-width: 80%; /* Reduce el tamaño de la imagen en dispositivos móviles */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
-  }
+  /* Estilos para la imagen de nosotros */
+.about-img {
+  display: block; /* Asegura que la imagen sea un bloque para aplicar márgenes automáticamente */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  max-width: 100%; /* Ajusta el ancho máximo de la imagen al contenedor */
+}
+
 }
 /* En tu archivo About.css */
 

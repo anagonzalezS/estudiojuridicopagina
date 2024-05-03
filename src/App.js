@@ -4,11 +4,11 @@ import Navbar from './components/principal/Navbar'; // Corregido el nombre del c
 import Home from './components/Home';
 import About from './components/About';
 import Service from './components/Service';
-import Contact from './components/Contact';
 import Turno from './components/Turno';
 import Footer from './components/Footer';
 import Planificacion from './components/Planificacion';
 import WhatsappIcon from './components/WhatsappIcon'; // Importa el componente WhatsappIcon
+
 function App() {
   return (
     <div>
@@ -19,7 +19,6 @@ function App() {
       <Service />
       <Turno />
       <Planificacion/>
-      <Contact />
       <Footer />
       <WhatsappIcon /> {/* Agrega el ícono flotante WhatsappIcon aquí */}
     </div>

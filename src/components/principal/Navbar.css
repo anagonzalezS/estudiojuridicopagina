@@ -33,9 +33,7 @@
     outline: none; /* Eliminar contorno */
   }
   
-  .navbar-toggler .navbar-toggler-icon {
-    background-color: #333333; /* Color del icono del botón */
-  }
+  
   
   /* Estilos para el texto "Menú" en el botón del menú desplegable */
   .navbar-toggler-label {

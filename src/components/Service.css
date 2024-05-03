@@ -62,7 +62,7 @@ body {
 /* Estilos para el ícono en los elementos de servicio */
 .icon {
   position: absolute;
-  top: -20px; /* Ajusta esta propiedad según sea necesario para alinear el icono con el texto */
+  top: 4px; /* Ajusta esta propiedad según sea necesario para alinear el icono con el texto */
   left: 50%;
   transform: translateX(-50%);
 }
@@ -88,13 +88,27 @@ body {
 .wow.fadeInUp {
   animation-name: fadeInUp;
 }
-/* Estilos para el card de servicio */
 .service-card {
+  display: flex; /* Usa flexbox para alinear ícono y texto */
+  flex-direction: column; /* Alinea ícono y texto en columna */
+  justify-content: center; /* Centra verticalmente el contenido */
+  align-items: center; /* Centra horizontalmente el contenido */
   background-color: rgba(255, 255, 255, 0.1); /* Color de fondo del card con transparencia */
   border-radius: 10px; /* Bordes redondeados */
   overflow: hidden; /* Oculta el contenido que excede el tamaño del card */
   transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo */
+  position: relative; /* Ajusta la posición para que los íconos estén dentro del card */
+  padding: 20px; /* Añade espacio interno para separar ícono y texto */
+  text-align: center; /* Alinea el texto al centro */
 }
+
+
+/* Estilos para el texto del servicio */
+.service-text {
+  margin: 0; /* Elimina el margen del texto para evitar espacios */
+}
+
+
 
 /* Estilos cuando se pasa el mouse sobre el card */
 .service-card:hover {

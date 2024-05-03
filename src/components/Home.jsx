@@ -33,22 +33,23 @@ function Home() {
     };
 
     typeAndErase();
+    // Cleanup the timeout when the component unmounts
+    return () => clearTimeout(typeAndErase);
   }, []);
 
   return (
     <div>
-      <div id="inicio" className="container-fluid position-relative p-0" style={{ backgroundImage: 'url("/portada.png")', minHeight: '100vh' }}>
+      <div id="inicio" className="container-fluid position-relative p-0" style={{ backgroundImage: 'url("/portada1.png")', minHeight: '100vh' }}>
         <div className="position-absolute top-0 start-0 w-100 h-100" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}></div>
         <div className="position-absolute top-50 start-50 translate-middle text-center text-light">
           <div className="d-flex flex-column justify-content-center align-items-center" style={{ minHeight: '80vh', minWidth: '320px' }}> {/* Tamaño mínimo para evitar cambios bruscos */}
             {/* Contenedor centrado verticalmente */}
             <h1 className="display-1 mb-4 wow fadeIn uppercase-text" style={{ fontSize: '52px', fontFamily: 'inherit', marginBottom: '0', minHeight: '52px' }}>Sáenz & Asociados</h1>
 
-
             <div className="typed-text-container" style={{ position: 'relative', width: '100%', textAlign: 'center', marginBottom: '20px', minHeight: '50px' }}> {/* Tamaño fijo para el contenedor */}
               <p className="lead" style={{ fontSize: '20px', margin: '0' }}>{typedText}</p> {/* Reducir el tamaño de la fuente */}
             </div>
-            <a href="#contact" className="btn btn-outline-light btn-lg mt-3" style={{ minHeight: '50px', lineHeight: '1' }}>Contactar</a>
+            <a href="#about" className="btn btn-outline-light btn-lg mt-3" style={{ minHeight: '50px', lineHeight: '1' }}>BIENVENIDO</a>
           </div>
         </div>
       </div>

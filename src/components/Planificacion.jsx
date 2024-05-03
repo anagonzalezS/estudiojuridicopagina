@@ -16,7 +16,7 @@ function Planificacion() {
   }, []);
 
   return (
-    <section id="financial-planning" className="container mt-5">
+    <section id="planificacion" className="container mt-5">
       <div className="row justify-content-center">
         <div className="col-md-8">
           <div className="card p-3 shadow-lg wow fadeInUp" data-wow-duration="1s">
