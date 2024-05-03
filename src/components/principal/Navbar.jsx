@@ -38,5 +38,11 @@ function Navbar() {
     </nav>
   );
 }
-
+// Agregar el código JavaScript al final del componente Navbar
+document.addEventListener("DOMContentLoaded", function () {
+  // Activar el menú desplegable al hacer clic en el botón del menú
+  document.querySelector(".navbar-toggler").addEventListener("click", function () {
+    document.querySelector("#navbarSupportedContent").classList.toggle("show");
+  });
+});
 export default Navbar;
