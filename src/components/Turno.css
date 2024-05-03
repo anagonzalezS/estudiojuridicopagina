@@ -4,4 +4,7 @@
   .turno-section {
     background-color: white;
   }
-  
+  /* Estilos para el contenido del modal */
+.modal-body {
+  color: #000000; /* Establece el color del texto en negro */
+}
