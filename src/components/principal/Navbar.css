@@ -98,4 +98,7 @@
       background-color: #f8f9fa; /* Color de fondo al pasar el ratón */
     }
   }
+  .navbar-nav .nav-item:hover .nav-link {
+    color: #00BFFF; /* Color celeste al pasar el mouse */
+  }
   
