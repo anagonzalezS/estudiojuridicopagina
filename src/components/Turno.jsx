@@ -33,7 +33,7 @@ function Turno() {
           <div className="col-md-8">
             <div className="card p-3 shadow-lg wow fadeInUp">
               <div className="card-body">
-                <h2 className="card-title text-center">Reservas de Turnos</h2>
+                <h1 className="card-title text-center">Reservas de Turnos</h1>
                 <p className="card-text text-center">¿Necesita un turno? Haga clic en el botón a continuación para reservar su turno en el calendario de Google.</p>
                 <div className="text-center">
                   <button onClick={handleOpenModal} className="btn btn-primary">Reservar Turno</button>
@@ -44,12 +44,12 @@ function Turno() {
         </div>
 
         {/* Modal */}
-        <div className={`modal ${modalVisible ? 'd-block' : 'd-none'}`} tabIndex="-1">
-          <div className="modal-dialog">
+        <div className={`modal ${modalVisible ? 'd-block' : 'd-none'}`} tabIndex="-1" role="dialog" aria-labelledby="informacionImportante" aria-hidden={!modalVisible}>
+          <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">Información Importante</h5>
-                <button type="button" className="btn-close" onClick={() => setModalVisible(false)}></button>
+                <h5 className="modal-title" id="informacionImportante">Información Importante</h5>
+                <button type="button" className="btn-close" onClick={() => setModalVisible(false)} aria-label="Close"></button>
               </div>
               <div className="modal-body">
                 <p>Estás queriendo agendar un turno. Recuerda que el valor de CABA es de:</p>
@@ -86,9 +86,9 @@ function Turno() {
                     <h2 className="card-title text-center">Consulte el Cuadro Tarifario</h2>
                     <p className="card-text text-center">Consulte el cuadro tarifario de consultas según su jurisdicción.</p>
                     <div className="text-center">
-                      <a href="https://www.cajaabogados.org.ar/noticia.php?n=24" className="enlace-tarifario">Ver Cuadro Tarifario Provincia</a>
+                      <a href="https://www.cajaabogados.org.ar/noticia.php?n=24" className="enlace-tarifario" aria-label="Ver Cuadro Tarifario Provincia">Ver Cuadro Tarifario Provincia</a>
                       <span className="enlace-separator"> {/* Separador */} | </span>
-                      <a href="https://www.cpacf.org.ar/noticia/5201/valores-uma-pjn-ley-27423" className="enlace-tarifario">Ver Cuadro Tarifario CABA</a>
+                      <a href="https://www.cpacf.org.ar/noticia/5201/valores-uma-pjn-ley-27423" className="enlace-tarifario" aria-label="Ver Cuadro Tarifario CABA">Ver Cuadro Tarifario CABA</a>
                     </div>
                   </div>
                 </div>

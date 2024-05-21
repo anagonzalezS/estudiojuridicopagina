@@ -13,7 +13,8 @@ function About() {
       <div className="container">
         <div className="row mt-4 align-items-center">
           <div className="col-md-6 mb-4 wow fadeIn" data-wow-duration="1s">
-            <img src="/nosotros.png" alt="About Us" className="img-fluid about-img"/> {/* Aplica la clase about-img aquí */}
+          <img src="/nosotros.png" alt="Equipo de abogados trabajando juntos" className="img-fluid about-img"/> {/* Aplica la clase about-img aquí */}
+
           </div>
           <div className="col-md-6 mb-4 wow fadeIn" data-wow-duration="1s">
             <h2 className="text-center mb-4">NOSOTROS</h2>
