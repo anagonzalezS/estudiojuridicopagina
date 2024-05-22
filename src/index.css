@@ -1,4 +1,9 @@
 /* index.css */
+/* Agregar desplazamiento suave */
+html {
+  scroll-behavior: smooth;
+}
+
 
 /* Estilos globales para toda la aplicación */
 body {
