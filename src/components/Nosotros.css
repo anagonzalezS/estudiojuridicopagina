@@ -1,0 +1,53 @@
+/* Nosotros.css */
+/* Agregar desplazamiento suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilos para la sección Nosotros */
+#nosotros {
+  background-color: #f8f8f8; /* Fondo gris claro */
+  padding: 60px 0; /* Espaciado superior e inferior */
+}
+
+/* Estilos para la imagen en la sección Nosotros */
+.nosotros-img {
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilos para el texto en la sección Nosotros */
+#nosotros h2 {
+  color: #333; /* Color del título */
+  font-size: 40px;
+  text-align: center; /* Alineación centrada */
+  margin-bottom: 20px; /* Margen inferior */
+}
+
+#nosotros p {
+  color: #666; /* Color del texto */
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 15px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Sombra suave */
+  line-height: 1.6; /* Altura de línea */
+  font-size: 18px; /* Tamaño de fuente */
+}
+
+/* Media Queries para pantallas de menos de 768px (dispositivos móviles) */
+@media (max-width: 767px) {
+  .row {
+    flex-direction: column-reverse; /* Coloca el texto arriba y la imagen debajo en móviles */
+  }
+
+  .col-md-6 {
+    width: 100%; /* Ocupa el 100% del ancho del contenedor en móviles */
+    margin-bottom: 20px; /* Añade un margen en la parte inferior para separar texto e imagen */
+  }
+
+  .about-img {
+    display: block; /* Asegura que la imagen sea un bloque para aplicar márgenes automáticamente */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    max-width: 100%; /* Ajusta el ancho máximo de la imagen al contenedor */
+  }
+}

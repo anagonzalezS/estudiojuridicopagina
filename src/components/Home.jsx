@@ -49,7 +49,7 @@ function Home() {
             <div className="typed-text-container" style={{ position: 'relative', width: '100%', textAlign: 'center', marginBottom: '20px', minHeight: '50px' }}> {/* Tamaño fijo para el contenedor */}
               <p className="lead" style={{ fontSize: '20px', margin: '0' }}>{typedText}</p> {/* Reducir el tamaño de la fuente */}
             </div>
-            <a href="#about" className="btn btn-outline-light btn-lg mt-3" style={{ minHeight: '50px', lineHeight: '1' }}>BIENVENIDO</a>
+            <a href="#nosotros" className="btn btn-outline-light btn-lg mt-3" style={{ minHeight: '50px', lineHeight: '1' }}>BIENVENIDO</a>
           </div>
         </div>
       </div>

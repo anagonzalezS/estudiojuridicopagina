@@ -2,8 +2,8 @@ import React from 'react';
 import Header from './components/Header';
 import Navbar from './components/principal/Navbar'; // Corregido el nombre del componente NavBar a Navbar
 import Home from './components/Home';
-import About from './components/About';
-import Service from './components/Service';
+import Nosotros from './components/Nosotros';
+import Servicio from './components/Servicio';
 import Turno from './components/Turno';
 import Footer from './components/Footer';
 import Planificacion from './components/Planificacion';
@@ -15,8 +15,8 @@ function App() {
       <Header />
       <Navbar /> {/* Cambiado a Navbar en lugar de NavBar */}
       <Home />
-      <About />
-      <Service />
+      <Nosotros />
+      <Servicio />
       <Turno />
       <Planificacion/>
       <Footer />

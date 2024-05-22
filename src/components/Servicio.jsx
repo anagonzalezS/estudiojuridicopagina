@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import './Service.css'; // Archivo de estilos personalizados
+import './Servicio.css'; // Archivo de estilos personalizados
 import WOW from 'wowjs';
 import 'animate.css/animate.min.css';
 import { FaGavel, FaBalanceScale, FaUserFriends, FaHeart, FaBook, FaRegBuilding, FaFileSignature, FaGripHorizontal, FaHome, FaUser, FaHandshake, FaHandHoldingUsd } from 'react-icons/fa'; // Iconos de Font Awesome
 
-function Service() {
+function Servicio() {
   useEffect(() => {
     const wow = new WOW.WOW({
       boxClass: 'wow', // Clase CSS aplicada a elementos WOW
@@ -18,7 +18,7 @@ function Service() {
 
   return (
 
-    <section id="service" className="container mt-5 service-section">
+    <section id="servicios" className="container mt-5 service-section">
 
       <div className="row justify-content-center">
         <div className="col-md-12">
@@ -131,4 +131,4 @@ function Service() {
   );
 }
 
-export default Service;
+export default Servicio;

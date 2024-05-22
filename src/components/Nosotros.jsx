@@ -1,20 +1,20 @@
+// Nosotros.jsx
 import React, { useEffect } from 'react';
-import './About.css'; // Asegúrate de que la ruta al archivo CSS sea correcta
+import './Nosotros.css'; // Asegúrate de que la ruta al archivo CSS sea correcta
 import WOW from 'wowjs';
 import 'animate.css/animate.min.css';
 
-function About() {
+function Nosotros() {
   useEffect(() => {
     new WOW.WOW().init();
   }, []);
 
   return (
-    <section id="about" className="wow fadeIn">
+    <section id="nosotros" className="wow fadeIn"> {/* Cambia el id a "nosotros" */}
       <div className="container">
         <div className="row mt-4 align-items-center">
           <div className="col-md-6 mb-4 wow fadeIn" data-wow-duration="1s">
-          <img src="/nosotros.png" alt="Equipo de abogados trabajando juntos" className="img-fluid about-img"/> {/* Aplica la clase about-img aquí */}
-
+            <img src="/nosotros.png" alt="Equipo de abogados trabajando juntos" className="img-fluid about-img"/> {/* Aplica la clase about-img aquí */}
           </div>
           <div className="col-md-6 mb-4 wow fadeIn" data-wow-duration="1s">
             <h2 className="text-center mb-4">NOSOTROS</h2>
@@ -28,4 +28,4 @@ function About() {
   );
 }
 
-export default About;
+export default Nosotros;

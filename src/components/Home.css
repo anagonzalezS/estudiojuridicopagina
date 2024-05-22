@@ -47,17 +47,6 @@
   color: #000000;
   margin-bottom: 36px;
 }
-#nosotros .mb-4{
-font-family: 'Noto Sans';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 141.7%;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  /* color: #195B97; */
-  margin-bottom: 24px;
-}
 
 .lead {
   text-align: justify;

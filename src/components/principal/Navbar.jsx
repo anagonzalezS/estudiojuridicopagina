@@ -15,13 +15,13 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="#top">INICIO</a>
+              <a className="nav-link" href="#inicio">INICIO</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#about">NOSOTROS</a>
+              <a className="nav-link" href="#nosotros">NOSOTROS</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#service">SERVICIOS</a>
+              <a className="nav-link" href="#servicios">SERVICIOS</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#turno">TURNO</a>

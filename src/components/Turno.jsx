@@ -27,13 +27,13 @@ function Turno() {
   };
 
   return (
-    <section id="turno" className="turno-section" style={{ backgroundColor: 'white', padding: '20px', borderRadius: '10px' }}>
+    <section id="turno" className="turno-section">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-8">
             <div className="card p-3 shadow-lg wow fadeInUp">
               <div className="card-body">
-                <h1 className="card-title text-center">Reservas de Turnos</h1>
+                <h1 className="card-title text-center">Reserve su Turno</h1>
                 <p className="card-text text-center">¿Necesita un turno? Haga clic en el botón a continuación para reservar su turno en el calendario de Google.</p>
                 <div className="text-center">
                   <button onClick={handleOpenModal} className="btn btn-primary">Reservar Turno</button>
