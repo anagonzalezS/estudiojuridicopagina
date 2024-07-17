@@ -4,6 +4,7 @@ import Navbar from './components/principal/Navbar'; // Corregido el nombre del c
 import Home from './components/Home';
 import Nosotros from './components/Nosotros';
 import Servicio from './components/Servicio';
+import Administracion from './components/Administracion'
 import Turno from './components/Turno';
 import Footer from './components/Footer';
 import Planificacion from './components/Planificacion';
@@ -17,8 +18,11 @@ function App() {
       <Home />
       <Nosotros />
       <Servicio />
-      <Turno />
+      <Administracion />
+
       <Planificacion/>
+      <Turno />
+     
       <Footer />
       <WhatsappIcon /> {/* Agrega el ícono flotante WhatsappIcon aquí */}
     </div>

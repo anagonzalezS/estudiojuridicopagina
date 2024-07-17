@@ -1,0 +1,45 @@
+.administracion-section {
+    padding: 60px 0;
+    color: #fff; /* Color del texto en blanco */
+  }
+  
+  .administracion-item {
+    transition: transform 0.3s;
+  }
+  
+  .administracion-card {
+    background: #212529; /* Fondo más oscuro para las tarjetas */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .administracion-card .icon {
+    color: #fff; /* Color del ícono en blanco */
+  }
+  
+  .administracion-text {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #fff; /* Color del texto en blanco */
+  }
+  
+  .administracion-card-text {
+    font-size: 1em;
+    margin-top: 10px;
+    color: #fff; /* Color del texto en blanco */
+  }
+  
+  .administracion-section h2 {
+    color: #fff; /* Color del título en blanco */
+  }
+  
+  .administracion-list {
+    margin-top: 20px;
+  }
+  
+  .administracion-list-item {
+    margin-bottom: 10px;
+  }
+  

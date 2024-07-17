@@ -1,12 +1,36 @@
-/* Estilos para los enlaces */
-.enlace-destacado {
-    color: #007bff; /* Color celeste */
-    text-decoration: underline; /* Subrayado */
-    transition: color 0.3s ease; /* Transición suave del color */
-  }
-  
-  .enlace-destacado:hover {
-    color: #0056b3; /* Color celeste más oscuro al pasar el mouse */
-    text-decoration: none; /* Eliminar subrayado al pasar el mouse */
-  }
-  
+.planificacion-section {
+  padding: 60px 0;
+  background-color: #343a40; /* Fondo oscuro para la sección */
+}
+
+.planificacion-item {
+  transition: transform 0.3s;
+}
+
+.planificacion-card {
+  background: #212529; /* Fondo más oscuro para las tarjetas */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  color: #fff; /* Color del texto en blanco */
+}
+
+.planificacion-card .icon {
+  color: #fff; /* Color del ícono en blanco */
+}
+
+.planificacion-text {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #fff; /* Color del texto en blanco */
+}
+
+.planificacion-card-text {
+  font-size: 1em;
+  margin-top: 10px;
+  color: #fff; /* Color del texto en blanco */
+}
+
+.planificacion-section h2 {
+  color: #fff; /* Color del título en blanco */
+}

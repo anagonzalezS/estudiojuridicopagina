@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './Servicio.css'; // Archivo de estilos personalizados
 import WOW from 'wowjs';
 import 'animate.css/animate.min.css';
-import { FaGavel, FaBalanceScale, FaUserFriends, FaHeart, FaBook, FaRegBuilding, FaFileSignature, FaGripHorizontal, FaHome, FaUser, FaHandshake, FaHandHoldingUsd } from 'react-icons/fa'; // Iconos de Font Awesome
+import { FaGavel, FaBalanceScale, FaUserFriends, FaHeart, FaBook, FaRegBuilding, FaFileSignature, FaGripHorizontal, FaHome, FaUser, FaHandshake, FaHandHoldingUsd, } from 'react-icons/fa'; // Iconos de Font Awesome
 
 function Servicio() {
   useEffect(() => {
@@ -126,6 +126,7 @@ function Servicio() {
             </div>
           </div>
         </div>
+       
       </div>
     </section>
   );
