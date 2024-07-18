@@ -18,10 +18,11 @@ function App() {
       <Home />
       <Nosotros />
       <Servicio />
+      <Turno />
+
       <Administracion />
 
       <Planificacion/>
-      <Turno />
      
       <Footer />
       <WhatsappIcon /> {/* Agrega el ícono flotante WhatsappIcon aquí */}

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import './Administracion.css'; // Archivo de estilos personalizados
 import WOW from 'wowjs';
-import 'animate.css/animate.min.css';
 import { FaBuilding, FaCity, FaUsers } from 'react-icons/fa'; // Iconos de Font Awesome
 
 function Administracion() {
@@ -17,55 +16,58 @@ function Administracion() {
   }, []);
 
   return (
-    <section id="servicios" className="container mt-5 service-section">
-      <div className="row justify-content-center">
-        <div className="col-md-12">
-          <h2 className="wow fadeInDown text-center mb-4">ADMINISTRACIÓN DE CONSORCIO</h2>
+    <section id="administracion" className="administracion-section">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <h2 className="wow fadeInDown text-center mb-4">ADMINISTRACIÓN DE CONSORCIO</h2>
+          </div>
         </div>
-      </div>
-      <div className="row justify-content-center">
-        <div className="col-md-4 text-center mb-4">
-          <div className="service-item wow fadeInUp" data-wow-duration="1s">
-            <div className="service-card service-card-hover">
-              <FaBuilding className="icon" size={36} />
-              <h4 className="service-text mt-3">Edificios</h4>
+        <div className="row">
+          <div className="col-md-4 col-sm-6 mb-4">
+            <div className="service-item wow fadeInUp" data-wow-duration="1s">
+              <div className="service-card service-card-hover">
+                <FaBuilding className="icon" size={36} />
+                <h4 className="service-text mt-3">Edificios</h4>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 col-sm-6 mb-4">
+            <div className="service-item wow fadeInUp" data-wow-duration="1s">
+              <div className="service-card service-card-hover">
+                <FaCity className="icon" size={36} />
+                <h4 className="service-text mt-3">Barrios Cerrados</h4>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 col-sm-6 mb-4">
+            <div className="service-item wow fadeInUp" data-wow-duration="1s">
+              <div className="service-card service-card-hover">
+                <FaUsers className="icon" size={36} />
+                <h4 className="service-text mt-3">Club</h4>
+              </div>
             </div>
           </div>
         </div>
-        <div className="col-md-4 text-center mb-4">
-          <div className="service-item wow fadeInUp" data-wow-duration="1s">
-            <div className="service-card service-card-hover">
-              <FaCity className="icon" size={36} />
-              <h4 className="service-text mt-3">Barrios Cerrados</h4>
-            </div>
+        <div className="row mt-5">
+          <div className="col-md-12">
+            <h3 className="wow fadeInDown text-center mb-4">Ofrecemos</h3>
           </div>
-        </div>
-        <div className="col-md-4 text-center mb-4">
-          <div className="service-item wow fadeInUp" data-wow-duration="1s">
-            <div className="service-card service-card-hover">
-              <FaUsers className="icon" size={36} />
-              <h4 className="service-text mt-3">Club de Propietarios</h4>
-            </div>
+          <div className="col-md-6">
+            <ul className="wow fadeInLeft">
+              <li>Sistema informático para seguimiento online del consorcio.</li>
+              <li>Varios medios de pago de expensas.</li>
+              <li>Contacto de emergencia.</li>
+            </ul>
           </div>
-        </div>
-      </div>
-      <div className="row justify-content-center mt-5">
-        <div className="col-md-12">
-          <h3 className="wow fadeInDown text-center mb-4">Ofrecemos</h3>
-        </div>
-        <div className="col-md-6">
-          <ul className="wow fadeInLeft">
-            <li>Sistema informático para seguimiento online del consorcio.</li>
-            <li>Varios medios de pago de expensas.</li>
-            <li>Contacto de emergencia.</li>
-          </ul>
-        </div>
-        <div className="col-md-6">
-          <ul className="wow fadeInRight">
-            <li>Seguimiento de morosos del edificio.</li>
-            <li>Trabajo en conjunto con miembros del Consejo.</li>
-            <li>Proveedores altamente capacitados y calificados.</li>
-          </ul>
+          <div className="col-md-6">
+            <ul className="wow fadeInRight">
+
+              <li>Seguimiento de morosos del edificio.</li>
+              <li>Trabajo en conjunto con miembros del Consejo.</li>
+              <li>Proveedores altamente capacitados y calificados.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

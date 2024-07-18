@@ -37,9 +37,39 @@
   
   .administracion-list {
     margin-top: 20px;
+    padding-left: 0; /* Elimina el padding izquierdo de la lista */
   }
   
   .administracion-list-item {
     margin-bottom: 10px;
+    color: #fff; /* Color del texto en blanco */
+    font-size: 1em;
+  }
+  /* Administracion.css */
+@media (max-width: 768px) {
+    /* Estilos específicos para dispositivos móviles */
+    .administracion-section h3 {
+      font-size: 24px; /* Tamaño de fuente ajustado para móviles */
+      margin-bottom: 20px; /* Espaciado inferior ajustado */
+    }
+  }
+  /* Administracion.css */
+.administracion-section .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Alinear elementos al centro */
+  }
+  
+  .administracion-section .col-md-12 {
+    text-align: center; /* Alinear texto al centro */
+  }
+  
+  .administracion-section h3 {
+    margin-bottom: 20px; /* Espaciado inferior ajustado */
+  }
+  
+  .administracion-section .col-md-6 {
+    width: 100%; /* Ancho completo en dispositivos móviles */
+    text-align: left; /* Alinear texto a la izquierda */
   }
   
