@@ -29,14 +29,30 @@ function Turno() {
   return (
     <section id="turno" className="turno-section">
       <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-md-8">
+        <div className="row">
+          {/* Columna de Reserva */}
+          <div className="col-md-6">
             <div className="card p-3 shadow-lg wow fadeInUp">
               <div className="card-body">
                 <h1 className="card-title text-center">Reserve su Turno</h1>
                 <p className="card-text text-center">¿Necesita un turno? Haga clic en el botón a continuación para reservar su turno en el calendario de Google.</p>
                 <div className="text-center">
                   <button onClick={handleOpenModal} className="btn btn-primary">Reservar Turno</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Columna de Tarifas */}
+          <div className="col-md-6">
+            <div className="card p-3 shadow-lg wow fadeInUp">
+              <div className="card-body">
+                <h2 className="card-title text-center">Consulte el Cuadro Tarifario</h2>
+                <p className="card-text text-center">Consulte el cuadro tarifario de consultas según su jurisdicción.</p>
+                <div className="text-center">
+                  <a href="https://www.cajaabogados.org.ar/noticia.php?n=24" className="enlace-tarifario" aria-label="Ver Cuadro Tarifario Provincia">Ver Cuadro Tarifario Provincia</a>
+                  <span className="enlace-separator"> {/* Separador */} | </span>
+                  <a href="https://www.cpacf.org.ar/noticia/5201/valores-uma-pjn-ley-27423" className="enlace-tarifario" aria-label="Ver Cuadro Tarifario CABA">Ver Cuadro Tarifario CABA</a>
                 </div>
               </div>
             </div>
@@ -75,29 +91,9 @@ function Turno() {
             </div>
           </div>
         </div> {/* Cierre del modal */}
-
-        {/* Sección de Tarifa */}
-        <section id="tarifa" className="tarifa-section">
-          <div className="container mt-5">
-            <div className="row justify-content-center">
-              <div className="col-md-8">
-                <div className="card p-3 shadow-lg">
-                  <div className="card-body">
-                    <h2 className="card-title text-center">Consulte el Cuadro Tarifario</h2>
-                    <p className="card-text text-center">Consulte el cuadro tarifario de consultas según su jurisdicción.</p>
-                    <div className="text-center">
-                      <a href="https://www.cajaabogados.org.ar/noticia.php?n=24" className="enlace-tarifario" aria-label="Ver Cuadro Tarifario Provincia">Ver Cuadro Tarifario Provincia</a>
-                      <span className="enlace-separator"> {/* Separador */} | </span>
-                      <a href="https://www.cpacf.org.ar/noticia/5201/valores-uma-pjn-ley-27423" className="enlace-tarifario" aria-label="Ver Cuadro Tarifario CABA">Ver Cuadro Tarifario CABA</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> 
       </div>
-    </section> 
-)}
+    </section>
+  );
+}
 
 export default Turno;
