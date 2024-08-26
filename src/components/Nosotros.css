@@ -12,8 +12,20 @@ html {
 
 /* Estilos para la imagen en la sección Nosotros */
 .nosotros-img {
+  object-fit: contain; /* Ajusta la imagen dentro del contenedor sin recortar */
+
   border-radius: 10px; /* Bordes redondeados */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  width: 100%; /* Ocupa el 100% del ancho del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  max-width: 360px; /* Define un ancho máximo para la imagen */
+  max-height: 450px; /* Define una altura máxima mayor */
+  object-fit: cover; /* Ajusta la imagen para que ocupe el espacio sin deformarse */
+  margin: 0 auto 20px auto; /* Centra la imagen horizontalmente y añade margen inferior */
+  display: block; /* Asegura que la imagen sea un bloque para aplicar márgenes automáticamente */
+  max-width: 69%; /* Ajusta el ancho máximo de la imagen al contenedor */
+  object-fit: cover; /* Ajuste en móviles */
+  
 }
 
 /* Estilos para el texto en la sección Nosotros */
@@ -45,9 +57,4 @@ html {
     margin-bottom: 20px; /* Añade un margen en la parte inferior para separar texto e imagen */
   }
 
-  .about-img {
-    display: block; /* Asegura que la imagen sea un bloque para aplicar márgenes automáticamente */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
-    max-width: 100%; /* Ajusta el ancho máximo de la imagen al contenedor */
-  }
 }
