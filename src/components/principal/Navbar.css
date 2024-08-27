@@ -13,7 +13,7 @@
 
 /* Estilos para el botón del menú desplegable */
 .navbar-toggler {
-  border: none; /* Sin borde */
+  border: 1px solid transparent; /* Asegurarse de que el borde no sea visible */
   outline: none; /* Sin contorno */
   padding: 0.5rem 1rem; /* Tamaño adecuado para el botón */
 }
@@ -87,4 +87,8 @@
     color: #007bff; /* Color celeste al pasar el ratón */
     text-decoration: underline; /* Subrayado al pasar el ratón */
   }
+}
+/* Prueba básica para asegurarse de que el menú se muestra */
+.navbar-collapse {
+  display: block !important; /* Forzar que el menú se muestre */
 }

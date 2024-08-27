@@ -36,7 +36,11 @@
     font-weight: normal; /* Eliminar la negrita */
 
   }
-  
+  /* Prueba básica para asegurarse de que el menú se muestra */
+.navbar-collapse {
+  display: block !important; /* Forzar que el menú se muestre */
+}
+
 
   .administracion-list {
     margin-top: 20px;
