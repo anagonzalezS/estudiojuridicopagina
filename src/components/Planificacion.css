@@ -1,81 +1,77 @@
 /* Contenedor principal del componente */
 #planificacion h2 {
-  color: #000; /* Asegura que el texto "Administración Financiera" sea negro */
+  color: #003366; /* Azul oscuro para un aspecto profesional */
   text-align: center;
-  font-size: 40px;
-  padding-bottom: 40px;
-  text-transform: uppercase; /* Pone el texto en mayúsculas */
-  margin-top: 60px; /* Espacio superior para separar del margen de la sección anterior */
+  font-size: 36px; /* Tamaño ajustado para una mejor jerarquía visual */
+  padding-bottom: 30px;
+  text-transform: uppercase;
+  margin-top: 50px;
 }
 
 /* Tarjetas de planificación */
 .planning-card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9; /* Color de fondo más claro para las tarjetas */
+  border-radius: 12px; /* Bordes más redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .planning-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Títulos de servicio */
 .planning-service-title {
-  font-size: 1.5rem;
-  color: #333;
+  font-size: 1.6rem;
+  color: #003366; /* Azul oscuro para los títulos */
   margin-top: 15px;
 }
 
 /* Descripción de la tarjeta de planificación */
 .planning-card-description {
   font-size: 1rem;
-  color: #555;
+  color: #333; /* Color de texto más oscuro para mejorar la legibilidad */
   line-height: 1.6;
 }
 
 /* Estilos para las listas dentro de los cards */
 .planning-card-description ul {
-  list-style-type: none; /* Quita las viñetas predeterminadas */
-  padding-left: 0; /* Quita el espacio de las viñetas predeterminadas */
+  list-style-type: none;
+  padding-left: 0;
   margin: 0;
 }
 
 .planning-card-description ul li {
   position: relative;
-  padding-left: 40px; /* Ajusta el espacio para las viñetas personalizadas */
-  margin-bottom: 10px; /* Espacio entre cada ítem de la lista */
+  padding-left: 30px;
+  margin-bottom: 10px;
   font-size: 1rem;
-  color: #555;
-  line-height: 1.5; /* Ajusta la altura de la línea para el texto */
-  display: flex; /* Utiliza Flexbox para alinear verticalmente */
-  align-items: center; /* Alinea verticalmente el texto con la viñeta */
+  color: #333;
+  display: flex;
+  align-items: center;
 }
 
-/* Personaliza el icono antes de cada ítem */
 .planning-card-description ul li::before {
-  content: '·'; /* Usa el símbolo '·' como viñeta */
-  color: #000; /* Color negro para el símbolo */
+  content: '·';
+  color: #003366; /* Color de viñeta personalizado */
   position: absolute;
-  left: 0; /* Ajusta la posición horizontal del símbolo */
-  font-size: 1.6rem; /* Tamaño del símbolo, ajustado para mayor visibilidad */
-  top: 50%; /* Posiciona el símbolo verticalmente al centro */
-  transform: translateY(-50%); /* Ajusta la posición vertical del símbolo para centrarlo con el texto */
+  left: 0;
+  font-size: 1.4rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
-
 
 /* Negrita para el texto resaltado */
 .bold-text {
   font-weight: bold;
-  color: #000;
+  color: #003366;
 }
 
 /* Estilo para los íconos */
 .planning-icon {
-  margin-right: 8px;
-  color: #000;
+  color: #003366;
 }
 
 /* Asegura que los elementos WOW tengan visibilidad */
@@ -86,6 +82,6 @@
 /* Media Queries para dispositivos móviles y tabletas */
 @media (max-width: 767px) {
   .planning-card-description ul li::before {
-    font-size: 1.2rem; /* Ajusta el tamaño de la viñeta en dispositivos móviles */
+    font-size: 1.2rem;
   }
 }
