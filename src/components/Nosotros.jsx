@@ -18,7 +18,7 @@ function Nosotros() {
             <div id="aboutCarousel" className="carousel slide" data-ride="carousel" data-interval="3000">
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img src="/nosotros.png" alt="Equipo de abogados trabajando juntos" className="img-fluid nosotros-img"/>
+                  <img src="/nosotros1.png" alt="Equipo de abogados trabajando juntos" className="img-fluid nosotros-img"/>
                 </div>
                 <div className="carousel-item">
                   <img src="/nosotros2.png" alt="Equipo de abogados trabajando juntos" className="img-fluid nosotros-img"/>

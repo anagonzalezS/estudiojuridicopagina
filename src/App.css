@@ -1,0 +1,31 @@
+/* Archivo: src/App.css */
+
+.home-section {
+    background: #f5f5f5; /* Color para la sección Home */
+  }
+  
+  .nosotros-section {
+    background: #ffe4e1; /* Color para la sección Nosotros */
+  }
+  
+  .servicio-section {
+    background: #303030; /* Color para la sección Servicio */
+  }
+  
+  .turno-section {
+    background: #ffffff;/* Color para la sección Turno */
+  }
+  
+  .administracion-section {
+    background: #303030; /* Color para la sección Administración */
+  }
+  
+  .planificacion-section {
+    background: #ffffff; /* Color para la sección Planificación */
+  }
+  
+  .footer-section {
+    background: #303030; /* Color para la sección Footer */
+     /* Color de texto en el Footer */
+  }
+  

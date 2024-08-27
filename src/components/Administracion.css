@@ -33,8 +33,11 @@
   
   .administracion-section h2 {
     color: #fff; /* Color del título en blanco */
+    font-weight: normal; /* Eliminar la negrita */
+
   }
   
+
   .administracion-list {
     margin-top: 20px;
     padding-left: 0; /* Elimina el padding izquierdo de la lista */

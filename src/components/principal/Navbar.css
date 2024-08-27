@@ -1,18 +1,24 @@
-/* Navbar.css */
-
 /* Estilos generales */
 .navbar {
-  background-color: #ffffff; /* Color de fondo */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+  background-color: #ffffff; /* Color de fondo blanco */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  padding: 10px 0; /* Espaciado interno */
+}
+
+/* Estilo para el logo */
+.navbar-logo {
+  width: 140px; /* Tamaño del logo */
+  height: auto; /* Mantener la proporción */
 }
 
 /* Estilos para el botón del menú desplegable */
 .navbar-toggler {
-  border: none; /* Eliminar borde */
-  outline: none; /* Eliminar contorno */
+  border: none; /* Sin borde */
+  outline: none; /* Sin contorno */
+  padding: 0.5rem 1rem; /* Tamaño adecuado para el botón */
 }
 
-/* Estilos para el texto "Menú" en el botón del menú desplegable */
+/* Estilo para el texto "Menú" en el botón del menú desplegable */
 .navbar-toggler-label {
   display: none; /* Ocultar texto en pantallas grandes */
 }
@@ -20,13 +26,16 @@
 /* Estilos para dispositivos móviles */
 @media (max-width: 768px) {
   .navbar-toggler-label {
-    display: inline-block; /* Mostrar texto solo en pantallas pequeñas */
-    margin-left: 5px; /* Ajustar margen */
+    display: inline-block; /* Mostrar texto en pantallas pequeñas */
+    margin-left: 5px; /* Espaciado con el ícono */
+    font-size: 14px; /* Tamaño del texto */
+    color: #333; /* Color del texto */
   }
 
   .navbar-collapse {
     background-color: #ffffff; /* Color de fondo del menú desplegable */
     border-top: 1px solid #dddddd; /* Borde superior */
+    padding-top: 10px; /* Espaciado superior para el menú */
   }
 
   .navbar-nav {
@@ -34,7 +43,7 @@
   }
 
   .nav-item {
-    margin-bottom: 10px; /* Espaciado entre elementos del menú */
+    margin-bottom: 10px; /* Reduce el espaciado entre elementos del menú */
   }
 
   .nav-link {
@@ -42,14 +51,15 @@
     font-weight: bold; /* Negrita */
     text-transform: uppercase; /* Mayúsculas */
     font-size: 16px; /* Tamaño de fuente */
-    display: block; /* Mostrar como bloque para ocupar todo el ancho */
+    display: block; /* Mostrar como bloque */
     padding: 10px 15px; /* Espaciado interno */
-    transition: background-color 0.3s ease; /* Transición suave */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
   }
 
   /* Estilos al pasar el ratón sobre los enlaces */
   .nav-link:hover {
     background-color: #f8f9fa; /* Color de fondo al pasar el ratón */
+    color: #007bff; /* Color del texto al pasar el ratón */
   }
 }
 
@@ -57,21 +67,24 @@
 @media (min-width: 769px) {
   .navbar-nav {
     margin-left: auto; /* Alinear a la derecha */
+    margin-right: 0; /* Eliminar margen derecho para centrar los elementos */
   }
 
   .nav-item {
-    margin-left: 10px; /* Espaciado entre elementos */
+    margin-left: 20px; /* Espaciado entre elementos */
   }
 
   .nav-link {
     color: #333333; /* Color del texto del enlace */
     font-weight: bold; /* Negrita */
     text-transform: uppercase; /* Mayúsculas */
+    font-size: 14px; /* Tamaño de fuente */
     transition: color 0.3s ease; /* Transición de color */
   }
 
   /* Estilos al pasar el ratón sobre los enlaces */
   .nav-link:hover {
-    color: #00BFFF; /* Color celeste al pasar el mouse */
+    color: #007bff; /* Color celeste al pasar el ratón */
+    text-decoration: underline; /* Subrayado al pasar el ratón */
   }
 }

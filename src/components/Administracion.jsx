@@ -20,7 +20,7 @@ function Administracion() {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <h2 className="wow fadeInDown text-center mb-4">ADMINISTRACIÓN DE CONSORCIO</h2>
+            <h2 className="wow fadeInDown text-center mb-4">ADMINISTRACIÓN DE CONSORCIOS</h2>
           </div>
         </div>
         <div className="row">
@@ -44,7 +44,7 @@ function Administracion() {
             <div className="service-item wow fadeInUp" data-wow-duration="1s">
               <div className="service-card service-card-hover">
                 <FaUsers className="icon" size={36} />
-                <h4 className="service-text mt-3">Club</h4>
+                <h4 className="service-text mt-3">Clubes</h4>
               </div>
             </div>
           </div>
@@ -58,14 +58,14 @@ function Administracion() {
               <li>Sistema informático para seguimiento online del consorcio.</li>
               <li>Varios medios de pago de expensas.</li>
               <li>Contacto de emergencia.</li>
+              <li>Seguimiento de morosos del edificio.</li>
+              <li>Trabajo en conjunto con miembros del Consejo.</li>
+              <li>Proveedores altamente capacitados y calificados.</li>
             </ul>
           </div>
           <div className="col-md-6">
             <ul className="wow fadeInRight">
 
-              <li>Seguimiento de morosos del edificio.</li>
-              <li>Trabajo en conjunto con miembros del Consejo.</li>
-              <li>Proveedores altamente capacitados y calificados.</li>
             </ul>
           </div>
         </div>

@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 .turno-section {
-  background-color: white;
   padding: 20px;
   border-radius: 10px;
   font-family: 'Roboto', sans-serif; /* Asegura que la tipografía se mantenga consistente */
