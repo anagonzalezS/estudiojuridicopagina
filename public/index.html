@@ -22,20 +22,26 @@
 <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-ZvpUoO/+Pp0Qy56E/3x1g+zZd0h5L5j4e6yD8YEF3bzTKpyyLxB6Udoa8fZ5yA4J" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zyA1f7l8lO1U9em4j4d7rF7ujD1gN2D6w7hO9/8I" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q1Afj0rXpoa6cBYR9dGR1C2U7Knaom1MwK5HYP56M0w68XRyAPuG+FeRuplLmxRz" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgSNjDhMh/jvB21gmrw7ixzF3iu6pdb3Jn5c5/fZ6KA5yHfDm8T" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgSNjDhMh/jvB21gmrw7ixzF3iu6pdb3Jn5c5/fZ6KA5yHfDm8T" crossorigin="anonymous"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
           const carousel = document.querySelector('#aboutCarousel');
-          const carouselInstance = new bootstrap.Carousel(carousel, {
-            interval: 3000, // Intervalo de cambio de imagen en milisegundos (3 segundos en este caso)
-            pause: 'hover', // Pausar la reproducción al pasar el ratón por encima
-            wrap: true, // Volver al principio después de llegar al final
-            keyboard: false, // Desactivar el control mediante el teclado
-          });
+          if (carousel) {
+            const carouselInstance = new bootstrap.Carousel(carousel, {
+              interval: 3000, // Intervalo de cambio de imagen en milisegundos (3 segundos en este caso)
+              pause: 'hover', // Pausar la reproducción al pasar el ratón por encima
+              wrap: true, // Volver al principio después de llegar al final
+              keyboard: false, // Desactivar el control mediante el teclado
+            });
+          }
         });
-      </script>
-      
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

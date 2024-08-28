@@ -1,20 +1,146 @@
-.container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  
-  .row {
-    margin-right: -15px;
-    margin-left: -15px;
-  }
-  
-  body {
-    background: #f5f5f5;
+/* Archivo: src/App.css */
 
-    color: #FFFFFF;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+/* Estilos generales del body */
+body {
+  background: #f5f5f5; /* Color de fondo */
+  color: #333; /* Color de texto */
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  margin: 0; /* Elimina el margen predeterminado */
+  padding: 0; /* Elimina el relleno predeterminado */
+}
+
+/* Contenedor para el diseño */
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 100%; /* Asegura que el contenedor no exceda el ancho de la pantalla */
+}
+
+/* Filas para el diseño de grid */
+.row {
+  margin-right: 0; /* Elimina el margen negativo */
+  margin-left: 0; /* Elimina el margen negativo */
+  display: flex; /* Utiliza flexbox para una disposición flexible */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+/* Estilos para la sección Home */
+.home-section {
+  background: #f5f5f5; /* Color para la sección Home */
+}
+
+/* Estilos para la sección Nosotros */
+.nosotros-section {
+  background: #ffe4e1; /* Color para la sección Nosotros */
+}
+
+/* Estilos para la sección Servicio */
+.servicio-section {
+  background: #303030; /* Color para la sección Servicio */
+}
+
+/* Estilos para la sección Turno */
+.turno-section {
+  background: #ffffff; /* Color para la sección Turno */
+}
+
+/* Estilos para la sección Administración */
+.administracion-section {
+  background: #303030; /* Color para la sección Administración */
+}
+
+/* Estilos para la sección Planificación */
+.planificacion-section {
+  background: #ffffff; /* Color para la sección Planificación */
+}
+
+/* Estilos para la sección Footer */
+.footer-section {
+  background: #303030; /* Color para la sección Footer */
+}
+
+/* Contenedor para Header y Navbar */
+.header-navbar-container {
+  display: flex;
+  flex-direction: column; /* Aplica la dirección de columna por defecto */
+}
+
+/* Estilos para pantallas grandes (PC) */
+@media (min-width: 769px) {
+  .header-navbar-container {
+    flex-direction: column; /* Coloca el Header primero y el Navbar después en pantallas grandes */
   }
-  
+
+  .header-section {
+    order: 1; /* El Header se muestra primero */
+  }
+
+  .navbar-section {
+    order: 2; /* El Navbar se muestra después del Header */
+  }
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .header-navbar-container {
+    flex-direction: column; /* Coloca el Header primero y el Navbar después en pantallas pequeñas */
+  }
+
+  .header-section {
+    order: 2; /* El Header se muestra después del Navbar en móviles */
+  }
+
+  .navbar-section {
+    order: 1; /* El Navbar se muestra primero en móviles */
+  }
+}
+
+/* Estilos generales del Header */
+.header-section {
+  background-color: #303030; /* Color de fondo del Header */
+  color: #ffffff; /* Color del texto */
+  padding: 10px;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en una columna en pantallas pequeñas */
+  align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+}
+
+.header-text {
+  margin: 5px 0;
+  font-size: 16px; /* Tamaño de fuente ajustado */
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .header-content {
+    align-items: center; /* Centra los elementos en pantallas pequeñas */
+    text-align: center;
+  }
+
+  .header-text {
+    font-size: 14px; /* Tamaño de fuente ajustado para pantallas pequeñas */
+    margin: 10px 0; /* Espacio entre los textos en pantallas pequeñas */
+  }
+
+  .header-icons ul {
+    padding: 0;
+    list-style: none; /* Elimina los puntos de lista */
+    margin: 0;
+  }
+
+  .header-icons ul li {
+    display: block; /* Coloca cada ícono en una línea separada */
+    margin: 5px 0;
+  }
+
+  .header-icons ul li a {
+    font-size: 24px; /* Tamaño de íconos ajustado para pantallas pequeñas */
+    color: #28a7e9; /* Color de los íconos */
+  }
+}

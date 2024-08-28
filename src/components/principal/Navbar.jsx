@@ -3,7 +3,7 @@ import './Navbar.css'; // Asegúrate de tener este archivo CSS
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white" role="navigation">
+    <nav className="navbar navbar-expand-lg navbar-light bg-white">
       <div className="container">
         <a className="navbar-brand" href="#top">
           <img src="/logoweb.png" alt="Logo" className="navbar-logo" />
@@ -15,25 +15,25 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a className="nav-link" href="#inicio">inicio</a>
+              <a className="nav-link" href="#inicio" onClick={() => document.querySelector('.navbar-toggler').click()}>Inicio</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#nosotros">nosotros</a>
+              <a className="nav-link" href="#nosotros" onClick={() => document.querySelector('.navbar-toggler').click()}>Nosotros</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#servicios">servicios</a>
+              <a className="nav-link" href="#servicios" onClick={() => document.querySelector('.navbar-toggler').click()}>Servicios</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#turno">turnos</a>
+              <a className="nav-link" href="#turno" onClick={() => document.querySelector('.navbar-toggler').click()}>Turnos</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#tarifa">tarifas</a>
+              <a className="nav-link" href="#tarifa" onClick={() => document.querySelector('.navbar-toggler').click()}>Tarifas</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#administracion">Administración de consorcios</a>
+              <a className="nav-link" href="#administracion" onClick={() => document.querySelector('.navbar-toggler').click()}>Administración de Consorcios</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#planificacion">planificacion financiera</a>
+              <a className="nav-link" href="#planificacion" onClick={() => document.querySelector('.navbar-toggler').click()}>Planificación Financiera</a>
             </li>
           </ul>
         </div>

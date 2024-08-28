@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importa el archivo CSS de Bootstrap
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 import 'animate.css/animate.min.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
