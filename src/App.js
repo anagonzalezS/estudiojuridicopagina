@@ -14,8 +14,14 @@ import './App.css'; // Importa el archivo CSS
 function App() {
   return (
     <div>
-      <Header />
-      <Navbar />
+      <div className="header-navbar-container">
+        <div className="header-section">
+          <Header />
+        </div>
+        <div className="navbar-section">
+          <Navbar />
+        </div>
+      </div>
       <div className="home-section">
         <Home />
       </div>
