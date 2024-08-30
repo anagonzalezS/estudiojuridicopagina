@@ -1,65 +1,70 @@
-/* Estilos para h4 dentro de #service */
-#service h4 {
-  color: #ffffff;
-  font-weight: 600;
-  padding-top: 10px;
-  padding-bottom: 14px;
-}
-
-/* Estilos para h2 span */
-h2 span {
-  color: #FFFFFF;
-  font-weight: bold;
-}
-
-/* Estilos para h2 */
-h2 {
-  text-align: center;
-  font-size: 40px;
-  padding-bottom: 40px;
-}
-
 /* Estilos generales del cuerpo */
 body {
-  background: #303030;
-  color: #FFFFFF;
+  background: #303030; /* Color de fondo oscuro para el cuerpo */
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   overflow-x: hidden;
 }
 
-/* Estilos específicos para #service h2 */
-#service h2 {
+/* Estilos para h2 dentro de #servicios */
+#servicios h2 {
+  color: #ffffff; /* Blanco para el título */
   text-align: center;
   font-size: 40px;
   padding-bottom: 40px;
-  color: #FFFFFF; /* Establece el color del texto "NUESTROS" como blanco */
 }
 
-/* Contenedor de ícono y texto */
-.icon-text-container {
-  display: flex;
-  align-items: center; /* Centra verticalmente */
+/* Estilos para los títulos h4 dentro de los ítems de servicio */
+.service-item h4 {
+  color: #ffffff; /* Blanco para los títulos dentro de los ítems de servicio */
+  font-weight: 600;
+  padding-top: 10px;
+  padding-bottom: 14px;
 }
 
-/* Estilos para el ícono */
+/* Estilos para los íconos dentro del componente Servicio */
 .icon {
-  margin-right: 10px; /* Espacio entre el ícono y el texto */
+  color: #ffffff; /* Blanco para los íconos */
 }
 
-/* Estilos para el texto del servicio */
+/* Estilos para los textos dentro de las tarjetas de servicio */
 .service-text {
-  margin: 0; /* Elimina el margen del texto para evitar espacios */
-  display: inline-block; /* Permite alinear verticalmente el texto */
-  vertical-align: middle; /* Alinea verticalmente el texto */
+  color: #ffffff; /* Blanco para el texto de los servicios */
+  margin: 0; /* Elimina el margen del texto para evitar espacios innecesarios */
 }
 
-/* Estilos para los elementos de servicio */
+/* Estilos para el contenedor de íconos y texto */
+.icon-text-container {
+  color: #ffffff; /* Blanco para el contenedor de íconos y texto */
+}
+
+/* Estilos para las tarjetas de servicio */
+.service-card {
+  display: flex; /* Usa flexbox para alinear ícono y texto */
+  flex-direction: column; /* Alinea ícono y texto en columna */
+  justify-content: center; /* Centra verticalmente el contenido */
+  align-items: center; /* Centra horizontalmente el contenido */
+  background-color: rgba(255, 255, 255, 0.1); /* Color de fondo del card con transparencia */
+  border-radius: 10px; /* Bordes redondeados */
+  overflow: hidden; /* Oculta el contenido que excede el tamaño del card */
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo */
+  position: relative; /* Ajusta la posición para que los íconos estén dentro del card */
+  padding: 20px; /* Añade espacio interno para separar ícono y texto */
+  text-align: center; /* Alinea el texto al centro */
+  color: #ffffff; /* Blanco para el texto dentro del card */
+}
+
+/* Estilos cuando se pasa el mouse sobre el card */
+.service-card:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Cambia el color de fondo al pasar el mouse */
+}
+
+/* Estilos específicos para los ítems de servicio */
 .service-item {
   position: relative;
 }
 
-/* Estilos para el ícono en los elementos de servicio */
+/* Estilos para los íconos dentro de los ítems de servicio */
 .icon {
   position: absolute;
   top: 4px; /* Ajusta esta propiedad según sea necesario para alinear el icono con el texto */
@@ -67,7 +72,7 @@ body {
   transform: translateX(-50%);
 }
 
-/* Espacio entre el ícono y el texto en los elementos de servicio */
+/* Espacio entre el ícono y el texto en los ítems de servicio */
 .service-text {
   margin-top: 20px; /* Ajusta esta propiedad para dar espacio entre el icono y el texto */
 }
@@ -88,29 +93,19 @@ body {
 .wow.fadeInUp {
   animation-name: fadeInUp;
 }
-.service-card {
-  display: flex; /* Usa flexbox para alinear ícono y texto */
-  flex-direction: column; /* Alinea ícono y texto en columna */
-  justify-content: center; /* Centra verticalmente el contenido */
-  align-items: center; /* Centra horizontalmente el contenido */
-  background-color: rgba(255, 255, 255, 0.1); /* Color de fondo del card con transparencia */
-  border-radius: 10px; /* Bordes redondeados */
-  overflow: hidden; /* Oculta el contenido que excede el tamaño del card */
-  transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo */
-  position: relative; /* Ajusta la posición para que los íconos estén dentro del card */
-  padding: 20px; /* Añade espacio interno para separar ícono y texto */
-  text-align: center; /* Alinea el texto al centro */
+
+/* Estilos para h4 dentro de #service */
+#service h4 {
+  color: #ffffff; /* Blanco para los títulos dentro del contenedor #service */
 }
 
-
-/* Estilos para el texto del servicio */
-.service-text {
-  margin: 0; /* Elimina el margen del texto para evitar espacios */
+/* Estilos para h2 span */
+h2 span {
+  color: #ffffff; /* Blanco para el texto en h2 span */
+  font-weight: bold;
 }
 
-
-
-/* Estilos cuando se pasa el mouse sobre el card */
-.service-card:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Cambia el color de fondo al pasar el mouse */
+/* Estilos para los íconos */
+.icon {
+  margin-right: 10px; /* Espacio entre el ícono y el texto */
 }

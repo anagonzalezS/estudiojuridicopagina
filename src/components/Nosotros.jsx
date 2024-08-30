@@ -21,10 +21,8 @@ function Nosotros() {
                   <img src="/nosotros1.png" alt="Equipo de abogados trabajando juntos" className="img-fluid nosotros-img"/>
                 </div>
                 <div className="carousel-item">
-                  <img src="/nosotros2.png" alt="Equipo de abogados trabajando juntos" className="img-fluid nosotros-img"/>
                 </div>
                 <div className="carousel-item">
-                  <img src="/nosotros3.png" alt="Otra imagen de equipo de abogados" className="img-fluid nosotros-img"/>
                 </div>
               </div>
             </div>

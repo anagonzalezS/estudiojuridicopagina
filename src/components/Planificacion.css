@@ -15,6 +15,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left; /* Alineación del texto a la izquierda */
 }
 
 .planning-card:hover {
@@ -27,6 +28,7 @@
   font-size: 1.6rem;
   color: #003366; /* Azul oscuro para los títulos */
   margin-top: 15px;
+  font-weight: bold; /* Negrita para los títulos */
 }
 
 /* Descripción de la tarjeta de planificación */
@@ -34,44 +36,35 @@
   font-size: 1rem;
   color: #333; /* Color de texto más oscuro para mejorar la legibilidad */
   line-height: 1.6;
+  text-align: justify; /* Justificar el texto para mejorar la lectura */
+  margin-bottom: 10px; /* Espacio entre los párrafos */
 }
 
-/* Estilos para las listas dentro de los cards */
-.planning-card-description ul {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.planning-card-description ul li {
-  position: relative;
-  padding-left: 30px;
-  margin-bottom: 10px;
+/* Texto adicional desplegable */
+.additional-text {
   font-size: 1rem;
-  color: #333;
-  display: flex;
-  align-items: center;
+  color: #555; /* Color de texto más suave para el texto adicional */
+  margin-top: 10px; /* Espacio superior para separar el texto adicional */
 }
 
-.planning-card-description ul li::before {
-  content: '·';
-  color: #003366; /* Color de viñeta personalizado */
-  position: absolute;
-  left: 0;
-  font-size: 1.4rem;
-  top: 50%;
-  transform: translateY(-50%);
+/* Estilo para el enlace "Leer más" */
+.read-more {
+  color: #003366; /* Azul oscuro */
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: 10px;
 }
 
-/* Negrita para el texto resaltado */
+.read-more:hover {
+  color: #005599; /* Un tono más claro al pasar el cursor */
+}
+
+/* Estilo para el texto resaltado */
 .bold-text {
   font-weight: bold;
-  color: #003366;
-}
-
-/* Estilo para los íconos */
-.planning-icon {
-  color: #003366;
+  color: #003366; /* Azul oscuro para destacar */
 }
 
 /* Asegura que los elementos WOW tengan visibilidad */
@@ -81,7 +74,7 @@
 
 /* Media Queries para dispositivos móviles y tabletas */
 @media (max-width: 767px) {
-  .planning-card-description ul li::before {
-    font-size: 1.2rem;
+  .planning-card-description {
+    font-size: 0.9rem; /* Ajuste de tamaño de fuente para móviles */
   }
 }
