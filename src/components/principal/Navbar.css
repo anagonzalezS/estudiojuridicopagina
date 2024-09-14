@@ -1,90 +1,131 @@
 /* Estilos generales */
 .navbar {
-  background-color: #ffffff; /* Color de fondo blanco */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  padding: 10px 0; /* Espaciado interno */
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  border-bottom: 1px solid #dddddd;
 }
 
-/* Estilo para el logo */
 .navbar-logo {
-  width: 140px; /* Tamaño del logo */
-  height: auto; /* Mantener la proporción */
+  width: 120px;
+  height: auto;
 }
 
-/* Estilos para el botón del menú desplegable */
 .navbar-toggler {
-  border: 1px solid transparent; /* Asegurarse de que el borde no sea visible */
-  outline: none; /* Sin contorno */
-  padding: 0.5rem 1rem; /* Tamaño adecuado para el botón */
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  background: transparent;
 }
 
-/* Estilo para el texto "Menú" en el botón del menú desplegable */
-.navbar-toggler-label {
-  display: none; /* Ocultar texto en pantallas grandes */
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml;charset=utf8,<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24" height="24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px;
 }
 
-/* Estilos para dispositivos móviles */
+.dropdown-menu {
+  display: none; /* Oculta el menú por defecto */
+  position: absolute; /* Ajusta la posición en dispositivos móviles */
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 8px;
+  min-width: 200px;
+  z-index: 1000;
+  left: 0; /* Alinea el menú con el borde izquierdo del botón */
+}
+
+.nav-item:hover .dropdown-menu,
+.dropdown-menu:hover {
+  display: block; /* Muestra el menú cuando el ítem o el menú están en hover */
+}
+
+.dropdown-item {
+  color: #333333;
+  padding: 10px 15px;
+  text-transform: none;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+  text-decoration: none;
+}
+
 @media (max-width: 768px) {
-  .navbar-toggler-label {
-    display: inline-block; /* Mostrar texto en pantallas pequeñas */
-    margin-left: 5px; /* Espaciado con el ícono */
-    font-size: 14px; /* Tamaño del texto */
-    color: #333; /* Color del texto */
-  }
-
-  .navbar-collapse {
-    background-color: #ffffff; /* Color de fondo del menú desplegable */
-    border-top: 1px solid #dddddd; /* Borde superior */
-    padding-top: 10px; /* Espaciado superior para el menú */
-  }
-
   .navbar-nav {
-    text-align: center; /* Centrar elementos del menú */
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Asegura que el menú ocupe todo el ancho */
   }
 
   .nav-item {
-    margin-bottom: 10px; /* Reduce el espaciado entre elementos del menú */
+    display: block;
+    margin: 0;
   }
 
   .nav-link {
-    color: #333333; /* Color del texto del enlace */
-    font-weight: bold; /* Negrita */
-    text-transform: uppercase; /* Mayúsculas */
-    font-size: 16px; /* Tamaño de fuente */
-    display: block; /* Mostrar como bloque */
-    padding: 10px 15px; /* Espaciado interno */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+    color: #333333;
+    font-weight: normal; /* Quita el estilo en negrita */
+    text-transform: none; /* Elimina la mayúscula */
+    font-size: 16px;
+    display: block;
+    padding: 12px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center; /* Centra el texto dentro del enlace */
   }
 
-  /* Estilos al pasar el ratón sobre los enlaces */
   .nav-link:hover {
-    background-color: #f8f9fa; /* Color de fondo al pasar el ratón */
-    color: #007bff; /* Color del texto al pasar el ratón */
+    background-color: #f8f9fa;
+    color: #007bff;
+  }
+
+  .dropdown-menu {
+    position: relative; /* Alinea el menú debajo del ítem en móviles */
+    top: 0; /* Sin margen superior en móviles */
+    left: 0; /* Sin alineación adicional */
+    width: 100%; /* Asegura que el menú ocupe todo el ancho del contenedor */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    z-index: 1000;
+    background-color: #ffffff;
+  }
+
+  .dropdown-item {
+    padding: 12px; /* Ajusta el padding para dispositivos móviles */
+    text-align: center; /* Centra el texto dentro del ítem del menú desplegable */
   }
 }
 
-/* Estilos para PC */
 @media (min-width: 769px) {
   .navbar-nav {
-    margin-left: auto; /* Alinear a la derecha */
-    margin-right: 0; /* Eliminar margen derecho para centrar los elementos */
+    margin-left: auto;
+    margin-right: 0;
   }
 
   .nav-item {
-    margin-left: 20px; /* Espaciado entre elementos */
+    position: relative;
+    margin-left: 20px;
   }
 
   .nav-link {
-    color: #333333; /* Color del texto del enlace */
-    font-weight: bold; /* Negrita */
-    text-transform: uppercase; /* Mayúsculas */
-    font-size: 14px; /* Tamaño de fuente */
-    transition: color 0.3s ease; /* Transición de color */
+    color: #333333;
+    font-weight: normal; /* Quita el estilo en negrita */
+    text-transform: none; /* Elimina la mayúscula */
+    font-size: 14px;
+    transition: color 0.3s ease;
+    position: relative;
   }
 
-  /* Estilos al pasar el ratón sobre los enlaces */
   .nav-link:hover {
-    color: #007bff; /* Color celeste al pasar el ratón */
-    text-decoration: underline; /* Subrayado al pasar el ratón */
+    color: #007bff;
+    text-decoration: underline;
   }
 }

@@ -51,21 +51,26 @@ function Administracion() {
         </div>
         <div className="row mt-5">
           <div className="col-md-12">
-            <h3 className="wow fadeInDown text-center mb-4">Ofrecemos</h3>
+            <h3 className="wow fadeInDown text-center mb-4">Nuestros Servicios</h3>
           </div>
           <div className="col-md-6">
             <ul className="wow fadeInLeft">
-              <li>Sistema informático para seguimiento online del consorcio.</li>
-              <li>Varios medios de pago de expensas.</li>
-              <li>Contacto de emergencia.</li>
-              <li>Seguimiento de morosos del edificio.</li>
-              <li>Trabajo en conjunto con miembros del Consejo.</li>
-              <li>Proveedores altamente capacitados y calificados.</li>
+              <li>Sistema de gestión en línea para el monitoreo integral del consorcio.</li>
+              <li>Facilidad en el pago de expensas a través de múltiples métodos.</li>
+              <li>Atención de emergencias disponible las 24 horas.</li>
+              <li>Gestión y seguimiento personalizado de morosidad.</li>
+              <li>Colaboración continua con el Consejo de Administración.</li>
+              <li>Acceso a proveedores altamente calificados y certificados.</li>
             </ul>
           </div>
           <div className="col-md-6">
             <ul className="wow fadeInRight">
-
+              <li>Optimización de recursos y reducción de costos operativos.</li>
+              <li>Transparencia total en la gestión financiera y contable.</li>
+              <li>Informes detallados de mantenimiento y mejoras estructurales.</li>
+              <li>Programación y supervisión de trabajos de mantenimiento.</li>
+              <li>Asesoramiento legal y administrativo continuo.</li>
+              <li>Implementación de tecnologías sostenibles y eficientes.</li>
             </ul>
           </div>
         </div>

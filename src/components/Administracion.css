@@ -1,78 +1,81 @@
+/* Sección de Administración */
 .administracion-section {
-    padding: 60px 0;
-    color: #fff; /* Color del texto en blanco */
-  }
-  
-  .administracion-item {
-    transition: transform 0.3s;
-  }
-  
-  .administracion-card {
-    background: #212529; /* Fondo más oscuro para las tarjetas */
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .administracion-card .icon {
-    color: #fff; /* Color del ícono en blanco */
-  }
-  
-  .administracion-text {
-    font-size: 1.2em;
-    margin-top: 10px;
-    color: #fff; /* Color del texto en blanco */
-  }
-  
-  .administracion-card-text {
-    font-size: 1em;
-    margin-top: 10px;
-    color: #fff; /* Color del texto en blanco */
-  }
-  
-  .administracion-section h2 {
-    color: #fff; /* Color del título en blanco */
-    font-weight: normal; /* Eliminar la negrita */
+  padding: 60px 0;
+  color: #fff; /* Color del texto en blanco */
+}
 
-  }
-  
+/* Ítems de Administración */
+.administracion-item {
+  transition: transform 0.3s;
+}
 
-  .administracion-list {
-    margin-top: 20px;
-    padding-left: 0; /* Elimina el padding izquierdo de la lista */
-  }
-  
-  .administracion-list-item {
-    margin-bottom: 10px;
-    color: #fff; /* Color del texto en blanco */
-    font-size: 1em;
-  }
-  /* Administracion.css */
+/* Tarjetas de Administración */
+.administracion-card {
+  background: #212529; /* Fondo oscuro */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.administracion-card .icon {
+  color: #fff; /* Color del ícono en blanco */
+}
+
+/* Texto en Tarjetas */
+.administracion-text, .administracion-card-text {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #fff; /* Color del texto en blanco */
+}
+
+/* Título de la sección */
+.administracion-section h2 {
+  color: #fff; /* Color del título en blanco */
+  font-weight: normal; /* Eliminar la negrita */
+  text-align: center;
+  font-size: 36px; /* Tamaño ajustado para mejor jerarquía visual */
+  padding-bottom: 30px;
+  text-transform: uppercase;
+  margin-top: 50px;
+}
+
+/* Lista de Administración */
+.administracion-list {
+  margin-top: 20px;
+  padding-left: 0; /* Elimina el padding izquierdo de la lista */
+}
+
+.administracion-list-item {
+  margin-bottom: 10px;
+  color: #fff; /* Color del texto en blanco */
+  font-size: 1em;
+}
+
+/* Ajustes específicos para móviles */
 @media (max-width: 768px) {
-    /* Estilos específicos para dispositivos móviles */
-    .administracion-section h3 {
-      font-size: 24px; /* Tamaño de fuente ajustado para móviles */
-      margin-bottom: 20px; /* Espaciado inferior ajustado */
-    }
-  }
-  /* Administracion.css */
-.administracion-section .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Alinear elementos al centro */
-  }
-  
-  .administracion-section .col-md-12 {
-    text-align: center; /* Alinear texto al centro */
-  }
-  
   .administracion-section h3 {
+    font-size: 24px; /* Tamaño de fuente ajustado para móviles */
     margin-bottom: 20px; /* Espaciado inferior ajustado */
   }
-  
+
   .administracion-section .col-md-6 {
     width: 100%; /* Ancho completo en dispositivos móviles */
     text-align: left; /* Alinear texto a la izquierda */
   }
-  
+}
+
+/* Flexbox ajustes */
+.administracion-section .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Alinear elementos al centro */
+}
+
+.administracion-section .col-md-12 {
+  text-align: center; /* Alinear texto al centro */
+}
+
+.administracion-section h3 {
+  margin-bottom: 20px; /* Espaciado inferior ajustado */
+}

@@ -1,4 +1,3 @@
-// Nosotros.jsx
 import React, { useEffect } from 'react';
 import WOW from 'wowjs';
 import 'animate.css/animate.min.css';
@@ -14,15 +13,11 @@ function Nosotros() {
     <section id="nosotros" className="wow fadeIn">
       <div className="container">
         <div className="row mt-4 align-items-center">
-          <div className="col-md-6 mb-4 wow fadeIn" data-wow-duration="1s">
-            <div id="aboutCarousel" className="carousel slide" data-ride="carousel" data-interval="3000">
+          <div className="col-md-6 mb-4">
+            <div id="aboutCarousel" className="carousel slide">
               <div className="carousel-inner">
                 <div className="carousel-item active">
                   <img src="/nosotros1.png" alt="Equipo de abogados trabajando juntos" className="img-fluid nosotros-img"/>
-                </div>
-                <div className="carousel-item">
-                </div>
-                <div className="carousel-item">
                 </div>
               </div>
             </div>

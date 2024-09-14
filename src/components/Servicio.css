@@ -10,8 +10,9 @@ body {
 #servicios h2 {
   color: #ffffff; /* Blanco para el título */
   text-align: center;
-  font-size: 40px;
-  padding-bottom: 40px;
+  font-size: 36px; /* Tamaño ajustado para una mejor jerarquía visual */
+  padding-bottom: 30px;
+  text-transform: uppercase;
 }
 
 /* Estilos para los títulos h4 dentro de los ítems de servicio */
