@@ -1,6 +1,6 @@
 /* Contenedor principal del componente */
 #planificacion h2 {
-  color: #003366; /* Azul oscuro para un aspecto profesional */
+  color: #333; /* Azul oscuro para un aspecto profesional */
   text-align: center;
   font-size: 36px; /* Tamaño ajustado para una mejor jerarquía visual */
   padding-bottom: 30px;
@@ -26,7 +26,7 @@
 /* Títulos de servicio */
 .planning-service-title {
   font-size: 1.6rem;
-  color: #003366; /* Azul oscuro para los títulos */
+  color: #333; /* Azul oscuro para los títulos */
   margin-top: 15px;
   font-weight: bold; /* Negrita para los títulos */
 }

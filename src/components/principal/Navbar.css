@@ -1,9 +1,19 @@
-/* Estilos generales */
+/* Navbar */
 .navbar {
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px 0;
   border-bottom: 1px solid #dddddd;
+}
+.navbar-nav {
+  display: flex;
+  justify-content: center; /* Centra los elementos */
+  align-items: center; /* Alinea los elementos verticalmente */
+}
+
+/* Ajuste para centrar el contenido del menú */
+.navbar-collapse {
+  justify-content: center; /* Centra los elementos del menú */
 }
 
 .navbar-logo {
@@ -25,9 +35,10 @@
   background-size: 24px;
 }
 
+/* Estilos para el menú desplegable */
 .dropdown-menu {
   display: none; /* Oculta el menú por defecto */
-  position: absolute; /* Ajusta la posición en dispositivos móviles */
+  position: absolute;
   background-color: #ffffff;
   border: 1px solid #dddddd;
   border-radius: 4px;
@@ -35,12 +46,12 @@
   margin-top: 8px;
   min-width: 200px;
   z-index: 1000;
-  left: 0; /* Alinea el menú con el borde izquierdo del botón */
+  left: 0;
 }
 
 .nav-item:hover .dropdown-menu,
 .dropdown-menu:hover {
-  display: block; /* Muestra el menú cuando el ítem o el menú están en hover */
+  display: block; /* Muestra el menú cuando está en hover */
 }
 
 .dropdown-item {
@@ -57,12 +68,13 @@
   text-decoration: none;
 }
 
+/* Estilos para móviles */
 @media (max-width: 768px) {
   .navbar-nav {
     text-align: center;
     padding: 0;
     margin: 0;
-    width: 100%; /* Asegura que el menú ocupe todo el ancho */
+    width: 100%;
   }
 
   .nav-item {
@@ -72,13 +84,13 @@
 
   .nav-link {
     color: #333333;
-    font-weight: normal; /* Quita el estilo en negrita */
-    text-transform: none; /* Elimina la mayúscula */
+    font-weight: normal;
+    text-transform: none;
     font-size: 16px;
     display: block;
     padding: 12px 15px;
     transition: background-color 0.3s ease, color 0.3s ease;
-    text-align: center; /* Centra el texto dentro del enlace */
+    text-align: center;
   }
 
   .nav-link:hover {
@@ -87,27 +99,22 @@
   }
 
   .dropdown-menu {
-    position: relative; /* Alinea el menú debajo del ítem en móviles */
-    top: 0; /* Sin margen superior en móviles */
-    left: 0; /* Sin alineación adicional */
-    width: 100%; /* Asegura que el menú ocupe todo el ancho del contenedor */
+    position: relative; /* Ajuste para dispositivos móviles */
+    width: 100%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid #dddddd;
-    border-radius: 4px;
-    z-index: 1000;
-    background-color: #ffffff;
   }
 
   .dropdown-item {
-    padding: 12px; /* Ajusta el padding para dispositivos móviles */
-    text-align: center; /* Centra el texto dentro del ítem del menú desplegable */
+    padding: 12px;
+    text-align: center;
   }
 }
 
+/* Estilos para pantallas grandes */
 @media (min-width: 769px) {
   .navbar-nav {
-    margin-left: auto;
-    margin-right: 0;
+    display: flex;
+    justify-content: center; /* Centra el menú en pantallas grandes */
   }
 
   .nav-item {
@@ -117,11 +124,10 @@
 
   .nav-link {
     color: #333333;
-    font-weight: normal; /* Quita el estilo en negrita */
-    text-transform: none; /* Elimina la mayúscula */
+    font-weight: normal;
+    text-transform: none;
     font-size: 14px;
     transition: color 0.3s ease;
-    position: relative;
   }
 
   .nav-link:hover {
