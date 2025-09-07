@@ -1,13 +1,14 @@
 import React from 'react';
+import "./Footer.css";
 
 function Footer() {
   return (
-    <footer className="footer" style={{ paddingTop: '20px', paddingBottom: '20px' }}>
+    <footer className="footer-section">
       <div className="container">
-        <div className="row">
+        <div className="row align-items-center">
           <div className="col-md-12 text-center">
-            <p style={{ margin: '0', fontWeight: 'bold' }}>
-              Copyright © 2024 SÁENZ & ASOCIADOS
+            <p className="footer-text">
+              © 2024 SÁENZ & ASOCIADOS. Todos los derechos reservados.
             </p>
           </div>
         </div>

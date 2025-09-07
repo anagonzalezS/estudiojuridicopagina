@@ -1,137 +1,95 @@
-/* Navbar */
-.navbar {
+.navbar-custom {
   background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
-  border-bottom: 1px solid #dddddd;
-}
-.navbar-nav {
-  display: flex;
-  justify-content: center; /* Centra los elementos */
-  align-items: center; /* Alinea los elementos verticalmente */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: 500;
 }
 
-/* Ajuste para centrar el contenido del menú */
-.navbar-collapse {
-  justify-content: center; /* Centra los elementos del menú */
+.navbar-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .navbar-logo {
-  width: 120px;
+  width: 150px; /* tamaño escritorio */
   height: auto;
+  transition: width 0.3s;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #0056b3;
 }
 
 .navbar-toggler {
   border: none;
-  outline: none;
-  padding: 0.5rem 1rem;
   background: transparent;
+  display: none; /* oculto en desktop */
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
 }
 
 .navbar-toggler-icon {
-  background-image: url('data:image/svg+xml;charset=utf8,<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24" height="24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>');
+  width: 26px;
+  height: 26px;
+  background-image: url('data:image/svg+xml;charset=utf8,<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 24px;
 }
 
-/* Estilos para el menú desplegable */
-.dropdown-menu {
-  display: none; /* Oculta el menú por defecto */
-  position: absolute;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 4px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 8px;
-  min-width: 200px;
-  z-index: 1000;
-  left: 0;
+.navbar-toggler-label {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
 }
 
-.nav-item:hover .dropdown-menu,
-.dropdown-menu:hover {
-  display: block; /* Muestra el menú cuando está en hover */
-}
-
-.dropdown-item {
-  color: #333333;
-  padding: 10px 15px;
-  text-transform: none;
-  white-space: nowrap;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dropdown-item:hover {
-  background-color: #f8f9fa;
-  color: #007bff;
-  text-decoration: none;
-}
-
-/* Estilos para móviles */
+/* Móviles */
 @media (max-width: 768px) {
-  .navbar-nav {
-    text-align: center;
-    padding: 0;
-    margin: 0;
+  .navbar-flex {
+    flex-direction: row; /* logo a la izquierda, menú toggle a la derecha */
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
   }
 
-  .nav-item {
-    display: block;
-    margin: 0;
+  .navbar-logo {
+    width: 120px; /* tamaño móvil */
+  }
+
+  .navbar-toggler {
+    display: flex; /* visible solo en móvil */
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: 10px;
+    display: none; /* oculto por defecto */
+  }
+
+  .navbar-nav.show {
+    display: flex; /* se muestra al hacer clic */
   }
 
   .nav-link {
-    color: #333333;
-    font-weight: normal;
-    text-transform: none;
     font-size: 16px;
-    display: block;
-    padding: 12px 15px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-align: center;
-  }
-
-  .nav-link:hover {
-    background-color: #f8f9fa;
-    color: #007bff;
-  }
-
-  .dropdown-menu {
-    position: relative; /* Ajuste para dispositivos móviles */
-    width: 100%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .dropdown-item {
-    padding: 12px;
-    text-align: center;
-  }
-}
-
-/* Estilos para pantallas grandes */
-@media (min-width: 769px) {
-  .navbar-nav {
-    display: flex;
-    justify-content: center; /* Centra el menú en pantallas grandes */
-  }
-
-  .nav-item {
-    position: relative;
-    margin-left: 20px;
-  }
-
-  .nav-link {
-    color: #333333;
-    font-weight: normal;
-    text-transform: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-  }
-
-  .nav-link:hover {
-    color: #007bff;
-    text-decoration: underline;
+    padding: 10px 0;
   }
 }

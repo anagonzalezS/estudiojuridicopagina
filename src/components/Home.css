@@ -18,9 +18,7 @@
   text-transform: uppercase;
 }
 
-#servicios {
-  padding-top: 96px;
-}
+
 
 #nosotros img {
   display: block;
@@ -54,7 +52,7 @@
 
 @media (max-width: 1240px) {
   .display-1 {
-    font-size: 32px;
+    font-size: 30px;
     font-family: 'Roboto', sans-serif;
 
     font-style: normal;
