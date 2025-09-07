@@ -27,7 +27,7 @@ function Servicio() {
   return (
     <section id="servicios" className="service-section">
       <div className="container">
-        <h2 className="text-center mb-4">SERVICIOS</h2>
+        <h2 className="text">SERVICIOS</h2>
 
         {/* Botones estilo pestañas */}
         <div className="tabs-container">
@@ -49,7 +49,7 @@ function Servicio() {
               <span className="icono">{activeService.icon}</span> {activeService.title}
             </h3>
             <p>{activeService.description}</p>
-            <p><strong>Horario de atención:</strong> Lunes a Viernes, 8 a 18 hs</p>
+            <p><strong>Horario de atención:</strong> Lunes a Viernes de 8 a 18 hs</p>
             
             <p className="turno-text">
               <strong>¿Necesita un turno?</strong>{' '}
@@ -92,8 +92,9 @@ function Servicio() {
                   <li>Estudio o información de actuaciones judiciales o administrativas: 3 Jus</li>
                   <li>Asistencia y asesoramiento del cliente en la realización de actos jurídicos: 3,5 Jus</li>
                 </ul>
-
-                <p> Mercado Pago: <strong>@estudio.saenz</strong></p>
+                <p className="alias-mp">
+                  <strong>@estudio.saenz</strong>
+                </p>
               </div>
             </div>
 

@@ -6,7 +6,7 @@
   margin-right: 6px;
   font-size: 1rem;
   vertical-align: middle;
-  color: #444;
+  color: #f8f8f8;
 }
 
 .tabs-container {
@@ -59,6 +59,13 @@
 .info-box p {
   margin-bottom: 8px;
   color: #555;
+}
+.alias-mp {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 10px;
+  color: #333;
 }
 
 .tarifario-box {
@@ -118,6 +125,19 @@
   margin-bottom: 8px;
   font-weight: 500;
   color: #333;
+}
+.text {
+  font-size: 36px; /* tamaño por defecto para escritorio */
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Para celulares */
+@media (max-width: 768px) {
+  .text {
+    font-size: 28px;
+  }
 }
 
 /* MEDIA QUERY PARA MÓVILES: dos columnas */
