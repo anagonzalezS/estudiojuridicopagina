@@ -20,7 +20,11 @@ function Navbar() {
     <nav className="navbar navbar-custom">
       <div className="container navbar-flex">
         {/* Logo */}
-        <a className="navbar-brand" href="#inicio" onClick={(e) => handleScroll(e, "#inicio")}>
+        <a
+          className="navbar-brand"
+          href="#inicio"
+          onClick={(e) => handleScroll(e, "#inicio")}
+        >
           <img
             src="/logoweb.png"
             alt="Logo Estudio Jurídico Sáenz & Asociados"
@@ -42,22 +46,38 @@ function Navbar() {
         {/* Menú */}
         <ul className={`navbar-nav ${isOpen ? "show" : ""}`}>
           <li className="nav-item">
-            <a className="nav-link" href="#inicio" onClick={(e) => handleScroll(e, "#inicio")}>
+            <a
+              className="nav-link"
+              href="#inicio"
+              onClick={(e) => handleScroll(e, "#inicio")}
+            >
               Inicio
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#nosotros" onClick={(e) => handleScroll(e, "#nosotros")}>
+            <a
+              className="nav-link"
+              href="#nosotros"
+              onClick={(e) => handleScroll(e, "#nosotros")}
+            >
               Nosotros
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#servicios" onClick={(e) => handleScroll(e, "#servicios")}>
+            <a
+              className="nav-link"
+              href="#servicios"
+              onClick={(e) => handleScroll(e, "#servicios")}
+            >
               Servicios
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#contacto" onClick={(e) => handleScroll(e, "#contacto")}>
+            <a
+              className="nav-link"
+              href="#contacto"
+              onClick={(e) => handleScroll(e, "#contacto")}
+            >
               Contacto
             </a>
           </li>

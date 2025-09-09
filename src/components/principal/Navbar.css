@@ -7,7 +7,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  font-weight: normal; /* Quitamos negrita */
+  font-weight: normal;
 }
 
 /* FLEX GENERAL */
@@ -18,16 +18,23 @@
   width: 100%;
 }
 
-/* LOGO */
+/* LOGO RESPONSIVE */
 .navbar-logo {
-  width: 160px;
-  height: auto;
+  width: 160px;       /* Tamaño base escritorio */
+  max-width: 100%;
+  height: auto;       /* Mantiene proporción */
   transition: transform 0.3s ease;
 }
 
 .navbar-logo:hover {
   transform: scale(1.05);
 }
+
+/* Ajustes responsive */
+@media (max-width: 1200px) { .navbar-logo { width: 140px; } }
+@media (max-width: 992px)  { .navbar-logo { width: 130px; } }
+@media (max-width: 768px)  { .navbar-logo { width: 120px; } }
+@media (max-width: 480px)  { .navbar-logo { width: 100px; } }
 
 /* MENÚ ESCRITORIO */
 .navbar-nav {
@@ -39,16 +46,14 @@
   list-style: none;
 }
 
-.nav-item {
-  text-align: center;
-}
+.nav-item { text-align: center; }
 
 .nav-link {
   color: #333;
   font-size: 16px;
   text-decoration: none;
   transition: all 0.3s;
-  font-weight: normal; /* Quitamos negrita */
+  font-weight: normal;
 }
 
 .nav-link:hover {
@@ -80,20 +85,15 @@
 .navbar-toggler.open .bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-.navbar-toggler.open .bar:nth-child(2) {
-  opacity: 0;
-}
+.navbar-toggler.open .bar:nth-child(2) { opacity: 0; }
 .navbar-toggler.open .bar:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* RESPONSIVE MÓVIL */
 @media (max-width: 992px) {
-  .navbar-toggler {
-    display: flex;
-  }
+  .navbar-toggler { display: flex; }
 
-  /* Menú móvil */
   .navbar-nav {
     position: fixed;
     top: 0;
@@ -112,18 +112,14 @@
     z-index: 1050;
   }
 
-  .navbar-nav.show {
-    right: 0;
-  }
+  .navbar-nav.show { right: 0; }
 
   .nav-link {
     font-size: 20px;
-    font-weight: normal; /* Quitamos negrita */
+    font-weight: normal;
     padding: 12px 0;
     text-align: center;
   }
 
-  .nav-link:hover {
-    color: #0d47a1;
-  }
+  .nav-link:hover { color: #0d47a1; }
 }
