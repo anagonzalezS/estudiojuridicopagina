@@ -1,0 +1,162 @@
+/* ======== Sección Contacto ======== */
+.contacto-section {
+  padding: 60px 20px;
+  background-color: #fdfdfd;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contacto-container {
+  max-width: 550px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 40px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Título Contacto igual que Nosotros */
+.contacto-section h2 {
+  font-size: 40px;          
+  margin-bottom: 40px;
+  color: #2c3e50;           
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  position: relative;
+}
+
+/* Línea decorativa debajo del título */
+.contacto-section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #0d47a1; 
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.contacto-intro {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+/* Formulario */
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contacto-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #333;
+  font-size: 15px;
+  text-align: left;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+  margin-top: 6px;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 8px rgba(0, 86, 179, 0.2);
+  outline: none;
+}
+
+.contacto-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contacto-form button {
+  padding: 14px 25px;
+  background-color: #0056b3;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  align-self: center;
+  width: 180px;
+}
+
+.contacto-form button:hover {
+  background-color: #003f7f;
+  transform: translateY(-2px);
+}
+
+/* ======== Modal ======== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.modal-content p {
+  font-size: 16px;
+  color: #0056b3;
+  margin: 15px 0 0 0;
+}
+
+/* ======== Responsive ======== */
+@media (max-width: 768px) {
+  .contacto-section h2 {
+    font-size: 30px;
+  }
+
+  .contacto-intro {
+    font-size: 14px;
+  }
+
+  .contacto-form button {
+    width: 100%;
+  }
+
+  .modal-content {
+    padding: 20px;
+    max-width: 90%;
+  }
+}

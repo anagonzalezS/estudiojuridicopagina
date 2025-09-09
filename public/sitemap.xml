@@ -16,28 +16,16 @@
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://saenz-asociados.com.ar/#turno</loc>
+      <loc>https://saenz-asociados.com.ar/#contacto</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
-   <url>
-      <loc>https://saenz-asociados.com.ar/#planificacion</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
+   
    <url>
       <loc>https://saenz-asociados.com.ar/#inicio</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
-   <url>
-      <loc>https://saenz-asociados.com.ar/#tarifa</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://saenz-asociados.com.ar/#servicios</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
+   
+  
 </urlset>

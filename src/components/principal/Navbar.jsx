@@ -6,34 +6,60 @@ function Navbar() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  // Función para hacer scroll suave
+  const handleScroll = (e, id) => {
+    e.preventDefault();
+    const section = document.querySelector(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsOpen(false); // Cierra el menú móvil
+  };
+
   return (
     <nav className="navbar navbar-custom">
       <div className="container navbar-flex">
         {/* Logo */}
-        <a className="navbar-brand" href="#top">
+        <a className="navbar-brand" href="#inicio" onClick={(e) => handleScroll(e, "#inicio")}>
           <img
             src="/logoweb.png"
-            alt="Logo de Estudio Sáenz & Asociados"
+            alt="Logo Estudio Jurídico Sáenz & Asociados"
             className="navbar-logo"
           />
         </a>
 
-        {/* Botón menú móvil */}
-        <button className="navbar-toggler" onClick={toggleMenu}>
-          <span className="navbar-toggler-icon"></span>
-          <span className="navbar-toggler-label">Menú</span>
+        {/* Botón hamburguesa */}
+        <button
+          className={`navbar-toggler ${isOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </button>
 
         {/* Menú */}
         <ul className={`navbar-nav ${isOpen ? "show" : ""}`}>
           <li className="nav-item">
-            <a className="nav-link" href="#inicio">Inicio</a>
+            <a className="nav-link" href="#inicio" onClick={(e) => handleScroll(e, "#inicio")}>
+              Inicio
+            </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#nosotros">Nosotros</a>
+            <a className="nav-link" href="#nosotros" onClick={(e) => handleScroll(e, "#nosotros")}>
+              Nosotros
+            </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#servicios">Servicios</a>
+            <a className="nav-link" href="#servicios" onClick={(e) => handleScroll(e, "#servicios")}>
+              Servicios
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#contacto" onClick={(e) => handleScroll(e, "#contacto")}>
+              Contacto
+            </a>
           </li>
         </ul>
       </div>
