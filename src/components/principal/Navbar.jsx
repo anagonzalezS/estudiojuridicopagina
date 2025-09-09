@@ -72,15 +72,7 @@ function Navbar() {
               Servicios
             </a>
           </li>
-          <li className="nav-item">
-            <a
-              className="nav-link"
-              href="#contacto"
-              onClick={(e) => handleScroll(e, "#contacto")}
-            >
-              Contacto
-            </a>
-          </li>
+         
         </ul>
       </div>
     </nav>

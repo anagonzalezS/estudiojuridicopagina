@@ -5,7 +5,6 @@ import Navbar from "./components/principal/Navbar";
 import Home from './components/Home';
 import Nosotros from './components/Nosotros';
 import Servicio from './components/Servicio';
-import Contacto from "./components/Contacto";
 import Footer from './components/Footer';
 import WhatsappIcon from './components/WhatsappIcon';
 import './App.css';
@@ -40,9 +39,7 @@ function App() {
         <Servicio />
       </section>
 
-      <section id="contacto">
-        <Contacto />
-      </section>
+    
 
       {/* Footer */}
       <Footer />
