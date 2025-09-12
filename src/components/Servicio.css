@@ -38,7 +38,7 @@
 ================================ */
 .tabs-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* ancho mínimo más rectangular */
   gap: 14px;
   margin-bottom: 32px;
 }
@@ -48,14 +48,14 @@
   color: #333;
   border: 1px solid #ddd;
   border-radius: 12px;
-  padding: 12px 16px; /* más ancho horizontalmente */
+  padding: 14px 20px; /* más ancho horizontalmente */
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 80px;
+  min-height: 60px; /* más rectangular */
   font-weight: 600;
   font-size: 0.95rem;
   text-align: center;
@@ -331,20 +331,21 @@
 ================================ */
 @media (max-width: 768px) {
   .service-container h2 { font-size: 32px; }
-  .tab-button { font-size: 0.9rem; padding: 12px 14px; min-height: 75px; }
+  .tabs-container { grid-template-columns: repeat(2, 1fr); gap: 12px; } /* siempre 2 columnas */
+  .tab-button { font-size: 0.9rem; padding: 12px 16px; min-height: 60px; }
   .info-box { padding: 20px; }
   .pago-items { flex-direction: column; gap: 14px; }
 }
 
 @media (max-width: 480px) {
   .tabs-container { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .tab-button { font-size: 0.85rem; padding: 10px 12px; min-height: 70px; }
+  .tab-button { font-size: 0.85rem; padding: 10px 12px; min-height: 60px; }
   .info-box h3 { font-size: 1.4rem; }
   .pago-item img, .pago-item svg { height: 32px; }
   .btn-ver-tarifas { width: 100%; padding: 12px 0; font-size: 0.9rem; }
 }
 
 @media (max-width: 360px) {
-  .tabs-container { grid-template-columns: 1fr; }
+  .tabs-container { grid-template-columns: 1fr; } /* 1 columna solo en pantallas muy pequeñas */
   .tab-button { font-size: 0.82rem; padding: 8px 10px; min-height: 60px; }
 }
