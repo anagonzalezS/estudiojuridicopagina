@@ -6,14 +6,11 @@ function Navbar() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // Función para hacer scroll suave
   const handleScroll = (e, id) => {
     e.preventDefault();
     const section = document.querySelector(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-    setIsOpen(false); // Cierra el menú móvil
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false);
   };
 
   return (
@@ -38,9 +35,9 @@ function Navbar() {
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
 
         {/* Menú */}
@@ -72,7 +69,6 @@ function Navbar() {
               Servicios
             </a>
           </li>
-         
         </ul>
       </div>
     </nav>

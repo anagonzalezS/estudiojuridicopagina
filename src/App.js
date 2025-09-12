@@ -5,6 +5,8 @@ import Navbar from "./components/principal/Navbar";
 import Home from './components/Home';
 import Nosotros from './components/Nosotros';
 import Servicio from './components/Servicio';
+import Testimonios from './components/Testimonios';
+
 import Footer from './components/Footer';
 import WhatsappIcon from './components/WhatsappIcon';
 import './App.css';
@@ -39,7 +41,9 @@ function App() {
         <Servicio />
       </section>
 
-    
+        <section id="testimonios">
+      <Testimonios />
+    </section>
 
       {/* Footer */}
       <Footer />
