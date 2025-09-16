@@ -6,7 +6,7 @@ html {
 /* --------------------- Sección Nosotros --------------------- */
 #nosotros {
   background-color:  #f0f4f8;/* fondo blanco para más elegancia */
-  padding: 80px 20px 40px 20px; /* arriba 80px, derecha 20px, abajo 40px, izquierda 20px */
+  padding: 40px 20px 40px 20px; /* arriba 80px, derecha 20px, abajo 40px, izquierda 20px */
 
   font-family: 'Lato', sans-serif;
 }

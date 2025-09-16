@@ -32,10 +32,10 @@
 @media (max-width: 480px) { .navbar-logo { width: 100px; } }
 
 /* ================================
-   MENÚ ESCRITORIO
+   MENÚ ESCRITORIO (default)
 ================================ */
 .navbar-nav {
-  display: flex;
+  display: flex;             
   flex-direction: row;
   gap: 30px;
   margin: 0;
@@ -57,59 +57,67 @@
 }
 
 /* ================================
-   BOTÓN HAMBURGUESA
+   BOTÓN HAMBURGUESA (default oculto)
 ================================ */
 .navbar-toggler {
-  display: none; /* oculto en escritorio */
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;  
-  height: 22px;
+  display: none;
+  position: relative;
+  width: 28px;
+  height: 20px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
   z-index: 1100;
-  transition: transform 0.3s ease;
 }
 
+/* Las 3 líneas de la hamburguesa */
 .navbar-toggler span {
   display: block;
+  position: absolute;
+  left: 0;
   width: 100%;
-  height: 3px;
+  height: 2px;
   background: #333;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
 
-/* Animación hamburguesa abierta */
+/* Posicionar cada línea */
+.navbar-toggler span:nth-child(1) { top: 0; }
+.navbar-toggler span:nth-child(2) { top: 9px; }
+.navbar-toggler span:nth-child(3) { top: 18px; }
+
+/* Animación hamburguesa -> X */
 .navbar-toggler.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  top: 9px;
+  transform: rotate(45deg);
 }
 .navbar-toggler.open span:nth-child(2) {
   opacity: 0;
 }
 .navbar-toggler.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  top: 9px;
+  transform: rotate(-45deg);
 }
 
 /* ================================
-   RESPONSIVE MÓVIL
+   RESPONSIVE MÓVIL (>0 y <992px)
 ================================ */
 @media (max-width: 992px) {
+  /* Mostrar hamburguesa en móvil */
   .navbar-toggler { display: flex; }
 
+  /* Menú en móvil oculto por defecto */
   .navbar-nav {
     position: absolute;
-    top: 95px; /* debajo de la navbar */
-    right: 20px; /* alineado a la derecha con la hamburguesa */
-    width: 180px; /* ancho compacto */
-    background: #ffffff; /* blanco */
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    top: 99px; 
+    right: 0px;
+    width: 200px;
+    background: #ffffff;
     text-align: center;
     flex-direction: column;
-    max-height: 0;
+    max-height: 0;          
     overflow: hidden;
     transition: max-height 0.4s ease, padding 0.4s ease;
     padding: 0;
@@ -117,6 +125,7 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
 
+  /* Menú cuando se abre */
   .navbar-nav.show {
     max-height: 400px;
     padding: 10px 0;
@@ -124,7 +133,7 @@
 
   .nav-link {
     display: block;
-    font-size: 16px;
+    font-size: 15px;
     color: #333;
     padding: 10px 0;
     width: 100%;
@@ -133,12 +142,28 @@
   }
 
   .nav-link:hover {
-    background: #f0f0f0; /* hover sutil */
+    background: #f0f0f0;
     color: #0056b3;
   }
 
-  /* Evitar scroll debajo del menú */
+  /* Bloquear scroll cuando menú está abierto */
   body.nav-open {
     overflow: hidden;
   }
+}
+
+/* ================================
+   AJUSTE SOLO MÓVIL (menos de 768px)
+================================ */
+@media (max-width: 768px) {
+  .navbar-toggler {
+    width: 24px;
+    height: 18px;
+  }
+
+  .navbar-toggler span:nth-child(2) { top: 8px; }
+  .navbar-toggler span:nth-child(3) { top: 16px; }
+
+  .navbar-toggler.open span:nth-child(1) { top: 8px; transform: rotate(45deg); }
+  .navbar-toggler.open span:nth-child(3) { top: 8px; transform: rotate(-45deg); }
 }
