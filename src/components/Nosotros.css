@@ -1,13 +1,12 @@
-/* Agregar desplazamiento suave */
+/* --------------------- General --------------------- */
 html {
   scroll-behavior: smooth;
 }
 
 /* --------------------- Sección Nosotros --------------------- */
 #nosotros {
-  background-color:  #f0f4f8;/* fondo blanco para más elegancia */
-  padding: 40px 20px 40px 20px; /* arriba 80px, derecha 20px, abajo 40px, izquierda 20px */
-
+  background-color: #f0f4f8; /* Fondo elegante */
+  padding: 60px 20px 50px 20px; 
   font-family: 'Lato', sans-serif;
 }
 
@@ -15,14 +14,14 @@ html {
 .nosotros-container {
   max-width: 1000px;
   margin: 0 auto;
-  text-align: left; /* texto alineado a la izquierda, más formal */
+  text-align: left; /* Texto alineado a la izquierda */
   padding: 0 20px;
 }
 
 /* Título */
 #nosotros h2 {
-  color: #0d1b2a; /* azul marino elegante */
-  font-size: 40px;
+  color: #0d1b2a; /* Azul marino elegante */
+  font-size: 38px;
   margin-bottom: 30px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -36,7 +35,7 @@ html {
   display: block;
   width: 70px;
   height: 3px;
-  background-color: #003366; /* azul marino */
+  background-color: #003366; /* Azul marino */
   margin: 12px auto 0;
   border-radius: 2px;
 }
@@ -44,21 +43,22 @@ html {
 /* Texto principal */
 .nosotros-text {
   color: #2c3e50;
-  line-height: 1.9;
+  line-height: 1.8;
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.3px;
+  margin-bottom: 18px;
 }
 
-/* Frase destacada dentro del texto */
-.nosotros-text .nosotros-frase {
+/* Frase destacada */
+.nosotros-frase {
   display: block;
   margin-top: 25px;
   font-size: 20px;
   font-weight: 700;
-  color: #003366; /* azul marino */
+  color: #003366; /* Azul marino */
   text-align: center;
-  font-style: italic; /* como lema/slogan */
+  font-style: italic; /* Lema / slogan */
 }
 
 /* --------------------- Responsividad --------------------- */
@@ -69,6 +69,9 @@ html {
   .nosotros-text {
     font-size: 16px;
   }
+  .nosotros-frase {
+    font-size: 18px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
@@ -77,5 +80,8 @@ html {
   }
   .nosotros-text {
     font-size: 17px;
+  }
+  .nosotros-frase {
+    font-size: 19px;
   }
 }

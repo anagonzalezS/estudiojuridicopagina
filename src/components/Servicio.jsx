@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import './Servicio.css';
 import {
   FaBalanceScale, FaGavel, FaBriefcase, FaUsers,
-  FaBookOpen, FaMoneyCheckAlt
+  FaBookOpen, FaUniversity
 } from 'react-icons/fa';
 
 const servicios = [
@@ -83,7 +83,7 @@ function Servicio() {
                   <span>Mercado Pago: estudio.saenz</span>
                 </div>
                 <div className="pago-item">
-                  <FaMoneyCheckAlt className="icono-pago" />
+                  <FaUniversity className="icono-pago" />
                   <span>Transferencias: s.saenz</span>
                 </div>
               </div>

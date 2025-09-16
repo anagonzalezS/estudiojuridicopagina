@@ -13,11 +13,11 @@
   padding: 0 20px;
 }
 
-/* Título principal SERVICIOS */
+/* Título principal */
 .service-container h2 {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 30px;
+  margin-bottom: 45px;
   color: #222;
   font-weight: 700;
   position: relative;
@@ -58,12 +58,7 @@
   transition: all 0.3s ease;
 }
 
-.tab-button:hover {
-  background: #0056a3;
-  color: #fff;
-}
-
-.tab-button.active {
+.tab-button:hover, .tab-button.active {
   background: #0056a3;
   color: #fff;
 }
@@ -102,7 +97,6 @@
   padding-left: 20px;
   list-style: disc;
   color: #333;
-  text-align: left;
 }
 
 .descripcion li {
@@ -131,7 +125,7 @@
 }
 
 /* ================================
-   FORMAS DE PAGO
+   FORMAS DE PAGO - HORIZONTAL
 ================================ */
 .pago-info {
   margin-top: 25px;
@@ -156,27 +150,28 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 60px;
 }
 
 .pago-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* ícono y texto siempre en horizontal */
   align-items: center;
-  gap: 10px;
+  gap: 15px; /* espacio entre ícono y texto */
   font-size: 1rem;
   color: #333;
   font-weight: 500;
+  text-align: left;
 }
 
 .pago-item img.mp-logo {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
 }
 
 .pago-item .icono-pago {
-  font-size: 60px;
+  font-size: 50px;
   color: #0056a3;
 }
 
@@ -267,48 +262,17 @@
 /* ================================
    RESPONSIVE
 ================================ */
-/* ================================
-   RESPONSIVE
-================================ */
 @media (max-width: 768px) {
-  /* Ajuste tamaño iconos de pago */
   .pago-item img.mp-logo { width: 60px; height: 60px; }
   .pago-item .icono-pago { font-size: 40px; }
-
-  /* Ajuste servicios en tabs para móviles */
-  .tabs-container {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .tab-button {
-    flex: 1 1 calc(50% - 10px); /* Dos columnas */
-    justify-content: center;
-    text-align: center;
-    font-size: 0.95rem;
-    padding: 8px 12px;
-  }
-
-  /* Ajuste info-box padding */
-  .info-box {
-    padding: 20px;
-  }
+  .tabs-container { gap: 10px; }
+  .tab-button { flex: 1 1 calc(50% - 10px); justify-content: center; text-align: center; font-size: 0.95rem; padding: 8px 12px; }
+  .info-box { padding: 20px; }
 }
 
 @media (max-width: 480px) {
-  /* Ajuste tamaño iconos de pago */
   .pago-item img.mp-logo { width: 50px; height: 50px; }
   .pago-item .icono-pago { font-size: 35px; }
-
-  /* Servicios en dos columnas más compactos */
-  .tab-button {
-    flex: 1 1 calc(50% - 8px);
-    padding: 6px 8px;
-    font-size: 0.9rem;
-  }
-
-  /* Ajuste info-box padding */
-  .info-box {
-    padding: 15px;
-  }
+  .tab-button { flex: 1 1 calc(50% - 8px); padding: 6px 8px; font-size: 0.9rem; }
+  .info-box { padding: 15px; }
 }
