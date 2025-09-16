@@ -1,36 +1,83 @@
 .testimonios-section {
-  background-color: #f9f9f9;
+  background-color: #f5f7fa;
   padding: 60px 16px;
   text-align: center;
   font-family: 'Lato', sans-serif;
+  color: #0d1b2a;
 }
 
 .testimonios-section h2 {
-  font-size: 32px;
+  font-size: 36px;
   margin-bottom: 40px;
-  color: #2c3e50;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #222;
+  position: relative;
+  display: inline-block; /* Para centrar la línea debajo */
+  padding-bottom: 10px;
 }
 
+/* Línea azul marino debajo del título */
+.testimonios-section h2::after {
+  content: "";
+  display: block;
+  width: 70px;          /* ancho de la línea */
+  height: 4px;          /* grosor de la línea */
+  background-color: #001f3f; /* azul marino */
+  margin: 8px auto 0;   /* centrado y separación del texto */
+  border-radius: 2px;   /* esquinas redondeadas */
+}
+
+
 .testimonios-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
   margin-bottom: 40px;
 }
 
 .testimonio-card {
   background-color: #fff;
   border-radius: 12px;
-  padding: 20px;
-  width: 260px;
+  padding: 20px 15px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s;
+  min-height: 200px;
+}
+
+.testimonio-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonio-card .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #0056a3;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.testimonio-card .contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .testimonio-card .estrellas {
   color: #ffd700;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-bottom: 10px;
 }
 
@@ -46,27 +93,44 @@
   font-size: 0.95rem;
   color: #333;
   margin-bottom: 10px;
+  line-height: 1.4;
 }
 
 .testimonio-card .autor {
   font-weight: 600;
-  color: #0d47a1;
+  color: #0056a3;
   font-size: 0.9rem;
 }
 
-/* NUEVO COMENTARIO */
+.nuevo-comentario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
 .nuevo-comentario textarea {
   width: 100%;
   max-width: 400px;
-  min-height: 70px;
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  resize: none;
-  margin-bottom: 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  min-height: 80px;
+  resize: vertical;
+}
+
+.nuevo-comentario .error {
+  color: red;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 .seleccion-estrellas {
+  display: flex;
+  justify-content: center;
   margin-bottom: 12px;
 }
 
@@ -75,6 +139,11 @@
   cursor: pointer;
   color: #ddd;
   margin: 0 3px;
+  transition: transform 0.2s;
+}
+
+.seleccion-estrellas span:hover {
+  transform: scale(1.2);
 }
 
 .seleccion-estrellas span.activo {
@@ -82,7 +151,7 @@
 }
 
 .nuevo-comentario button {
-  background-color: #0d47a1;
+  background-color: #0056a3;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -93,13 +162,45 @@
 }
 
 .nuevo-comentario button:hover {
-  background-color: #09367a;
+  background-color: #0a1526;
+}
+/* Avatar */
+.testimonio-card .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #0056a3;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  overflow: hidden; /* 👈 para que la imagen quede circular */
+}
+
+.testimonio-card .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* RESPONSIVE */
+@media (max-width: 768px) {
+  .testimonios-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
 @media (max-width: 480px) {
   .testimonios-list {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
+  }
+  .nuevo-comentario textarea {
+    max-width: 100%;
+  }
+  .nuevo-comentario {
+    padding: 0 10px;
   }
 }

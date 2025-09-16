@@ -3,8 +3,10 @@ import "./Navbar.css";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+    document.body.classList.toggle("nav-open"); // Bloquea scroll cuando el menú móvil está abierto
+  };
 
   const handleScroll = (e, id) => {
     e.preventDefault();

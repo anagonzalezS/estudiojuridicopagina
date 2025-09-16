@@ -1,70 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; 
 import { Helmet } from 'react-helmet';
 import './Servicio.css';
 import {
-  FaBalanceScale, FaGavel, FaBriefcase, FaHome, FaUsers,
-  FaBookOpen, FaFileAlt, FaUserPlus,
-  FaCreditCard
+  FaBalanceScale, FaGavel, FaBriefcase, FaUsers,
+  FaBookOpen, FaMoneyCheckAlt
 } from 'react-icons/fa';
 
 const servicios = [
-  {
-    id: 1,
-    title: 'Derecho Civil',
-    icon: <FaBalanceScale />,
-    description: [
-      'Usucapiones en CABA y Provincia de Buenos Aires',
-      'Accidentes de Tránsito',
-      'Incumplimientos Contractuales'
-    ],
-  },
-  { id: 2, title: 'Derecho Penal', icon: <FaGavel />, description: ['Representación legal en casos penales y delitos.'] },
-  { id: 4, title: 'Usucapión', icon: <FaHome />, description: ['Gestión de trámites legales relacionados con la usucapión de inmuebles.'] },
-  {
-    id: 5,
-    title: 'Derecho de Familia',
-    icon: <FaUsers />,
-    description: [
-      'Divorcios unilaterales',
-      'Divorcio presentación en conjunto',
-      'Alimentos',
-      'Compensación económica',
-      'Adopción',
-      'Determinación de la capacidad'
-    ],
-  },
-  {
-    id: 10,
-    title: 'Derecho Sucesorio',
-    icon: <FaBookOpen />,
-    description: [
-      'Sucesiones Ab intestato y testamentarias',
-      'Partición de Herencia',
-      'Planificación Hereditaria',
-      'Acciones de colación y reducción',
-      'Redacción Testamentos'
-    ],
-  },
-  { id: 11, title: 'Testamentarias', icon: <FaFileAlt />, description: ['Asesoramiento y gestión en sucesiones con testamento.'] },
-  { id: 12, title: 'Ampliación de Declaratoria Herederos', icon: <FaUserPlus />, description: ['Gestión de trámites para la ampliación de declaratoria de herederos.'] },
-  {
-    id: 13,
-    title: 'Derecho Empresarial',
-    icon: <FaBriefcase />,
-    description: [
-      'Constitución de Sociedades',
-      'Acuerdo entre socios',
-      'Trámites ante IGJ',
-      'Acuerdos laborales',
-      'Contratos'
-    ],
-  },
+  { id: 1, title: 'Derecho Civil', icon: <FaBalanceScale />, description: ['Usucapiones en CABA y Provincia de Buenos Aires','Accidentes de Tránsito','Incumplimientos Contractuales'], },
+  { id: 2, title: 'Derecho Penal', icon: <FaGavel />, description: ['Asistencia en comisarías y fiscalías','Defensa en todo tipo de delitos','Confidencialidad y acompañamiento personalizado'], },
+  { id: 5, title: 'Derecho de Familia', icon: <FaUsers />, description: ['Divorcios unilaterales','Divorcio presentación en conjunto','Alimentos','Compensación económica','Adopción','Determinación de la capacidad'], },
+  { id: 10, title: 'Derecho Sucesorio', icon: <FaBookOpen />, description: ['Sucesiones Ab intestato y testamentarias','Partición de Herencia','Planificación Hereditaria','Acciones de colación y reducción','Redacción de Testamentos'], },
+  { id: 13, title: 'Derecho Empresarial', icon: <FaBriefcase />, description: ['Constitución de Sociedades','Acuerdo entre socios','Trámites ante IGJ','Acuerdos laborales','Contratos','Ampliación de Declaratoria Herederos'], },
 ];
 
 function Servicio() {
   const [activeId, setActiveId] = useState(servicios[0].id);
   const [showModal, setShowModal] = useState(false);
-
   const activeService = servicios.find((s) => s.id === activeId);
 
   return (
@@ -80,6 +32,7 @@ function Servicio() {
       <div className="service-container">
         <h2>SERVICIOS</h2>
 
+        {/* Tabs de servicios */}
         <div className="tabs-container">
           {servicios.map((serv) => (
             <button
@@ -92,6 +45,7 @@ function Servicio() {
           ))}
         </div>
 
+        {/* Info del servicio activo */}
         {activeService && (
           <div className="info-box">
             <h3>
@@ -115,31 +69,27 @@ function Servicio() {
             </p>
 
             <div className="contacto-info">
-              <p>Consultas: <a href="mailto:estudio@saenz-asociados.com.ar">estudio@saenz-asociados.com.ar</a></p>
+              <p>
+                Consultas: <a href="mailto:estudio@saenz-asociados.com.ar">estudio@saenz-asociados.com.ar</a>
+              </p>
             </div>
 
+            {/* Formas de Pago */}
             <div className="pago-info">
               <h4>Formas de Pago</h4>
-              <div className="pago-banco-text">
-                <p><strong>Titular:</strong> Sandra Sáenz Huánuco</p>
-                <p><strong>CUIT:</strong> 27-19054671-9</p>
-                <p><strong>Banco:</strong> Banco Nación</p>
-                <p><strong>CBU:</strong> 0110654730065403759965</p>
-                <p><strong>Alias:</strong> s.saenz</p>
-              </div>
-
               <div className="pago-items">
                 <div className="pago-item">
-                  <img src="/mp.png" alt="Mercado Pago" />
-                  <span>Mercado Pago</span>
+                  <img src="/mp.png" alt="Mercado Pago" className="mp-logo" />
+                  <span>Mercado Pago: estudio.saenz</span>
                 </div>
                 <div className="pago-item">
-                  <FaCreditCard size={40} />
-                  <span>Transferencia / Tarjeta</span>
+                  <FaMoneyCheckAlt className="icono-pago" />
+                  <span>Transferencias: s.saenz</span>
                 </div>
               </div>
             </div>
 
+            {/* Tarifario */}
             <div className="tarifario-box">
               <p className="text-center">Consulte el cuadro tarifario según su jurisdicción:</p>
               <div className="text-center">
@@ -157,6 +107,7 @@ function Servicio() {
         )}
       </div>
 
+      {/* Modal Tarifario */}
       {showModal && (
         <div className="modal-overlay" onClick={() => setShowModal(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>

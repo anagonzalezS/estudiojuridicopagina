@@ -1,5 +1,3 @@
-/* Navbar.css */
-
 /* ================================
    NAVBAR GENERAL
 ================================ */
@@ -11,6 +9,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  font-family: 'Lato', sans-serif;
 }
 
 /* FLEX GENERAL */
@@ -26,6 +25,7 @@
   width: 160px;
   max-width: 100%;
   height: auto;
+  transition: width 0.3s ease;
 }
 @media (max-width: 992px) { .navbar-logo { width: 130px; } }
 @media (max-width: 768px) { .navbar-logo { width: 120px; } }
@@ -48,7 +48,7 @@
   font-size: 16px;
   text-decoration: none;
   transition: all 0.3s;
-  text-transform: uppercase; /* Mayúsculas */
+  text-transform: uppercase;
 }
 
 .nav-link:hover {
@@ -70,6 +70,7 @@
   cursor: pointer;
   padding: 0;
   z-index: 1100;
+  transition: transform 0.3s ease;
 }
 
 .navbar-toggler span {
@@ -78,6 +79,18 @@
   height: 3px;
   background: #333;
   border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animación hamburguesa abierta */
+.navbar-toggler.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.navbar-toggler.open span:nth-child(2) {
+  opacity: 0;
+}
+.navbar-toggler.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* ================================
@@ -88,11 +101,12 @@
 
   .navbar-nav {
     position: absolute;
-    top: 100%;
-    left: 0;                 
-    width: 100%;              
-    background: rgba(51, 51, 51, 0.95); /* gris oscuro con transparencia */
-    border-top: 2px solid #0056b3;      /* azul institucional */
+    top: 95px; /* debajo de la navbar */
+    right: 20px; /* alineado a la derecha con la hamburguesa */
+    width: 180px; /* ancho compacto */
+    background: #ffffff; /* blanco */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
     text-align: center;
     flex-direction: column;
     max-height: 0;
@@ -100,26 +114,31 @@
     transition: max-height 0.4s ease, padding 0.4s ease;
     padding: 0;
     z-index: 1050;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
 
   .navbar-nav.show {
-    max-height: 500px; 
+    max-height: 400px;
     padding: 10px 0;
   }
 
   .nav-link {
     display: block;
-    font-size: 18px;
-    color: #fff;              /* letras blancas */
-    padding: 12px 0;
+    font-size: 16px;
+    color: #333;
+    padding: 10px 0;
     width: 100%;
     text-align: center;
-    transition: background 0.3s ease;
-    text-transform: uppercase; /* Mayúsculas */
+    transition: background 0.3s ease, color 0.3s ease;
   }
 
   .nav-link:hover {
-    background: #0056b3;
-    color: #fff;
+    background: #f0f0f0; /* hover sutil */
+    color: #0056b3;
+  }
+
+  /* Evitar scroll debajo del menú */
+  body.nav-open {
+    overflow: hidden;
   }
 }

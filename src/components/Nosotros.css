@@ -5,58 +5,60 @@ html {
 
 /* --------------------- Sección Nosotros --------------------- */
 #nosotros {
-  background-color: #f5f5f5; /* gris suave de fondo */
-  padding: 60px 15px; /* menos padding horizontal en general */
+  background-color:  #f0f4f8;/* fondo blanco para más elegancia */
+  padding: 80px 20px 40px 20px; /* arriba 80px, derecha 20px, abajo 40px, izquierda 20px */
+
   font-family: 'Lato', sans-serif;
 }
 
 /* Contenedor centrado */
 .nosotros-container {
-  max-width: 1000px; /* ancho máximo */
+  max-width: 1000px;
   margin: 0 auto;
-  text-align: center;
-  padding: 0 20px; /* padding interno para que no quede pegado al borde */
+  text-align: left; /* texto alineado a la izquierda, más formal */
+  padding: 0 20px;
 }
 
 /* Título */
 #nosotros h2 {
-  color: #2c3e50; /* azul oscuro elegante */
+  color: #0d1b2a; /* azul marino elegante */
   font-size: 40px;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
   font-weight: 700;
   letter-spacing: 1px;
   position: relative;
+  text-align: center;
 }
 
 /* Línea decorativa bajo el título */
 #nosotros h2::after {
   content: "";
   display: block;
-  width: 60px;
+  width: 70px;
   height: 3px;
-  background-color: #0d47a1;
+  background-color: #003366; /* azul marino */
   margin: 12px auto 0;
   border-radius: 2px;
 }
 
 /* Texto principal */
 .nosotros-text {
-  color: #34495e;
-  background-color: #ffffff;
-  padding: 30px 25px;
-  border-radius: 15px;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
-  line-height: 1.8;
+  color: #2c3e50;
+  line-height: 1.9;
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.3px;
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Hover sutil */
-.nosotros-text:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+/* Frase destacada dentro del texto */
+.nosotros-text .nosotros-frase {
+  display: block;
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #003366; /* azul marino */
+  text-align: center;
+  font-style: italic; /* como lema/slogan */
 }
 
 /* --------------------- Responsividad --------------------- */
@@ -64,10 +66,8 @@ html {
   #nosotros h2 {
     font-size: 28px;
   }
-
   .nosotros-text {
     font-size: 16px;
-    padding: 18px 15px;
   }
 }
 
@@ -75,19 +75,7 @@ html {
   #nosotros h2 {
     font-size: 34px;
   }
-
   .nosotros-text {
     font-size: 17px;
-    padding: 25px 20px;
-  }
-}
-
-@media (min-width: 1200px) {
-  #nosotros {
-    padding: 80px 40px; /* más padding horizontal en pantallas grandes */
-  }
-
-  .nosotros-text {
-    padding: 35px 40px;
   }
 }
