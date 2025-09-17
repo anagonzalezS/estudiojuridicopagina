@@ -22,6 +22,7 @@
   font-weight: 700;
   position: relative;
 }
+
 .service-container h2::after {
   content: "";
   display: block;
@@ -45,21 +46,38 @@
 
 .tab-button {
   background: #fff;
-  border: 2px solid #0056a3;
-  border-radius: 25px;
-  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
   font-size: 1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #0056a3;
+  color: #222;
   font-weight: 600;
   transition: all 0.3s ease;
+  min-width: 160px;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-.tab-button:hover, .tab-button.active {
+.tab-button .icono {
+  color: #001f3f;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.tab-button:hover,
+.tab-button.active {
   background: #0056a3;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.tab-button:hover .icono,
+.tab-button.active .icono {
   color: #fff;
 }
 
@@ -71,77 +89,54 @@
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  text-align: left;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .info-box h3 {
   font-size: 1.5rem;
-  color: #0056a3;
+  color: #001f3f;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .subtitulo {
   font-size: 1rem;
   font-weight: 500;
-  color: #444;
-  margin-bottom: 15px;
-  text-align: center;
+  color: #555;
+  margin-bottom: 20px;
 }
 
 .descripcion {
-  margin: 20px 0;
+  margin: 20px auto;
   padding-left: 20px;
-  list-style: disc;
+  list-style: disc inside;
   color: #333;
+  text-align: left;
+  max-width: 600px;
 }
 
 .descripcion li {
   margin-bottom: 8px;
 }
 
-.turno-text a {
-  color: #0056a3;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.turno-text a:hover {
-  text-decoration: underline;
-}
-
-.contacto-info {
-  margin-top: 15px;
-  font-size: 0.95rem;
-  text-align: left;
-}
-
-.contacto-info a {
-  color: #0056a3;
-  font-weight: 500;
-}
-
 /* ================================
-   FORMAS DE PAGO - HORIZONTAL
+   PAGO
+================================ */
+/* ================================
+   PAGO - Contenedor y items
+================================ */
+/* ================================
+   PAGO - Minimalista
 ================================ */
 .pago-info {
   margin-top: 25px;
-  padding: 20px;
-  background: #f1f7ff;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.pago-info h4 {
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-  color: #0056a3;
+  padding: 0; /* quitar padding extra */
+  background: transparent; /* sin fondo */
+  border-radius: 0; /* nada de borde */
   text-align: center;
 }
 
@@ -150,30 +145,63 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 60px;
+  gap: 25px; /* separación entre items */
+  margin-top: 10px;
 }
 
 .pago-item {
   display: flex;
-  flex-direction: row; /* ícono y texto siempre en horizontal */
+  flex-direction: column;
   align-items: center;
-  gap: 15px; /* espacio entre ícono y texto */
-  font-size: 1rem;
-  color: #333;
-  font-weight: 500;
-  text-align: left;
+  justify-content: center;
+  gap: 5px;
+  font-size: 0.95rem;
+  color: #444; /* negrita suave */
+  font-weight: 600;
+  width: auto; /* ancho flexible */
+  height: auto;
+  background: transparent;
+  box-shadow: none;
+  cursor: default;
+  text-align: center;
 }
 
-.pago-item img.mp-logo {
-  width: 80px;
-  height: 80px;
+.pago-item img.mp-logo,
+.pago-item .icono-pago {
+  width: 50px;
+  height: 50px;
   object-fit: contain;
 }
 
-.pago-item .icono-pago {
-  font-size: 50px;
-  color: #0056a3;
+/* ================================
+   Responsive Ajustes
+================================ */
+@media (max-width: 768px) {
+  .pago-items {
+    gap: 20px;
+  }
+
+  .pago-item img.mp-logo,
+  .pago-item .icono-pago {
+    width: 45px;
+    height: 45px;
+  }
 }
+
+@media (max-width: 480px) {
+  .pago-items {
+    gap: 15px;
+  }
+
+  .pago-item img.mp-logo,
+  .pago-item .icono-pago {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+
 
 /* ================================
    TARIFARIO
@@ -183,17 +211,7 @@
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 12px;
-  text-align: left;
-}
-
-.tarifario-box a {
-  color: #0056a3;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.tarifario-box a:hover {
-  text-decoration: underline;
+  text-align: center;
 }
 
 .btn-ver-tarifas {
@@ -202,14 +220,14 @@
   color: #fff;
   border: none;
   padding: 10px 18px;
-  border-radius: 25px;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: 600;
   transition: background 0.3s ease;
 }
 
 .btn-ver-tarifas:hover {
-  background: #004080;
+  background: #001730;
 }
 
 /* ================================
@@ -237,17 +255,6 @@
   position: relative;
 }
 
-.modal-content h3 {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-  color: #0056a3;
-}
-
-.modal-content ol {
-  margin-left: 20px;
-  margin-bottom: 20px;
-}
-
 .modal-close {
   position: absolute;
   top: 12px;
@@ -263,16 +270,63 @@
    RESPONSIVE
 ================================ */
 @media (max-width: 768px) {
-  .pago-item img.mp-logo { width: 60px; height: 60px; }
-  .pago-item .icono-pago { font-size: 40px; }
-  .tabs-container { gap: 10px; }
-  .tab-button { flex: 1 1 calc(50% - 10px); justify-content: center; text-align: center; font-size: 0.95rem; padding: 8px 12px; }
-  .info-box { padding: 20px; }
+  .tabs-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .tab-button {
+    flex: 1 1 calc(50% - 10px);
+    font-size: 0.9rem;
+    padding: 10px;
+    min-width: 140px;
+  }
+
+  .info-box {
+    padding: 20px;
+  }
+
+  .descripcion {
+    text-align: left;
+    list-style: disc inside;
+    max-width: 100%;
+    padding-left: 20px;
+  }
+
+  .pago-item {
+    width: 100px;
+    height: 100px;
+  }
+
+  .tarifario-box {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .pago-item img.mp-logo { width: 50px; height: 50px; }
-  .pago-item .icono-pago { font-size: 35px; }
-  .tab-button { flex: 1 1 calc(50% - 8px); padding: 6px 8px; font-size: 0.9rem; }
-  .info-box { padding: 15px; }
+  .tab-button {
+    flex: 1 1 100%;
+    font-size: 0.85rem;
+  }
+
+  .descripcion li {
+    margin-bottom: 6px;
+  }
+
+  .pago-items {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .pago-item {
+    width: 80px;
+    height: 80px;
+  }
+
+  .tarifario-box {
+    padding: 15px;
+  }
 }

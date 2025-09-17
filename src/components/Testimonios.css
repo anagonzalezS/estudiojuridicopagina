@@ -1,3 +1,6 @@
+/* ================================
+   SECCIÓN TESTIMONIOS
+================================ */
 .testimonios-section {
   background-color: #f5f7fa;
   padding: 60px 16px;
@@ -7,48 +10,75 @@
 }
 
 .testimonios-section h2 {
-  font-size: 36px;
+  font-size: 2.2rem;
   margin-bottom: 40px;
   font-weight: 700;
   letter-spacing: 1px;
   color: #222;
   position: relative;
-  display: inline-block; /* Para centrar la línea debajo */
+  display: inline-block;
   padding-bottom: 10px;
 }
 
-/* Línea azul marino debajo del título */
 .testimonios-section h2::after {
   content: "";
   display: block;
-  width: 70px;          /* ancho de la línea */
-  height: 4px;          /* grosor de la línea */
-  background-color: #001f3f; /* azul marino */
-  margin: 8px auto 0;   /* centrado y separación del texto */
-  border-radius: 2px;   /* esquinas redondeadas */
+  width: 70px;
+  height: 4px;
+  background-color: #001f3f;
+  margin: 8px auto 0;
+  border-radius: 2px;
 }
 
+/* ================================
+   CARRUSEL HORIZONTAL
+================================ */
+.testimonios-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.testimonios-wrapper.unico .testimonios-list {
+  justify-content: center;
+}
+
+.testimonios-wrapper.unico .flecha {
+  display: none;
+}
 
 .testimonios-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  margin-bottom: 40px;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
+.testimonios-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* ================================
+   TARJETAS DE COMENTARIOS
+================================ */
 .testimonio-card {
+  flex: 0 0 250px;
   background-color: #fff;
   border-radius: 12px;
   padding: 20px 15px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  text-align: center;
-  max-width: 300px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s;
-  min-height: 200px;
+  height: auto;
+  scroll-snap-align: start;
+  min-height: 260px;
+  max-height: 100%;
+  box-sizing: border-box;
 }
 
 .testimonio-card:hover {
@@ -66,13 +96,22 @@
   justify-content: center;
   font-weight: 700;
   font-size: 1.2rem;
+  overflow: hidden;
   margin-bottom: 12px;
+}
+
+.testimonio-card .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .testimonio-card .contenido {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .testimonio-card .estrellas {
@@ -92,8 +131,11 @@
 .testimonio-card .texto {
   font-size: 0.95rem;
   color: #333;
-  margin-bottom: 10px;
   line-height: 1.4;
+  max-height: 120px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 .testimonio-card .autor {
@@ -102,11 +144,37 @@
   font-size: 0.9rem;
 }
 
+/* ================================
+   FLECHAS CARRUSEL
+================================ */
+.flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.3);
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.flecha.izquierda { left: 5px; }
+.flecha.derecha { right: 5px; }
+
+/* ================================
+   NUEVO COMENTARIO
+================================ */
 .nuevo-comentario {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  margin-top: 30px;
+  width: 100%;
 }
 
 .nuevo-comentario textarea {
@@ -132,13 +200,14 @@
   display: flex;
   justify-content: center;
   margin-bottom: 12px;
+  flex-wrap: wrap;
 }
 
 .seleccion-estrellas span {
   font-size: 1.4rem;
   cursor: pointer;
   color: #ddd;
-  margin: 0 3px;
+  margin: 3px;
   transition: transform 0.2s;
 }
 
@@ -151,9 +220,15 @@
 }
 
 .nuevo-comentario button {
-  background-color: #0056a3;
-  color: #fff;
-  border: none;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #fff;
+  color: #444;
+  border: 1px solid #ccc;
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
@@ -162,45 +237,29 @@
 }
 
 .nuevo-comentario button:hover {
-  background-color: #0a1526;
-}
-/* Avatar */
-.testimonio-card .avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #0056a3;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 1.2rem;
-  margin-bottom: 12px;
-  overflow: hidden; /* 👈 para que la imagen quede circular */
+  background-color: #f0f0f0;
+  color: #0056a3;
 }
 
-.testimonio-card .avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 1024px) {
+  .testimonio-card { flex: 0 0 220px; min-height: 280px; }
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
-  .testimonios-list {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
+  .testimonio-card { flex: 0 0 180px; min-height: 260px; }
+  .flecha { font-size: 1.6rem; width: 30px; height: 30px; }
+  .nuevo-comentario textarea { max-width: 95%; }
+  .nuevo-comentario { padding: 0 8px; }
+  .testimonios-list { gap: 15px; }
 }
 
 @media (max-width: 480px) {
-  .testimonios-list {
-    grid-template-columns: 1fr;
-  }
-  .nuevo-comentario textarea {
-    max-width: 100%;
-  }
-  .nuevo-comentario {
-    padding: 0 10px;
-  }
+  .testimonio-card { flex: 0 0 160px; min-height: 240px; padding: 15px 10px; }
+  .testimonios-list { gap: 12px; }
+  .nuevo-comentario textarea { font-size: 0.9rem; }
+  .seleccion-estrellas span { font-size: 1.2rem; }
+  .testimonios-section h2 { font-size: 1.8rem; }
 }

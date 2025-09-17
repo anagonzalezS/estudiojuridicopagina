@@ -7,11 +7,39 @@ import {
 } from 'react-icons/fa';
 
 const servicios = [
-  { id: 1, title: 'Derecho Civil', icon: <FaBalanceScale />, description: ['Usucapiones en CABA y Provincia de Buenos Aires','Accidentes de Tránsito','Incumplimientos Contractuales'], },
-  { id: 2, title: 'Derecho Penal', icon: <FaGavel />, description: ['Asistencia en comisarías y fiscalías','Defensa en todo tipo de delitos','Confidencialidad y acompañamiento personalizado'], },
-  { id: 5, title: 'Derecho de Familia', icon: <FaUsers />, description: ['Divorcios unilaterales','Divorcio presentación en conjunto','Alimentos','Compensación económica','Adopción','Determinación de la capacidad'], },
-  { id: 10, title: 'Derecho Sucesorio', icon: <FaBookOpen />, description: ['Sucesiones Ab intestato y testamentarias','Partición de Herencia','Planificación Hereditaria','Acciones de colación y reducción','Redacción de Testamentos'], },
-  { id: 13, title: 'Derecho Empresarial', icon: <FaBriefcase />, description: ['Constitución de Sociedades','Acuerdo entre socios','Trámites ante IGJ','Acuerdos laborales','Contratos','Ampliación de Declaratoria Herederos'], },
+  { id: 1, title: 'Derecho Civil', icon: <FaBalanceScale />, description: [
+    'Usucapiones en CABA y Provincia de Buenos Aires',
+    'Accidentes de Tránsito',
+    'Incumplimientos Contractuales'
+  ] },
+  { id: 2, title: 'Derecho Penal', icon: <FaGavel />, description: [
+    'Asistencia en comisarías y fiscalías',
+    'Defensa en todo tipo de delitos',
+    'Confidencialidad y acompañamiento personalizado'
+  ] },
+  { id: 3, title: 'Derecho de Familia', icon: <FaUsers />, description: [
+    'Divorcios unilaterales',
+    'Divorcio presentación en conjunto',
+    'Alimentos',
+    'Compensación económica',
+    'Adopción',
+    'Determinación de la capacidad'
+  ] },
+  { id: 4, title: 'Derecho Sucesorio', icon: <FaBookOpen />, description: [
+    'Sucesiones Ab intestato y testamentarias',
+    'Partición de Herencia',
+    'Planificación Hereditaria',
+    'Acciones de colación y reducción',
+    'Redacción de Testamentos'
+  ] },
+  { id: 5, title: 'Derecho Empresarial', icon: <FaBriefcase />, description: [
+    'Constitución de Sociedades',
+    'Acuerdo entre socios',
+    'Trámites ante IGJ',
+    'Acuerdos laborales',
+    'Contratos',
+    'Ampliación de Declaratoria Herederos'
+  ] },
 ];
 
 function Servicio() {
@@ -32,7 +60,7 @@ function Servicio() {
       <div className="service-container">
         <h2>SERVICIOS</h2>
 
-        {/* Tabs de servicios */}
+        {/* Tabs */}
         <div className="tabs-container">
           {servicios.map((serv) => (
             <button
@@ -40,16 +68,18 @@ function Servicio() {
               className={`tab-button ${activeId === serv.id ? 'active' : ''}`}
               onClick={() => setActiveId(serv.id)}
             >
-              <span className="icono">{serv.icon}</span> {serv.title}
+              <span className="icono">{serv.icon}</span>
+              {serv.title}
             </button>
           ))}
         </div>
 
-        {/* Info del servicio activo */}
+        {/* Info box */}
         {activeService && (
           <div className="info-box">
             <h3>
-              <span className="icono">{activeService.icon}</span> {activeService.title}
+              <span className="icono">{activeService.icon}</span>
+              {activeService.title}
             </h3>
             <h4 className="subtitulo">Estudio Jurídico Sáenz & Asociados</h4>
 
@@ -91,17 +121,18 @@ function Servicio() {
 
             {/* Tarifario */}
             <div className="tarifario-box">
-              <p className="text-center">Consulte el cuadro tarifario según su jurisdicción:</p>
-              <div className="text-center">
+              <p>Consulte el cuadro tarifario según su jurisdicción:</p>
+              <div>
                 <a href="https://www.cajaabogados.org.ar/noticia.php?n=24" target="_blank" rel="noopener noreferrer">
                   Provincia de Buenos Aires
-                </a> | <a href="https://www.cpacf.org.ar/noticia/5201/valores-uma-pjn-ley-27423" target="_blank" rel="noopener noreferrer">
+                </a> |{' '}
+                <a href="https://www.cpacf.org.ar/noticia/5201/valores-uma-pjn-ley-27423" target="_blank" rel="noopener noreferrer">
                   CABA
                 </a>
               </div>
-              <div className="text-center mt-3">
-                <button className="btn-ver-tarifas" onClick={() => setShowModal(true)}>Ver Tarifas</button>
-              </div>
+              <button className="btn-ver-tarifas" onClick={() => setShowModal(true)}>
+                Ver Tarifas
+              </button>
             </div>
           </div>
         )}
