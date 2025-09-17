@@ -30,7 +30,9 @@ const servicios = [
     'Partición de Herencia',
     'Planificación Hereditaria',
     'Acciones de colación y reducción',
-    'Redacción de Testamentos'
+    'Redacción de Testamentos',
+    'Ampliación de Declaratoria Herederos'
+
   ] },
   { id: 5, title: 'Derecho Empresarial', icon: <FaBriefcase />, description: [
     'Constitución de Sociedades',
@@ -38,7 +40,6 @@ const servicios = [
     'Trámites ante IGJ',
     'Acuerdos laborales',
     'Contratos',
-    'Ampliación de Declaratoria Herederos'
   ] },
 ];
 
