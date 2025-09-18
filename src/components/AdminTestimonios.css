@@ -1,0 +1,195 @@
+/* ================================
+   CONTENEDOR ADMIN LOGIN
+================================ */
+.admin-login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+  gap: 20px;
+  padding: 0 16px;
+}
+
+/* ================================
+   BOTÓN GOOGLE AJUSTADO
+================================ */
+.btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 20px; /* altura más equilibrada */
+  border-radius: 25px; /* redondeo más suave */
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s;
+  min-width: 220px;
+  max-width: 300px;
+}
+
+.btn-google svg {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-google:hover {
+  background-color: #f0f0f0;
+  color: #0056a3;
+}
+
+/* ================================
+   CONTENEDOR ADMIN
+================================ */
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* ================================
+   TARJETAS COMENTARIOS
+================================ */
+.card-comentario {
+  width: 100%;
+  max-width: 500px;
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+/* Respuestas admin */
+.respuesta-admin {
+  background-color: #eef3fb;
+  padding: 10px;
+  border-left: 4px solid #0056a3;
+  border-radius: 6px;
+}
+
+/* Input respuesta */
+.card-comentario input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Botón eliminar */
+.btn-eliminar {
+  background-color: #ea4335;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+  align-self: flex-end;
+}
+
+.btn-eliminar:hover {
+  background-color: #c12d2d;
+}
+
+/* ================================
+   MODAL ELIMINAR
+================================ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.btn-confirmar,
+.btn-cancelar {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-confirmar {
+  background-color: #ea4335;
+  color: #fff;
+}
+
+.btn-confirmar:hover {
+  background-color: #c12d2d;
+}
+
+.btn-cancelar {
+  background-color: #ccc;
+  color: #333;
+}
+
+.btn-cancelar:hover {
+  background-color: #aaa;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .card-comentario {
+    max-width: 95%;
+  }
+
+  .btn-google {
+    width: 90%;
+    max-width: none;
+    padding: 10px 15px;
+    font-size: 15px;
+  }
+
+  .modal {
+    width: 90%;
+    padding: 15px 20px;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-confirmar,
+  .btn-cancelar {
+    width: 100%;
+  }
+}

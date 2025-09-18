@@ -1,11 +1,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Header from './components/Header';
 import Navbar from "./components/principal/Navbar";
 import Home from './components/Home';
 import Nosotros from './components/Nosotros';
 import Servicio from './components/Servicio';
 import Testimonios from './components/Testimonios';
+import AdminTestimonios from './components/AdminTestimonios';
 
 import Footer from './components/Footer';
 import WhatsappIcon from './components/WhatsappIcon';
@@ -13,7 +16,7 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+    <Router>
       <Helmet>
         <title>Estudio Jurídico Sáenz & Asociados - Servicios Legales</title>
         <meta
@@ -22,35 +25,43 @@ function App() {
         />
       </Helmet>
 
-      {/* Header + Navbar */}
-      <div className="header-navbar-container">
-        <Header />
-        <Navbar />
-      </div>
+      <Routes>
+        {/* Ruta pública */}
+        <Route
+          path="/"
+          element={
+            <div>
+              <div className="header-navbar-container">
+                <Header />
+                <Navbar />
+              </div>
 
-      {/* Secciones principales */}
-      <section id="inicio">
-        <Home />
-      </section>
+              <section id="inicio">
+                <Home />
+              </section>
 
-      <section id="nosotros">
-        <Nosotros />
-      </section>
+              <section id="nosotros">
+                <Nosotros />
+              </section>
 
-      <section id="servicios">
-        <Servicio />
-      </section>
+              <section id="servicios">
+                <Servicio />
+              </section>
 
-        <section id="testimonios">
-      <Testimonios />
-    </section>
+              <section id="testimonios">
+                <Testimonios />
+              </section>
 
-      {/* Footer */}
-      <Footer />
+              <Footer />
+              <WhatsappIcon />
+            </div>
+          }
+        />
 
-      {/* Icono WhatsApp flotante */}
-      <WhatsappIcon />
-    </div>
+        {/* Ruta privada para la abogada */}
+        <Route path="/admin-testimonios" element={<AdminTestimonios />} />
+      </Routes>
+    </Router>
   );
 }
 

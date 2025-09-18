@@ -1,71 +1,10 @@
 /* ================================
-   SECCIÓN TESTIMONIOS
-================================ */
-.testimonios-section {
-  background-color: #f5f7fa;
-  padding: 60px 16px;
-  text-align: center;
-  font-family: 'Lato', sans-serif;
-  color: #0d1b2a;
-}
-
-.testimonios-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 40px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #222;
-  position: relative;
-  display: inline-block;
-  padding-bottom: 10px;
-}
-
-.testimonios-section h2::after {
-  content: "";
-  display: block;
-  width: 70px;
-  height: 4px;
-  background-color: #001f3f;
-  margin: 8px auto 0;
-  border-radius: 2px;
-}
-
-/* ================================
-   CARRUSEL HORIZONTAL
-================================ */
-.testimonios-wrapper {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.testimonios-wrapper.unico .testimonios-list {
-  justify-content: center;
-}
-
-.testimonios-wrapper.unico .flecha {
-  display: none;
-}
-
-.testimonios-list {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding-bottom: 10px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-
-.testimonios-list::-webkit-scrollbar {
-  display: none;
-}
-
-/* ================================
    TARJETAS DE COMENTARIOS
 ================================ */
 .testimonio-card {
-  flex: 0 0 250px;
+  flex: 0 0 calc(33.33% - 20px); 
+  max-width: calc(33.33% - 20px);
+  min-width: 250px;
   background-color: #fff;
   border-radius: 12px;
   padding: 20px 15px;
@@ -74,11 +13,8 @@
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s;
-  height: auto;
   scroll-snap-align: start;
-  min-height: 260px;
-  max-height: 100%;
-  box-sizing: border-box;
+  position: relative;
 }
 
 .testimonio-card:hover {
@@ -132,7 +68,7 @@
   font-size: 0.95rem;
   color: #333;
   line-height: 1.4;
-  max-height: 120px;
+  max-height: 140px;
   overflow-y: auto;
   margin-bottom: 10px;
   width: 100%;
@@ -142,6 +78,68 @@
   font-weight: 600;
   color: #0056a3;
   font-size: 0.9rem;
+}
+
+/* ================================
+   RESPUESTAS DE LA ABOGADA
+================================ */
+.respuesta {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-left: 4px solid #0056a3;
+  background-color: #eef3fb;
+  border-radius: 8px;
+  width: 100%;
+  text-align: left;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.respuesta:hover {
+  transform: translateY(-2px);
+  background-color: #e1e9f5;
+}
+
+.respuesta .texto {
+  font-size: 0.9rem;
+  color: #222;
+}
+
+.respuesta .autor {
+  font-size: 0.8rem;
+  color: #0056a3;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* ================================
+   CARRUSEL HORIZONTAL
+================================ */
+.testimonios-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.testimonios-wrapper.unico .testimonios-list {
+  justify-content: center;
+}
+
+.testimonios-wrapper.unico .flecha {
+  display: none;
+}
+
+.testimonios-list {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+  justify-content: flex-start;
+}
+
+.testimonios-list::-webkit-scrollbar {
+  display: none;
 }
 
 /* ================================
@@ -245,11 +243,11 @@
    RESPONSIVE
 ================================ */
 @media (max-width: 1024px) {
-  .testimonio-card { flex: 0 0 220px; min-height: 280px; }
+  .testimonio-card { flex: 0 0 calc(50% - 15px); min-height: 280px; }
 }
 
 @media (max-width: 768px) {
-  .testimonio-card { flex: 0 0 180px; min-height: 260px; }
+  .testimonio-card { flex: 0 0 90%; min-height: 260px; }
   .flecha { font-size: 1.6rem; width: 30px; height: 30px; }
   .nuevo-comentario textarea { max-width: 95%; }
   .nuevo-comentario { padding: 0 8px; }
