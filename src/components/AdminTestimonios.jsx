@@ -27,7 +27,7 @@ function AdminTestimonios() {
     setEsperandoLogin(true);
     signInWithPopup(auth, provider)
       .then((result) => {
-        if (result.user.email !== "gonzalezana202312@gmail.com") {
+        if (result.user.email !== "estudio@saenz-asociados.com.ar") {
           alert("No tienes permisos de administrador.");
           return;
         }
