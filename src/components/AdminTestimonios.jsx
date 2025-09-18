@@ -9,6 +9,7 @@ function AdminTestimonios() {
   const [user, setUser] = useState(null);
   const [esperandoLogin, setEsperandoLogin] = useState(false);
   const [modalEliminar, setModalEliminar] = useState({ abierto: false, key: null });
+  const [respuestasInputs, setRespuestasInputs] = useState({}); // estado para inputs de respuesta
 
   // Leer comentarios de Firebase
   useEffect(() => {
@@ -38,7 +39,10 @@ function AdminTestimonios() {
   };
 
   // Responder comentario
-  const responderComentario = (index, respuesta) => {
+  const responderComentario = (index) => {
+    const respuesta = respuestasInputs[index]?.trim();
+    if (!respuesta) return;
+
     const comentario = comentarios[index];
     const nuevasRespuestas = comentario.respuestas ? [...comentario.respuestas] : [];
     nuevasRespuestas.push({
@@ -54,6 +58,9 @@ function AdminTestimonios() {
     const updated = [...comentarios];
     updated[index].respuestas = nuevasRespuestas;
     setComentarios(updated);
+
+    // Limpiar input
+    setRespuestasInputs({ ...respuestasInputs, [index]: "" });
   };
 
   // Abrir modal de eliminación
@@ -111,14 +118,14 @@ function AdminTestimonios() {
           <input
             type="text"
             placeholder="Escribe tu respuesta..."
+            value={respuestasInputs[i] || ""}
+            onChange={(e) => setRespuestasInputs({ ...respuestasInputs, [i]: e.target.value })}
             onKeyDown={(e) => {
-              if (e.key === "Enter" && e.target.value.trim()) {
-                responderComentario(i, e.target.value);
-                e.target.value = "";
-              }
+              if (e.key === "Enter") responderComentario(i);
             }}
           />
 
+          <button onClick={() => responderComentario(i)}>Responder</button>
           <button className="btn-eliminar" onClick={() => abrirModalEliminar(c.key)}>Eliminar</button>
         </div>
       ))}

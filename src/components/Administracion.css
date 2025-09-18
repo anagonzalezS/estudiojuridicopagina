@@ -1,81 +1,200 @@
-/* Sección de Administración */
-.administracion-section {
-  padding: 60px 0;
-  color: #fff; /* Color del texto en blanco */
-}
-
-/* Ítems de Administración */
-.administracion-item {
-  transition: transform 0.3s;
-}
-
-/* Tarjetas de Administración */
-.administracion-card {
-  background: #212529; /* Fondo oscuro */
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.administracion-card .icon {
-  color: #fff; /* Color del ícono en blanco */
-}
-
-/* Texto en Tarjetas */
-.administracion-text, .administracion-card-text {
-  font-size: 1.2em;
-  margin-top: 10px;
-  color: #fff; /* Color del texto en blanco */
-}
-
-/* Título de la sección */
-.administracion-section h2 {
-  color: #fff; /* Color del título en blanco */
-  font-weight: normal; /* Eliminar la negrita */
-  text-align: center;
-  font-size: 36px; /* Tamaño ajustado para mejor jerarquía visual */
-  padding-bottom: 30px;
-  text-transform: uppercase;
-  margin-top: 50px;
-}
-
-/* Lista de Administración */
-.administracion-list {
-  margin-top: 20px;
-  padding-left: 0; /* Elimina el padding izquierdo de la lista */
-}
-
-.administracion-list-item {
-  margin-bottom: 10px;
-  color: #fff; /* Color del texto en blanco */
-  font-size: 1em;
-}
-
-/* Ajustes específicos para móviles */
-@media (max-width: 768px) {
-  .administracion-section h3 {
-    font-size: 24px; /* Tamaño de fuente ajustado para móviles */
-    margin-bottom: 20px; /* Espaciado inferior ajustado */
-  }
-
-  .administracion-section .col-md-6 {
-    width: 100%; /* Ancho completo en dispositivos móviles */
-    text-align: left; /* Alinear texto a la izquierda */
-  }
-}
-
-/* Flexbox ajustes */
-.administracion-section .row {
+/* ================================
+   CONTENEDOR ADMIN LOGIN
+================================ */
+.admin-login-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Alinear elementos al centro */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+  gap: 20px;
+  padding: 0 16px;
 }
 
-.administracion-section .col-md-12 {
-  text-align: center; /* Alinear texto al centro */
+/* ================================
+   BOTÓN GOOGLE
+================================ */
+.btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s;
+  min-width: 220px;
+  max-width: 300px;
 }
 
-.administracion-section h3 {
-  margin-bottom: 20px; /* Espaciado inferior ajustado */
+.btn-google svg {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-google:hover {
+  background-color: #f0f0f0;
+  color: #0056a3;
+}
+
+/* ================================
+   CONTENEDOR ADMIN
+================================ */
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  font-family: 'Lato', sans-serif;
+}
+
+/* ================================
+   TARJETAS COMENTARIOS
+================================ */
+.card-comentario {
+  width: 100%;
+  max-width: 500px;
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.respuesta-admin {
+  background-color: #eef3fb;
+  padding: 10px;
+  border-left: 4px solid #0056a3;
+  border-radius: 6px;
+}
+
+.card-comentario input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-comentario button {
+  margin-top: 8px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.card-comentario button:hover {
+  opacity: 0.9;
+}
+
+.btn-eliminar {
+  background-color: #ea4335;
+  color: #fff;
+}
+
+.btn-eliminar:hover {
+  background-color: #c12d2d;
+}
+
+/* ================================
+   MODAL ELIMINAR
+================================ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.btn-confirmar,
+.btn-cancelar {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-confirmar {
+  background-color: #ea4335;
+  color: #fff;
+}
+
+.btn-confirmar:hover {
+  background-color: #c12d2d;
+}
+
+.btn-cancelar {
+  background-color: #ccc;
+  color: #333;
+}
+
+.btn-cancelar:hover {
+  background-color: #aaa;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .card-comentario {
+    max-width: 95%;
+  }
+
+  .btn-google {
+    width: 90%;
+    max-width: none;
+    padding: 10px 15px;
+    font-size: 15px;
+  }
+
+  .modal {
+    width: 90%;
+    padding: 15px 20px;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-confirmar,
+  .btn-cancelar {
+    width: 100%;
+  }
 }
