@@ -1,20 +1,23 @@
-/* ================================ General ================================ */
+/* ================================ 
+   General 
+================================ */
 .testimonios-section {
-  background-color: #f5f7fa;
-  padding: 60px 16px;
+  background-color: #223352;
+  padding: 40px 16px;
   text-align: center;
   font-family: 'Lato', sans-serif;
-  color: #0d1b2a;
+  color: #FFFFFF;
 }
 
-/* ================================ Título ================================ */
+/* ================================ 
+   Título 
+================================ */
 .testimonios-section .title {
-  color: #0d1b2a;
-  font-size: 38px;
+  color: #FFFFFF;
+  font-size: 2rem;
   margin-bottom: 30px;
   font-weight: 700;
   letter-spacing: 1px;
-  text-align: center;
   position: relative;
 }
 
@@ -23,37 +26,33 @@
   display: block;
   width: 70px;
   height: 3px;
-  background-color: #003366;
+  background-color: #4da6ff;
   margin: 12px auto 0;
   border-radius: 2px;
 }
 
-/* ================================ Tarjetas de comentarios ================================ */
+/* ================================ 
+   Tarjetas 
+================================ */
 .testimonio-card {
-  flex: 0 0 calc(33.33% - 20px); 
+  flex: 0 0 calc(33.33% - 20px);
   max-width: calc(33.33% - 20px);
   min-width: 250px;
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 12px;
   padding: 20px 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.3s;
-  scroll-snap-align: start;
-}
-
-.testimonio-card:hover {
-  transform: translateY(-5px);
 }
 
 .testimonio-card .avatar {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #0056a3;
-  color: #fff;
+  background-color: #4da6ff;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,13 +77,12 @@
 }
 
 .testimonio-card .estrellas {
-  color: #ffd700;
   font-size: 1.3rem;
   margin-bottom: 10px;
 }
 
 .testimonio-card .estrellas span {
-  color: #ddd;
+  color: #d1d5db;
 }
 
 .testimonio-card .estrellas span.activo {
@@ -93,8 +91,8 @@
 
 .testimonio-card .texto {
   font-size: 0.95rem;
-  color: #333;
-  line-height: 1.4;
+  color: #222222;
+  line-height: 1.5;
   max-height: 140px;
   overflow-y: auto;
   margin-bottom: 10px;
@@ -103,40 +101,64 @@
 
 .testimonio-card .autor {
   font-weight: 600;
-  color: #0056a3;
+  color: #4da6ff;
   font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
-/* ================================ Respuestas ================================ */
+.testimonio-card .verificado {
+  font-size: 0.75rem;
+  color: #4da6ff;
+  font-weight: 600;
+}
+
+/* Fecha de comentario */
+.testimonio-card .fecha {
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* ================================ 
+   Respuestas 
+================================ */
 .respuesta {
   margin-top: 10px;
   padding: 10px 14px;
-  border-left: 4px solid #0056a3;
-  background-color: #eef3fb;
+  border-left: 4px solid #4da6ff;
+  background-color: #eef6ff;
   border-radius: 8px;
   width: 100%;
   text-align: left;
-  transition: background 0.3s, transform 0.2s;
-}
-
-.respuesta:hover {
-  transform: translateY(-2px);
-  background-color: #e1e9f5;
 }
 
 .respuesta .texto {
   font-size: 0.9rem;
-  color: #222;
+  color: #222222;
 }
 
 .respuesta .autor {
   font-size: 0.8rem;
-  color: #0056a3;
+  color: #1a2a40;
   font-weight: 600;
   margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-/* ================================ Carrusel ================================ */
+.respuesta .fecha {
+  font-size: 0.7rem;
+  color: #555;
+  margin-top: 2px;
+}
+
+/* ================================ 
+   Carrusel 
+================================ */
 .testimonios-wrapper {
   position: relative;
   width: 100%;
@@ -169,10 +191,10 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.25);
   border: none;
   font-size: 2rem;
-  color: #fff;
+  color: #ffffff;
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -183,7 +205,9 @@
 .flecha.izquierda { left: 5px; }
 .flecha.derecha { right: 5px; }
 
-/* ================================ Nuevo comentario ================================ */
+/* ================================ 
+   Nuevo comentario 
+================================ */
 .nuevo-comentario {
   display: flex;
   flex-direction: column;
@@ -196,23 +220,23 @@
 .nuevo-comentario textarea {
   width: 100%;
   max-width: 400px;
-  padding: 10px;
+  padding: 12px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #d1d5db;
   font-family: 'Lato', sans-serif;
   font-size: 0.95rem;
-  box-sizing: border-box;
   min-height: 80px;
   resize: vertical;
+  color: #1a2a40;
+  background-color: #ffffff;
 }
 
 .nuevo-comentario .error {
-  color: red;
+  color: #e74c3c;
   font-weight: 600;
   margin-bottom: 8px;
 }
 
-/* Estrellas para nueva valoración */
 .seleccion-estrellas {
   display: flex;
   justify-content: center;
@@ -223,7 +247,7 @@
 .seleccion-estrellas span {
   font-size: 1.4rem;
   cursor: pointer;
-  color: #ddd;
+  color: #d1d5db;
   margin: 3px;
   transition: transform 0.2s;
 }
@@ -236,7 +260,6 @@
   color: #ffd700;
 }
 
-/* Botón comentar */
 .nuevo-comentario .btn-google {
   width: 100%;
   max-width: 300px;
@@ -244,22 +267,57 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background-color: #fff;
-  color: #444;
-  border: 1px solid #ccc;
+  background-color: #ffffff;
+  color: #1a2a40;
+  border: 1px solid #d1d5db;
   padding: 10px 20px;
   border-radius: 25px;
   cursor: pointer;
   font-weight: 600;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+}
+
+.ver-mas {
+  background: none;
+  border: none;
+  color: #4da6ff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: color 0.3s;
+}
+
+.ver-mas:hover {
+  color: #1a2a40;
 }
 
 .nuevo-comentario .btn-google:hover {
-  background-color: #f0f0f0;
-  color: #0056a3;
+  background-color: #1a2a40;
+  color: #ffffff;
+}
+.verificado {
+  color: #34a853;
+  font-weight: 600;
+  margin-right: 8px;
+  font-size: 0.85rem;
 }
 
-/* ================================ Responsive ================================ */
+.fecha {
+  color: #1a2a40;
+  font-size: 0.8rem;
+}
+
+.info-comentario {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  gap: 5px;
+}
+
+/* ================================ 
+   Responsive 
+================================ */
 @media (max-width: 1024px) {
   .testimonio-card { flex: 0 0 calc(50% - 15px); min-height: 280px; }
 }
@@ -268,7 +326,6 @@
   .testimonio-card { flex: 0 0 90%; min-height: 260px; }
   .flecha { font-size: 1.6rem; width: 30px; height: 30px; }
   .nuevo-comentario textarea { max-width: 95%; }
-  .nuevo-comentario { padding: 0 8px; }
   .testimonios-list { gap: 15px; }
 }
 
@@ -277,5 +334,5 @@
   .testimonios-list { gap: 12px; }
   .nuevo-comentario textarea { font-size: 0.9rem; }
   .seleccion-estrellas span { font-size: 1.2rem; }
-  .testimonios-section .title { font-size: 28px; }
+  .testimonios-section .title { font-size: 1.6rem; }
 }

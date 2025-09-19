@@ -2,9 +2,10 @@
    SECCIÓN SERVICIOS
 ================================ */
 .service-section {
-  background-color: #f9f9f9;
+  background-color: #f7f8fa; /* Blanco suave */
   font-family: 'Lato', sans-serif;
-  padding: 60px 16px;
+  padding: 40px 16px;
+  color: #1a2a40; /* Azul marino */
 }
 
 .service-container {
@@ -13,12 +14,12 @@
   padding: 0 20px;
 }
 
-/* Título principal */
+/* Título */
 .service-container h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 45px;
-  color: #222;
+  color: #1a2a40;
   font-weight: 700;
   position: relative;
 }
@@ -28,7 +29,7 @@
   display: block;
   width: 70px;
   height: 3px;
-  background-color: #003366;
+  background-color: #4da6ff; /* Celeste suave */
   margin: 12px auto 0;
   border-radius: 2px;
 }
@@ -41,66 +42,82 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .tab-button {
-  background: #fff;
-  border: none;
-  border-radius: 12px;
-  padding: 12px 20px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 14px 22px;
   font-size: 1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #222;
+  gap: 10px;
+  color: #333333; /* negro suave */
   font-weight: 600;
   transition: all 0.3s ease;
   min-width: 160px;
   justify-content: center;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
+/* Iconos dentro del botón */
 .tab-button .icono {
-  color: #001f3f;
+  color: inherit; /* toma el color del botón */
+  font-size: 1.3rem;
   transition: all 0.3s ease;
-  font-size: 1.2rem;
 }
 
+/* Texto del botón */
+.tab-button .tab-text {
+  color: inherit;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+/* Hover y activo */
 .tab-button:hover,
 .tab-button.active {
-  background: #0056a3;
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  background: #1A73E8;
+  color: #ffffff;
 }
 
 .tab-button:hover .icono,
-.tab-button.active .icono {
-  color: #fff;
+.tab-button.active .icono,
+.tab-button:hover .tab-text,
+.tab-button.active .tab-text {
+  color: #ffffff;
 }
 
 /* ================================
    INFO BOX
 ================================ */
 .info-box {
-  background: #fff;
-  padding: 30px;
+  background: #ffffff;
+  padding: 35px 30px;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   text-align: center;
-  margin-top: 20px;
+  margin-top: 25px;
+  color: #1a2a40;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
 }
 
 .info-box h3 {
-  font-size: 1.5rem;
-  color: #001f3f;
+  font-size: 1.6rem;
+  color: #1a2a40;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
 .subtitulo {
@@ -121,17 +138,16 @@
 
 .descripcion li {
   margin-bottom: 8px;
+  line-height: 1.6;
 }
 
 /* ================================
    PAGO
 ================================ */
 .pago-info {
-  margin-top: 25px;
-  padding: 0;
-  background: transparent;
-  border-radius: 0;
+  margin-top: 30px;
   text-align: center;
+  color: #1a2a40;
 }
 
 .pago-items {
@@ -139,30 +155,23 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 25px;
-  margin-top: 10px;
+  gap: 30px;
+  margin-top: 12px;
 }
 
 .pago-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 5px;
   font-size: 0.95rem;
-  color: #444;
+  color: #1a2a40;
   font-weight: 600;
-  width: auto;
-  height: auto;
-  background: transparent;
-  box-shadow: none;
-  cursor: default;
-  text-align: center;
 }
 
 .pago-item img.mp-logo,
 .pago-item .icono-pago {
-  width: 50px;
+  width: 120px;
   height: 50px;
   object-fit: contain;
 }
@@ -171,28 +180,31 @@
    TARIFARIO
 ================================ */
 .tarifario-box {
-  margin-top: 30px;
-  padding: 20px;
-  border: 1px solid #ddd;
+  margin-top: 35px;
+  padding: 22px;
   border-radius: 12px;
   text-align: center;
+  color: #1a2a40;
+  background-color: #f0f4f8;
 }
 
 .btn-ver-tarifas {
-  margin-top: 15px;
-  background: #0056a3;
-  color: #fff;
+  margin-top: 18px;
+  background: #1A73E8;
+  color: #ffffff;
   border: none;
-  padding: 10px 18px;
+  padding: 12px 20px;
   border-radius: 12px;
   cursor: pointer;
   font-weight: 600;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .btn-ver-tarifas:hover {
-  background: #001730;
+  background: #1a2a40;
+  transform: translateY(-2px);
 }
+
 
 /* ================================
    MODAL
@@ -203,7 +215,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.65);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -211,12 +223,14 @@
 }
 
 .modal-content {
-  background: #fff;
-  padding: 30px;
+  background: #ffffff;
+  padding: 35px;
   border-radius: 16px;
   max-width: 600px;
   width: 90%;
   position: relative;
+  color: #1a2a40;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
 .modal-close {
@@ -227,85 +241,73 @@
   border: none;
   font-size: 1.8rem;
   cursor: pointer;
-  color: #333;
+  color: #1a2a40;
 }
 
 /* ================================
    RESPONSIVE
 ================================ */
-@media (max-width: 1024px) {
-  .info-box {
-    padding: 25px;
-  }
-}
-
+/* ================================
+   RESPONSIVE
+================================ */
 @media (max-width: 768px) {
-  /* Tabs en 2 columnas */
   .tabs-container {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    display: grid;
     gap: 12px;
-    margin-bottom: 25px;
   }
-
   .tab-button {
     width: 100%;
-    font-size: 0.9rem;
-    padding: 12px;
+    font-size: 0.9rem; /* más pequeña */
+    padding: 10px 16px; /* más compacta */
   }
-
+  .tab-button .icono {
+    font-size: 1.1rem; /* ajusta icono proporcional */
+  }
   .info-box {
-    padding: 20px;
+    padding: 25px 20px; /* menos padding */
   }
-
+  .info-box h3 {
+    font-size: 1.4rem;
+    gap: 10px;
+  }
   .descripcion {
+    padding-left: 15px;
     max-width: 100%;
-    padding-left: 20px;
   }
-
-  .pago-items {
-    gap: 20px;
-  }
-
   .pago-item img.mp-logo,
   .pago-item .icono-pago {
-    width: 45px;
-    height: 45px;
+    width: 80px;
+    height: 40px;
   }
-
-  .tarifario-box {
-    font-size: 0.9rem;
+  .btn-ver-tarifas {
+    font-size: 0.95rem;
+    padding: 10px 16px; /* más pequeño en móvil */
   }
 }
 
 @media (max-width: 480px) {
-  .tabs-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
+  #nosotros h2,
+  .service-container h2 { font-size: 26px; }
+  .nosotros-text,
+  .descripcion li { font-size: 15px; }
+  .nosotros-frase { font-size: 17px; }
   .tab-button {
     font-size: 0.85rem;
-    padding: 10px;
+    padding: 8px 12px;
   }
-
-  .descripcion li {
-    margin-bottom: 6px;
+  .tab-button .icono {
+    font-size: 1rem;
   }
-
-  .pago-items {
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
+  .info-box {
+    padding: 20px 15px;
   }
-
-  .pago-item img.mp-logo,
-  .pago-item .icono-pago {
-    width: 40px;
-    height: 40px;
+  .info-box h3 {
+    font-size: 1.2rem;
+    gap: 8px;
   }
-
-  .tarifario-box {
-    padding: 15px;
+  .btn-ver-tarifas {
+    font-size: 0.9rem;
+    padding: 8px 14px;
   }
 }

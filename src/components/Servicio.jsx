@@ -64,14 +64,11 @@ function Servicio() {
         {/* Tabs */}
         <div className="tabs-container">
           {servicios.map((serv) => (
-            <button
-              key={serv.id}
-              className={`tab-button ${activeId === serv.id ? 'active' : ''}`}
-              onClick={() => setActiveId(serv.id)}
-            >
-              <span className="icono">{serv.icon}</span>
-              {serv.title}
-            </button>
+           <button className={`tab-button ${activeId === serv.id ? 'active' : ''}`} onClick={() => setActiveId(serv.id)}>
+          <span className="icono">{serv.icon}</span>
+          <span className="tab-text">{serv.title}</span>
+        </button>
+
           ))}
         </div>
 

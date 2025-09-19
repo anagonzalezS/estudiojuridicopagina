@@ -1,14 +1,12 @@
-/* Header.css */
-
-/* HEADER */
+/* ===========================
+   HEADER SUPERIOR (REDES/CONTACTO)
+=========================== */
 .header-section {
-  background-color: #2c2c2c; /* gris oscuro elegante */
-  color: #fff;
+  background-color: #1A2A40; /* Azul Marino */
+  color: #FFFFFF; /* Blanco */
   padding: 10px 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* FLEX CONTENEDOR */
 .header-flex {
   display: flex;
   justify-content: center;
@@ -17,56 +15,25 @@
   flex-wrap: wrap;
 }
 
-/* ITEM */
-.header-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+.header-item { display: flex; align-items: center; gap: 10px; }
 
-/* ICONOS */
-.header-logo {
-  height: 18px;
-  width: auto;
-}
+.header-logo { height: 18px; width: auto; }
 
-.social-icon {
-  height: 22px;
-  width: auto;
-  transition: transform 0.3s;
-}
+.social-icon { height: 22px; width: auto; transition: transform 0.3s; }
+.social-icon:hover { transform: scale(1.1); }
 
-.social-icon:hover {
-  transform: scale(1.1);
-}
-
-/* LINKS */
 .header-link, .instagram-text {
-  color: #1fa2e0; /* azul profesional */
+  color: #4DA6FF; /* Celeste Suave */
   text-decoration: none;
   transition: color 0.3s;
   font-size: 15px;
 }
 
-.header-link:hover, .instagram-text:hover {
-  color: #0d6efd; /* azul más fuerte al pasar */
-}
+.header-link:hover, .instagram-text:hover { color: #0056B3; /* Azul Intermedio */ }
 
-/* Instagram dentro de link */
-.instagram-link {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
+.instagram-link { display: flex; align-items: center; gap: 5px; }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
-  .header-flex {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .header-link, .instagram-text {
-    font-size: 14px;
-  }
+  .header-flex { flex-direction: column; gap: 12px; }
+  .header-link, .instagram-text { font-size: 14px; }
 }

@@ -1,18 +1,26 @@
-/* ================================
-   NAVBAR GENERAL
-================================ */
+/* ===========================
+   GENERAL
+=========================== */
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  color: #1A2A40; /* Azul marino */
+  background-color: #FFFFFF; /* Fondo general blanco */
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
 .navbar-custom {
-  background-color: #ffffff;
+  background-color: #FFFFFF; /* Blanco */
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   padding: 12px 20px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #E0E0E0; /* Gris claro */
   position: sticky;
   top: 0;
   z-index: 1000;
-  font-family: 'Lato', sans-serif;
 }
 
-/* FLEX GENERAL */
 .navbar-flex {
   display: flex;
   justify-content: space-between;
@@ -20,31 +28,28 @@
   width: 100%;
 }
 
-/* LOGO RESPONSIVE */
 .navbar-logo {
   width: 160px;
   max-width: 100%;
   height: auto;
   transition: width 0.3s ease;
 }
+
 @media (max-width: 992px) { .navbar-logo { width: 130px; } }
 @media (max-width: 768px) { .navbar-logo { width: 120px; } }
 @media (max-width: 480px) { .navbar-logo { width: 100px; } }
 
-/* ================================
-   MENÚ ESCRITORIO (default)
-================================ */
 .navbar-nav {
-  display: flex;             
+  display: flex;
   flex-direction: row;
   gap: 30px;
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
 .nav-link {
-  color: #333;
+  color: #1A2A40; /* Azul Marino */
   font-size: 16px;
   text-decoration: none;
   transition: all 0.3s;
@@ -52,13 +57,11 @@
 }
 
 .nav-link:hover {
-  color: #0056b3;
+  color: #0056B3; /* Azul Intermedio */
   text-decoration: underline;
 }
 
-/* ================================
-   BOTÓN HAMBURGUESA (default oculto)
-================================ */
+/* Hamburguesa */
 .navbar-toggler {
   display: none;
   position: relative;
@@ -71,24 +74,21 @@
   z-index: 1100;
 }
 
-/* Las 3 líneas de la hamburguesa */
 .navbar-toggler span {
   display: block;
   position: absolute;
   left: 0;
   width: 100%;
   height: 2px;
-  background: #333;
+  background: #1A2A40; /* Azul Marino */
   border-radius: 2px;
   transition: all 0.3s ease;
 }
 
-/* Posicionar cada línea */
 .navbar-toggler span:nth-child(1) { top: 0; }
 .navbar-toggler span:nth-child(2) { top: 9px; }
 .navbar-toggler span:nth-child(3) { top: 18px; }
 
-/* Animación hamburguesa -> X */
 .navbar-toggler.open span:nth-child(1) {
   top: 9px;
   transform: rotate(45deg);
@@ -101,23 +101,19 @@
   transform: rotate(-45deg);
 }
 
-/* ================================
-   RESPONSIVE MÓVIL (>0 y <992px)
-================================ */
+/* Responsive móvil */
 @media (max-width: 992px) {
-  /* Mostrar hamburguesa en móvil */
   .navbar-toggler { display: flex; }
 
-  /* Menú en móvil oculto por defecto */
   .navbar-nav {
     position: absolute;
     top: 99px; 
-    right: 0px;
+    right: 0;
     width: 200px;
-    background: #ffffff;
+    background: #F8F8F8;
     text-align: center;
     flex-direction: column;
-    max-height: 0;          
+    max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, padding 0.4s ease;
     padding: 0;
@@ -125,45 +121,15 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
 
-  /* Menú cuando se abre */
-  .navbar-nav.show {
-    max-height: 400px;
-    padding: 10px 0;
-  }
+  .navbar-nav.show { max-height: 400px; padding: 10px 0; }
 
   .nav-link {
     display: block;
     font-size: 15px;
-    color: #333;
     padding: 10px 0;
-    width: 100%;
-    text-align: center;
-    transition: background 0.3s ease, color 0.3s ease;
   }
 
-  .nav-link:hover {
-    background: #f0f0f0;
-    color: #0056b3;
-  }
+  .nav-link:hover { background: #E0E0E0; color: #0056B3; }
 
-  /* Bloquear scroll cuando menú está abierto */
-  body.nav-open {
-    overflow: hidden;
-  }
-}
-
-/* ================================
-   AJUSTE SOLO MÓVIL (menos de 768px)
-================================ */
-@media (max-width: 768px) {
-  .navbar-toggler {
-    width: 24px;
-    height: 18px;
-  }
-
-  .navbar-toggler span:nth-child(2) { top: 8px; }
-  .navbar-toggler span:nth-child(3) { top: 16px; }
-
-  .navbar-toggler.open span:nth-child(1) { top: 8px; transform: rotate(45deg); }
-  .navbar-toggler.open span:nth-child(3) { top: 8px; transform: rotate(-45deg); }
+  body.nav-open { overflow: hidden; }
 }
