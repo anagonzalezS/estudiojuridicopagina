@@ -32,7 +32,7 @@ function Home() {
 
     typeAndErase();
 
-    return () => clearTimeout(timeoutId); // Limpiamos el timeout al desmontar
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return (
@@ -50,20 +50,21 @@ function Home() {
         className="container-fluid position-relative p-0"
         style={{ backgroundImage: 'url("/portada1.png")', minHeight: '100vh' }}
       >
-        <div className="position-absolute top-0 start-0 w-100 h-100" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}></div>
-        <div className="position-absolute top-50 start-50 translate-middle text-center text-light">
-          <div className="d-flex flex-column justify-content-center align-items-center" style={{ minHeight: '80vh', minWidth: '320px' }}>
-            <h1 className="display-1 mb-4 wow fadeIn uppercase-text" style={{ fontSize: '52px', marginBottom: '0', minHeight: '52px' }}>
-              Sáenz & Asociados
-            </h1>
-            <div className="typed-text-container">
-              <p className="lead">
-                {typedText}
-                <span className="typing-cursor"></span>
-              </p>
-            </div>
-            <a href="#nosotros" className="btn btn-outline-light btn-lg mt-3" style={{ minHeight: '50px', lineHeight: '1' }}>BIENVENIDO</a>
+        <div className="overlay"></div>
+
+        <div className="content-center">
+          <h1 className="display-1 mb-4 uppercase-text">
+            Sáenz & Asociados
+          </h1>
+          <div className="typed-text-container">
+            <p className="lead">
+              {typedText}
+              <span className="typing-cursor"></span>
+            </p>
           </div>
+          <a href="#nosotros" className="btn-bienvenido">
+            BIENVENIDO
+          </a>
         </div>
       </div>
     </div>

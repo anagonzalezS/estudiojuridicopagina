@@ -9,9 +9,6 @@
   color: #FFFFFF;
 }
 
-/* ================================ 
-   Título 
-================================ */
 .testimonios-section .title {
   color: #FFFFFF;
   font-size: 2rem;
@@ -20,7 +17,6 @@
   letter-spacing: 1px;
   position: relative;
 }
-
 .testimonios-section .title::after {
   content: "";
   display: block;
@@ -31,9 +27,7 @@
   border-radius: 2px;
 }
 
-/* ================================ 
-   Tarjetas 
-================================ */
+/* Tarjetas */
 .testimonio-card {
   flex: 0 0 calc(33.33% - 20px);
   max-width: calc(33.33% - 20px);
@@ -80,11 +74,9 @@
   font-size: 1.3rem;
   margin-bottom: 10px;
 }
-
 .testimonio-card .estrellas span {
   color: #d1d5db;
 }
-
 .testimonio-card .estrellas span.activo {
   color: #ffd700;
 }
@@ -115,16 +107,13 @@
   font-weight: 600;
 }
 
-/* Fecha de comentario */
 .testimonio-card .fecha {
   font-size: 0.75rem;
   color: #888;
   margin-top: 2px;
 }
 
-/* ================================ 
-   Respuestas 
-================================ */
+/* Respuestas */
 .respuesta {
   margin-top: 10px;
   padding: 10px 14px;
@@ -156,9 +145,13 @@
   margin-top: 2px;
 }
 
-/* ================================ 
-   Carrusel 
-================================ */
+.respuesta .verificado {
+  color: #34a853;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+/* Carrusel */
 .testimonios-wrapper {
   position: relative;
   width: 100%;
@@ -168,10 +161,7 @@
 .testimonios-wrapper.unico .testimonios-list {
   justify-content: center;
 }
-
-.testimonios-wrapper.unico .flecha {
-  display: none;
-}
+.testimonios-wrapper.unico .flecha { display: none; }
 
 .testimonios-list {
   display: flex;
@@ -182,10 +172,7 @@
   scroll-snap-type: x mandatory;
   justify-content: flex-start;
 }
-
-.testimonios-list::-webkit-scrollbar {
-  display: none;
-}
+.testimonios-list::-webkit-scrollbar { display: none; }
 
 .flecha {
   position: absolute;
@@ -205,9 +192,7 @@
 .flecha.izquierda { left: 5px; }
 .flecha.derecha { right: 5px; }
 
-/* ================================ 
-   Nuevo comentario 
-================================ */
+/* Nuevo comentario */
 .nuevo-comentario {
   display: flex;
   flex-direction: column;
@@ -252,13 +237,8 @@
   transition: transform 0.2s;
 }
 
-.seleccion-estrellas span:hover {
-  transform: scale(1.2);
-}
-
-.seleccion-estrellas span.activo {
-  color: #ffd700;
-}
+.seleccion-estrellas span:hover { transform: scale(1.2); }
+.seleccion-estrellas span.activo { color: #ffd700; }
 
 .nuevo-comentario .btn-google {
   width: 100%;
@@ -277,6 +257,11 @@
   transition: all 0.3s ease;
 }
 
+.nuevo-comentario .btn-google:hover {
+  background-color: #1a2a40;
+  color: #ffffff;
+}
+
 .ver-mas {
   background: none;
   border: none;
@@ -287,37 +272,9 @@
   margin-top: 4px;
   transition: color 0.3s;
 }
+.ver-mas:hover { color: #1a2a40; }
 
-.ver-mas:hover {
-  color: #1a2a40;
-}
-
-.nuevo-comentario .btn-google:hover {
-  background-color: #1a2a40;
-  color: #ffffff;
-}
-.verificado {
-  color: #34a853;
-  font-weight: 600;
-  margin-right: 8px;
-  font-size: 0.85rem;
-}
-
-.fecha {
-  color: #1a2a40;
-  font-size: 0.8rem;
-}
-
-.info-comentario {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-  gap: 5px;
-}
-
-/* ================================ 
-   Responsive 
-================================ */
+/* Responsive */
 @media (max-width: 1024px) {
   .testimonio-card { flex: 0 0 calc(50% - 15px); min-height: 280px; }
 }

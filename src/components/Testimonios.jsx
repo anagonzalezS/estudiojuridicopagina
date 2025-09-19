@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { database, auth, provider } from "./firebase";
-import { ref, push, onValue } from "firebase/database";
+import { ref, push, onValue, update } from "firebase/database";
 import { signInWithPopup } from "firebase/auth";
 import "./Testimonios.css";
 
@@ -16,19 +16,28 @@ function Testimonios() {
 
   // Leer comentarios
   useEffect(() => {
-    const fechaVieja = new Date("2025-09-18T12:00:00").getTime(); // definido aquí para evitar warning
     const comentariosRef = ref(database, "comentarios");
-
     onValue(comentariosRef, (snapshot) => {
       const data = snapshot.val();
       const comentariosArray = data
-        ? Object.keys(data).map((key) => ({
-            key,
-            ...data[key],
-            fecha: data[key].fecha ? data[key].fecha : fechaVieja,
-            verificado:
-              data[key].verificado !== undefined ? data[key].verificado : true,
-          }))
+        ? Object.keys(data).map((key) => {
+            let fechaFinal;
+            if (!data[key].fecha) {
+              // Si no tiene fecha, asignamos 18 sep 2025
+              fechaFinal = new Date("2025-09-18T12:00:00").getTime();
+              update(ref(database, `comentarios/${key}`), { fecha: fechaFinal });
+            } else {
+              fechaFinal = data[key].fecha;
+            }
+
+            return {
+              key,
+              ...data[key],
+              fecha: fechaFinal,
+              verificado:
+                data[key].verificado !== undefined ? data[key].verificado : true,
+            };
+          })
         : [];
       setComentarios(comentariosArray);
     });
@@ -42,8 +51,8 @@ function Testimonios() {
       estrellas: nuevaEstrella,
       avatar: usuario.photoURL || "",
       respuestas: [],
-      fecha: Date.now(), // timestamp real para nuevos comentarios
-      verificado: true,   // comentario verificado
+      fecha: Date.now(), // fecha actual
+      verificado: true,
     });
     setNuevoComentario("");
     setNuevaEstrella(0);
@@ -88,21 +97,32 @@ function Testimonios() {
     ? comentarios.length > 3
     : comentarios.length > 2;
 
+  // Carrusel automático
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        scrollRef.current.scrollBy({ left: 270, behavior: "smooth" });
+      }
+    }, 5000); // 5 segundos
+    return () => clearInterval(interval);
+  }, []);
+
+  const formatFecha = (timestamp) =>
+    new Date(timestamp).toLocaleDateString("es-AR", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    });
+
   return (
     <section id="testimonios" className="testimonios-section">
       <h2 className="title">Comentarios de nuestros clientes</h2>
 
       {comentarios.length === 0 && <p>Aún no hay comentarios.</p>}
 
-      <div
-        className={`testimonios-wrapper ${
-          comentarios.length > 1 ? "multiple" : "unico"
-        }`}
-      >
+      <div className={`testimonios-wrapper ${comentarios.length > 1 ? "multiple" : "unico"}`}>
         {mostrarFlechas && (
-          <button className="flecha izquierda" onClick={() => scroll(-1)}>
-            ‹
-          </button>
+          <button className="flecha izquierda" onClick={() => scroll(-1)}>‹</button>
         )}
 
         <div className="testimonios-list" ref={scrollRef}>
@@ -113,35 +133,19 @@ function Testimonios() {
             return (
               <div className="testimonio-card" key={i}>
                 <div className="avatar">
-                  {c.avatar ? (
-                    <img src={c.avatar} alt={c.nombre} />
-                  ) : (
-                    c.nombre[0].toUpperCase()
-                  )}
+                  {c.avatar ? <img src={c.avatar} alt={c.nombre} /> : c.nombre[0].toUpperCase()}
                 </div>
+
                 <div className="contenido">
                   <div className="estrellas">
                     {Array.from({ length: 5 }, (_, idx) => (
-                      <span
-                        key={idx}
-                        className={idx < c.estrellas ? "activo" : ""}
-                      >
-                        ★
-                      </span>
+                      <span key={idx} className={idx < c.estrellas ? "activo" : ""}>★</span>
                     ))}
                   </div>
 
                   <div className="info-comentario">
                     {c.verificado && <span className="verificado">✔ Verificado</span>}
-                    {c.fecha && (
-                      <span className="fecha">
-                        {new Date(Number(c.fecha)).toLocaleDateString("es-AR", {
-                          day: "2-digit",
-                          month: "short",
-                          year: "numeric",
-                        })}
-                      </span>
-                    )}
+                    <span className="fecha">{formatFecha(c.fecha)}</span>
                   </div>
 
                   <p className={`texto ${isExpandido ? "expandido" : ""}`}>
@@ -149,10 +153,7 @@ function Testimonios() {
                   </p>
 
                   {c.texto.length > 150 && (
-                    <button
-                      className="ver-mas"
-                      onClick={() => toggleExpand(c.key)}
-                    >
+                    <button className="ver-mas" onClick={() => toggleExpand(c.key)}>
                       {isExpandido ? "Ver menos" : "Ver más"}
                     </button>
                   )}
@@ -167,38 +168,17 @@ function Testimonios() {
                     return (
                       <div className="respuesta" key={j}>
                         <div className="info-comentario">
-                          {r.verificado && (
-                            <span className="verificado">✔ Verificado</span>
-                          )}
-                          {r.fecha && (
-                            <span className="fecha">
-                              {new Date(Number(r.fecha)).toLocaleDateString(
-                                "es-AR",
-                                {
-                                  day: "2-digit",
-                                  month: "short",
-                                  year: "numeric",
-                                }
-                              )}
-                            </span>
-                          )}
+                          {r.verificado && <span className="verificado">✔ Verificado</span>}
+                          <span className="fecha">{formatFecha(r.fecha)}</span>
                         </div>
-
-                        <p
-                          className={`texto ${isRespExpandida ? "expandido" : ""}`}
-                        >
+                        <p className={`texto ${isRespExpandida ? "expandido" : ""}`}>
                           {respCorta ? r.texto.slice(0, 120) + "..." : r.texto}
                         </p>
-
                         {r.texto.length > 120 && (
-                          <button
-                            className="ver-mas"
-                            onClick={() => toggleExpand(respuestaId)}
-                          >
+                          <button className="ver-mas" onClick={() => toggleExpand(respuestaId)}>
                             {isRespExpandida ? "Ver menos" : "Ver más"}
                           </button>
                         )}
-
                         <p className="autor">- {r.nombre}</p>
                       </div>
                     );
@@ -210,9 +190,7 @@ function Testimonios() {
         </div>
 
         {mostrarFlechas && (
-          <button className="flecha derecha" onClick={() => scroll(1)}>
-            ›
-          </button>
+          <button className="flecha derecha" onClick={() => scroll(1)}>›</button>
         )}
       </div>
 
@@ -246,28 +224,11 @@ function Testimonios() {
             "Iniciando sesión..."
           ) : (
             <>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 533.5 544.3"
-                width="20"
-                height="20"
-              >
-                <path
-                  fill="#4285f4"
-                  d="M533.5 278.4c0-17.8-1.4-35-4-51.7H272v97.8h146.9c-6.3 34.1-25.2 63-53.8 82.5v68h86.9c50.8-46.8 80.5-115.7 80.5-196.6z"
-                />
-                <path
-                  fill="#34a853"
-                  d="M272 544.3c72.6 0 133.7-24 178.3-65.1l-86.9-68c-24.2 16.2-55 25.6-91.4 25.6-70 0-129.5-47.3-150.8-111.2H33v69.9C77.9 476.7 169.3 544.3 272 544.3z"
-                />
-                <path
-                  fill="#fbbc05"
-                  d="M121.2 366.7c-8.5-25.2-8.5-52.9 0-78.1V218.7H33c-17.9 35.8-17.9 78.2 0 114l88.2 34z"
-                />
-                <path
-                  fill="#ea4335"
-                  d="M272 107.3c38.6 0 73.2 13.3 100.5 39.2l75.3-75.3C405.7 24.7 344.6 0 272 0 169.3 0 77.9 67.6 33 166.2l88.2 69.1c21.3-63.9 80.8-111.2 150.8-111.2z"
-                />
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 533.5 544.3" width="20" height="20">
+                <path fill="#4285f4" d="M533.5 278.4c0-17.8-1.4-35-4-51.7H272v97.8h146.9c-6.3 34.1-25.2 63-53.8 82.5v68h86.9c50.8-46.8 80.5-115.7 80.5-196.6z"/>
+                <path fill="#34a853" d="M272 544.3c72.6 0 133.7-24 178.3-65.1l-86.9-68c-24.2 16.2-55 25.6-91.4 25.6-70 0-129.5-47.3-150.8-111.2H33v69.9C77.9 476.7 169.3 544.3 272 544.3z"/>
+                <path fill="#fbbc05" d="M121.2 366.7c-8.5-25.2-8.5-52.9 0-78.1V218.7H33c-17.9 35.8-17.9 78.2 0 114l88.2 34z"/>
+                <path fill="#ea4335" d="M272 107.3c38.6 0 73.2 13.3 100.5 39.2l75.3-75.3C405.7 24.7 344.6 0 272 0 169.3 0 77.9 67.6 33 166.2l88.2 69.1c21.3-63.9 80.8-111.2 150.8-111.2z"/>
               </svg>
               Deja tu Reseña
             </>
