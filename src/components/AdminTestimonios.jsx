@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { database, auth, provider } from "./firebase";
 import { ref, onValue, update, remove } from "firebase/database";
-import { signInWithRedirect, getRedirectResult } from "firebase/auth"; // <-- cambio aquí
+import { signInWithRedirect } from "firebase/auth";
 import "./AdminTestimonios.css";
 
 function AdminTestimonios() {
@@ -23,32 +23,27 @@ function AdminTestimonios() {
     });
   }, []);
 
-  // Manejar resultado del redirect (para móviles)
+  // Detectar usuario logueado (desktop o móvil)
   useEffect(() => {
-    getRedirectResult(auth)
-      .then((result) => {
-        if (result?.user) {
-          if (result.user.email !== "estudio@saenz-asociados.com.ar") {
-            alert("No tienes permisos de administrador.");
-            return;
-          }
-          setUser(result.user);
-        }
-      })
-      .catch(() => alert("Error al iniciar sesión"))
-      .finally(() => setEsperandoLogin(false));
+    const unsubscribe = auth.onAuthStateChanged((u) => {
+      if (u?.email === "anaester.sanchezgonzalez@gmail.com") {
+        setUser(u);
+      }
+      setEsperandoLogin(false);
+    });
+    return () => unsubscribe();
   }, []);
 
   // Login de la abogada
   const loginAbogada = () => {
     setEsperandoLogin(true);
-    signInWithRedirect(auth, provider); // <-- aquí usamos redirect
+    signInWithRedirect(auth, provider);
   };
 
   // Responder comentario
   const responderComentario = (index) => {
     const respuesta = respuestasInputs[index]?.trim();
-    if (!respuesta) return;
+    if (!respuesta || !user) return;
 
     const comentario = comentarios[index];
     const nuevasRespuestas = comentario.respuestas ? [...comentario.respuestas] : [];
