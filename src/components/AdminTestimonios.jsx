@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { database, auth, provider } from "./firebase";
 import { ref, onValue, update, remove } from "firebase/database";
-import { signInWithRedirect } from "firebase/auth";
+import { signInWithRedirect, getRedirectResult } from "firebase/auth";
 import "./AdminTestimonios.css";
 
 function AdminTestimonios() {
@@ -23,14 +23,27 @@ function AdminTestimonios() {
     });
   }, []);
 
-  // Detectar usuario logueado (desktop o móvil)
+  // Detectar usuario logueado (desktop o mobile)
   useEffect(() => {
+    setEsperandoLogin(true);
+
+    // 1️⃣ Revisar si hubo redirect (móviles)
+    getRedirectResult(auth)
+      .then((result) => {
+        if (result?.user?.email === "anaester.sanchezgonzalez@gmail.com") {
+          setUser(result.user);
+        }
+      })
+      .catch(() => alert("Error al iniciar sesión"))
+      .finally(() => setEsperandoLogin(false));
+
+    // 2️⃣ Revisar si ya hay usuario logueado (desktop o mobile)
     const unsubscribe = auth.onAuthStateChanged((u) => {
       if (u?.email === "anaester.sanchezgonzalez@gmail.com") {
         setUser(u);
       }
-      setEsperandoLogin(false);
     });
+
     return () => unsubscribe();
   }, []);
 
@@ -42,8 +55,9 @@ function AdminTestimonios() {
 
   // Responder comentario
   const responderComentario = (index) => {
+    if (!user) return;
     const respuesta = respuestasInputs[index]?.trim();
-    if (!respuesta || !user) return;
+    if (!respuesta) return;
 
     const comentario = comentarios[index];
     const nuevasRespuestas = comentario.respuestas ? [...comentario.respuestas] : [];
@@ -66,6 +80,7 @@ function AdminTestimonios() {
   const abrirModalEliminar = (key) => setModalEliminar({ abierto: true, key });
   const cerrarModal = () => setModalEliminar({ abierto: false, key: null });
   const confirmarEliminar = () => {
+    if (!modalEliminar.key) return;
     remove(ref(database, `comentarios/${modalEliminar.key}`));
     cerrarModal();
   };
