@@ -4,11 +4,11 @@ import "./Navbar.css";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
-    const handleResize = () => setIsMobile(window.innerWidth <= 992);
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
