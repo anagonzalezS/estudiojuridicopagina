@@ -4,11 +4,18 @@ import "./Navbar.css";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
@@ -31,7 +38,7 @@ function Navbar() {
           aria-label="Estudio Sáenz & Asociados - Inicio"
         >
           <img
-            src="/logo.png"
+            src={isMobile ? "/logo-cuadrado.png" : "/logo.png"}
             alt="Estudio Sáenz & Asociados"
             className="navbar-logo"
           />
@@ -53,7 +60,6 @@ function Navbar() {
               Servicios
             </a>
           </li>
-
         </ul>
 
         <button
@@ -69,15 +75,12 @@ function Navbar() {
 
       </div>
 
-
-
       <div className={`navbar-dropdown ${isOpen ? "show" : ""}`}>
         <ul>
           {[
             { href: "#inicio", label: "Inicio" },
             { href: "#nosotros", label: "Nosotros" },
             { href: "#servicios", label: "Servicios" },
-
           ].map(({ href, label }) => (
             <li key={href}>
               <a href={href} onClick={(e) => handleScroll(e, href)}>
