@@ -1,71 +1,59 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen((prev) => !prev);
-  };
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const toggleMenu = () => setIsOpen((prev) => !prev);
 
   const handleScroll = (e, id) => {
     e.preventDefault();
     const section = document.querySelector(id);
-
-    if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-
+    if (section) section.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
   };
 
   return (
-    <nav className="navbar-custom">
+    <nav className={`navbar-custom ${scrolled ? "navbar-scrolled" : ""}`}>
       <div className="navbar-inner">
+
         <a
           className="navbar-brand"
           href="#inicio"
           onClick={(e) => handleScroll(e, "#inicio")}
+          aria-label="Estudio Sáenz & Asociados - Inicio"
         >
           <img
-            src="/muestra.png"
-            alt="Sáenz & Asociados"
+            src="/logo.png"
+            alt="Estudio Sáenz & Asociados"
             className="navbar-logo"
           />
         </a>
 
-        <ul className={`navbar-nav ${isOpen ? "show" : ""}`}>
+        <ul className="navbar-nav">
           <li className="nav-item">
-            <a
-              className="nav-link"
-              href="#inicio"
-              onClick={(e) => handleScroll(e, "#inicio")}
-            >
+            <a className="nav-link" href="#inicio" onClick={(e) => handleScroll(e, "#inicio")}>
               Inicio
             </a>
           </li>
-
           <li className="nav-item">
-            <a
-              className="nav-link"
-              href="#nosotros"
-              onClick={(e) => handleScroll(e, "#nosotros")}
-            >
+            <a className="nav-link" href="#nosotros" onClick={(e) => handleScroll(e, "#nosotros")}>
               Nosotros
             </a>
           </li>
-
           <li className="nav-item">
-            <a
-              className="nav-link"
-              href="#servicios"
-              onClick={(e) => handleScroll(e, "#servicios")}
-            >
+            <a className="nav-link" href="#servicios" onClick={(e) => handleScroll(e, "#servicios")}>
               Servicios
             </a>
           </li>
+
         </ul>
 
         <button
@@ -78,36 +66,30 @@ function Navbar() {
           <span></span>
           <span></span>
         </button>
+
       </div>
+
+      {/* Overlay fondo oscuro mobile */}
+      <div
+        className={`navbar-overlay ${isOpen ? "show" : ""}`}
+        onClick={() => setIsOpen(false)}
+        aria-hidden="true"
+      />
 
       <div className={`navbar-dropdown ${isOpen ? "show" : ""}`}>
         <ul>
-          <li>
-            <a
-              href="#inicio"
-              onClick={(e) => handleScroll(e, "#inicio")}
-            >
-              Inicio
-            </a>
-          </li>
+          {[
+            { href: "#inicio", label: "Inicio" },
+            { href: "#nosotros", label: "Nosotros" },
+            { href: "#servicios", label: "Servicios" },
 
-          <li>
-            <a
-              href="#nosotros"
-              onClick={(e) => handleScroll(e, "#nosotros")}
-            >
-              Nosotros
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#servicios"
-              onClick={(e) => handleScroll(e, "#servicios")}
-            >
-              Servicios
-            </a>
-          </li>
+          ].map(({ href, label }) => (
+            <li key={href}>
+              <a href={href} onClick={(e) => handleScroll(e, href)}>
+                {label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
