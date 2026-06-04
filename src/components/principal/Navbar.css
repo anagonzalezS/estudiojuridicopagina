@@ -17,15 +17,8 @@
 }
 
 .navbar-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 68px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+  height: 84px;  /* → 84px */
 }
-
 /* ===========================
    LOGO
 =========================== */
@@ -37,7 +30,7 @@
 }
 
 .navbar-logo {
-  height: 52px;
+  height: 68px;
   width: auto;
   display: block;
   transition: opacity 0.2s;
