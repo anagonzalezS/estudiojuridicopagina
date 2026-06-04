@@ -55,16 +55,16 @@
   margin-bottom: 28px;
 }
 
-/* Mobile: columna */
+/* Mobile: columna completa, sin tabs sueltas */
 .tabs-two {
   grid-template-columns: 1fr;
 }
 
-/* Tablet y desktop: 2 columnas centradas con ancho máximo */
+/* Tablet y desktop: 3 columnas en una sola fila */
 @media (min-width: 480px) {
   .tabs-two {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 600px;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 760px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 28px;
@@ -441,6 +441,10 @@
 @media (min-width: 768px) {
   .service-section {
     padding: 80px 24px;
+  }
+
+  .service-container {
+    max-width: 860px;
   }
 
   .info-box {
