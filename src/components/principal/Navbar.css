@@ -179,13 +179,13 @@
 /* ===========================
    RESPONSIVE
 =========================== */
-@media (max-width: 992px) {
+@media (min-width: 993px) {
   .navbar-nav {
-    display: none;
+    display: flex;
   }
 
   .navbar-toggler {
-    display: flex;
+    display: none;
   }
 }
 
