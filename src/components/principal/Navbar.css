@@ -11,7 +11,6 @@
   transition: box-shadow 0.3s ease;
 }
 
-/* Sombra más pronunciada al hacer scroll */
 .navbar-scrolled {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
@@ -20,7 +19,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 68px;
+  height: 84px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
@@ -37,7 +36,7 @@
 }
 
 .navbar-logo {
-  height: 52px;
+  height: 68px;
   width: auto;
   display: block;
   transition: opacity 0.2s;
@@ -80,7 +79,7 @@
 }
 
 /* ===========================
-   HAMBURGUESA
+   HAMBURGUESA — oculta por defecto
 =========================== */
 .navbar-toggler {
   display: none;
@@ -128,8 +127,6 @@
   background-color: #0056B3;
 }
 
-
-
 /* ===========================
    DROPDOWN MÓVIL
 =========================== */
@@ -174,29 +171,30 @@
   color: #0056B3;
 }
 
-
-
 /* ===========================
    RESPONSIVE
 =========================== */
-@media (min-width: 993px) {
+
+/* TABLET Y MOBILE — hamburguesa visible, menú oculto */
+@media (max-width: 992px) {
   .navbar-nav {
-    display: flex;
+    display: none;
   }
 
   .navbar-toggler {
-    display: none;
+    display: flex;
   }
 }
 
+/* MOBILE PEQUEÑO */
 @media (max-width: 480px) {
-  .navbar-logo {
-    height: 40px;
-    max-width: 230px;
-  }
-
   .navbar-inner {
     height: 60px;
     padding: 0 16px;
+  }
+
+  .navbar-logo {
+    height: 40px;
+    max-width: 230px;
   }
 }
