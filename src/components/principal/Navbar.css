@@ -184,28 +184,25 @@
 /* ===========================
    RESPONSIVE
 =========================== */
-@media (max-width: 992px) {
-  .navbar-nav {
-    display: none;
-  }
-
-  .navbar-toggler {
-    display: flex;
-  }
-
-  .navbar-overlay {
-    display: block;
-  }
-}
-
+/* Cambiá esto: */
 @media (max-width: 480px) {
   .navbar-logo {
     height: 40px;
     max-width: 230px;
   }
-
   .navbar-inner {
     height: 60px;
+  }
+}
+
+/* Por esto: */
+@media (max-width: 480px) {
+  .navbar-logo {
+    height: 52px;
+    max-width: 260px;
+  }
+  .navbar-inner {
+    height: 72px;
     padding: 0 16px;
   }
 }
