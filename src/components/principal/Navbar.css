@@ -37,11 +37,12 @@
 
 /* Desktop — logo horizontal */
 .navbar-logo {
-  height: 82px;
+  height: 64px;
+   max-width: 400px;
   width: auto;
   display: block;
   transition: opacity 0.2s;
-  max-width: 400px;
+  
 }
 
 .navbar-brand:hover .navbar-logo {
