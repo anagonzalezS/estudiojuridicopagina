@@ -21,6 +21,17 @@ const servicios = [
   },
   {
     id: 2,
+    title: 'Derecho Penal Tributario',
+    icon: <FaUniversity />,
+    description: [
+      'Asesoramiento y Planificación',
+      'Inspecciones Fiscales',
+      'Determinaciones de Oficio tendientes al cobro de tributos',
+      'Defensas Penales Tributarias',
+    ]
+  },
+  {
+    id: 3,
     title: 'Derecho Empresarial',
     icon: <FaBriefcase />,
     description: [
