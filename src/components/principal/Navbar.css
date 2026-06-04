@@ -17,8 +17,15 @@
 }
 
 .navbar-inner {
-  height: 84px;  /* → 84px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 68px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
+
 /* ===========================
    LOGO
 =========================== */
@@ -30,7 +37,7 @@
 }
 
 .navbar-logo {
-  height: 68px;
+  height: 52px;
   width: auto;
   display: block;
   transition: opacity 0.2s;
@@ -179,10 +186,6 @@
 
   .navbar-toggler {
     display: flex;
-  }
-
-  .navbar-overlay {
-    display: block;
   }
 }
 
