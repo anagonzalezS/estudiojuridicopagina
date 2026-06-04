@@ -1,39 +1,99 @@
-/* ===========================
-   HEADER SUPERIOR (REDES/CONTACTO)
-=========================== */
 .header-section {
-  background-color: #333; /* Azul Marino */
-  color: #FFFFFF; /* Blanco */
-  padding: 10px 0;
+  background-color: #1A2A40;
+  width: 100%;
 }
 
-.header-flex {
+.header-inner {
   display: flex;
   justify-content: center;
+  align-items: stretch;
+  gap: 0;
+  height: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header-item {
+  display: flex;
   align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.header-item { display: flex; align-items: center; gap: 10px; }
-
-.header-logo { height: 18px; width: auto; }
-
-.social-icon { height: 22px; width: auto; transition: transform 0.3s; }
-.social-icon:hover { transform: scale(1.1); }
-
-.header-link, .instagram-text {
-  color: #4DA6FF; /* Celeste Suave */
+  gap: 7px;
+  padding: 0 20px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
   text-decoration: none;
-  transition: color 0.3s;
-  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.2px;
+  min-height: 40px;
+  transition: color 0.2s, background-color 0.2s;
+  white-space: nowrap;
 }
 
-.header-link:hover, .instagram-text:hover { color: #0056B3; /* Azul Intermedio */ }
+.header-item:last-child {
+  border-right: none;
+}
 
-.instagram-link { display: flex; align-items: center; gap: 5px; }
+.header-item:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.06);
+}
 
+.header-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+
+.header-item--wa { color: rgba(255, 255, 255, 0.75); }
+.header-item--wa .header-icon { color: #25D366; }
+.header-item--wa:hover { color: #ffffff; }
+
+.header-item--email { color: rgba(255, 255, 255, 0.65); }
+.header-item--email:hover { color: #ffffff; }
+
+.header-item--ig { color: rgba(255, 255, 255, 0.75); }
+.header-item--ig .header-icon { color: #E1306C; }
+.header-item--ig:hover { color: #ffffff; }
+
+/* ===========================
+   MOBILE
+=========================== */
 @media (max-width: 768px) {
-  .header-flex { flex-direction: column; gap: 12px; }
-  .header-link, .instagram-text { font-size: 14px; }
+  .header-inner {
+    height: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding: 0;
+    gap: 0;
+  }
+
+  .header-item {
+    flex: 1;
+    justify-content: center;
+    padding: 10px 4px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    flex-direction: column;
+    gap: 4px;
+    min-height: 52px;
+    font-size: 11px;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  .header-label--email {
+    display: none;
+  }
+
+  .header-item--email::after {
+    content: "Email";
+    font-size: 11px;
+  }
+
+  .header-icon {
+    width: 18px;
+    height: 18px;
+  }
 }

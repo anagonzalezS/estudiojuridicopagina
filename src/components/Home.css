@@ -1,122 +1,82 @@
-#inicio {
+.hero-section {
+  position: relative;
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.52);
+}
+
+.hero-content {
   position: relative;
-}
-
-/* Overlay negro semi-transparente */
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-}
-
-/* Centrar contenido */
-.content-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #fff;
-  min-height: 80vh;
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  min-width: 320px;
-}
-
-/* Título */
-.uppercase-text {
-  text-transform: uppercase;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-/* Texto tipeado */
-.typed-text-container {
-  position: relative;
-  width: 100%;
+  justify-content: center;
   text-align: center;
-  margin-bottom: 20px;
-  min-height: 50px;
+  color: #fff;
+  padding: 0 24px;
+  width: 100%;
+  max-width: 860px;
+}
+
+.hero-title {
+  font-size: clamp(28px, 6vw, 72px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  margin: 0 0 20px;
+}
+
+.hero-subtitle {
+  font-size: clamp(15px, 2.5vw, 22px);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  margin: 0 0 36px;
+  min-height: 2em;
 }
 
 .typing-cursor {
   display: inline-block;
-  width: 0.15em;
-  height: 1.1em;
-  background-color: white;
-  margin-left: 2px;
-  animation: blink-caret 0.75s step-end infinite;
+  width: 0.12em;
+  height: 1em;
+  background-color: #fff;
+  margin-left: 3px;
+  vertical-align: text-bottom;
+  animation: blink 0.75s step-end infinite;
 }
 
-@keyframes blink-caret {
+@keyframes blink {
   from, to { background-color: transparent; }
-  50% { background-color: white; }
+  50% { background-color: #fff; }
 }
 
-/* BOTÓN personalizado */
 .btn-bienvenido {
   display: inline-block;
-  padding: 16px 40px;
-  border: 2px solid #fff;
+  padding: clamp(10px, 2vw, 16px) clamp(24px, 4vw, 44px);
+  border: 2px solid rgba(255, 255, 255, 0.85);
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.2rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  font-size: clamp(13px, 1.8vw, 17px);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .btn-bienvenido:hover {
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: #fff;
   color: #fff;
-}
-
-/* TAMAÑOS RESPONSIVOS */
-@media (max-width: 1240px) {
-  .display-1 {
-    font-size: 42px;
-  }
-  .btn-bienvenido {
-    font-size: 1.1rem;
-    padding: 14px 36px;
-  }
-}
-
-@media (max-width: 992px) {
-  .display-1 {
-    font-size: 36px;
-  }
-  .btn-bienvenido {
-    font-size: 1rem;
-    padding: 12px 32px;
-  }
-}
-
-@media (max-width: 768px) {
-  .display-1 {
-    font-size: 30px;
-  }
-  .btn-bienvenido {
-    font-size: 0.95rem;
-    padding: 10px 28px;
-  }
-}
-
-@media (max-width: 480px) {
-  .display-1 {
-    font-size: 26px;
-  }
-  .btn-bienvenido {
-    font-size: 0.9rem;
-    padding: 8px 24px;
-  }
 }

@@ -1,38 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import './Home.css';
-import 'animate.css/animate.min.css';
 
 function Home() {
-  const textoVisible = "Estudio Jurídico Sáenz & Asociados";
+  const textoVisible = "Estudio Jurídico Integral";
   const [typedText, setTypedText] = useState('');
-  const typingDelay = 45;
-  const erasingDelay = 50;
 
   useEffect(() => {
     let currentIndex = 0;
     let isTyping = true;
     let timeoutId;
+    let cancelled = false;
 
     const typeAndErase = () => {
+      if (cancelled) return;
+
       if (currentIndex === textoVisible.length) isTyping = false;
       else if (currentIndex === 0) isTyping = true;
 
       if (isTyping) {
-        setTypedText(prev => prev + textoVisible[currentIndex]);
+        setTypedText(textoVisible.slice(0, currentIndex + 1));
         currentIndex++;
       } else {
-        setTypedText(prev => prev.slice(0, -1));
+        setTypedText(textoVisible.slice(0, currentIndex - 1));
         currentIndex--;
       }
 
-      const delay = isTyping ? typingDelay : erasingDelay;
-      timeoutId = setTimeout(typeAndErase, delay);
+      timeoutId = setTimeout(typeAndErase, isTyping ? 55 : 35);
     };
 
-    typeAndErase();
+    timeoutId = setTimeout(typeAndErase, 300);
 
-    return () => clearTimeout(timeoutId);
+    return () => {
+      cancelled = true;
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
@@ -41,32 +43,28 @@ function Home() {
         <title>Inicio - Estudio Jurídico Sáenz & Asociados</title>
         <meta
           name="description"
-          content="Inicio del sitio web de Estudio Jurídico Sáenz & Asociados, especialistas en Derecho Civil, Penal, Laboral, Familia y Sucesiones."
+          content="Estudio Jurídico Sáenz & Asociados, especialistas en Derecho Civil, Penal, Laboral, Familia y Sucesiones."
         />
       </Helmet>
 
-      <div
+      <section
         id="inicio"
-        className="container-fluid position-relative p-0"
-        style={{ backgroundImage: 'url("/portada1.png")', minHeight: '100vh' }}
+        className="hero-section"
+        style={{ backgroundImage: 'url("/portada1.png")' }}
       >
-        <div className="overlay"></div>
+        <div className="hero-overlay" />
 
-        <div className="content-center">
-          <h1 className="display-1 mb-4 uppercase-text">
-            Sáenz & Asociados
-          </h1>
-          <div className="typed-text-container">
-            <p className="lead">
-              {typedText}
-              <span className="typing-cursor"></span>
-            </p>
-          </div>
+        <div className="hero-content">
+          <h1 className="hero-title">Sáenz &amp; Asociados</h1>
+          <p className="hero-subtitle">
+            {typedText}
+            <span className="typing-cursor" />
+          </p>
           <a href="#nosotros" className="btn-bienvenido">
-            BIENVENIDO
+            Bienvenido
           </a>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

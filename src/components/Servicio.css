@@ -1,94 +1,101 @@
-/* ================================
-   SECCIÓN SERVICIOS
-================================ */
 .service-section {
-  background-color: #f7f8fa; /* Blanco suave */
+  background-color: #f7f8fa;
   font-family: 'Lato', sans-serif;
-  padding: 40px 16px;
-  color: #1a2a40; /* Azul marino */
+  padding: 60px 16px;
+  color: #1a2a40;
 }
 
 .service-container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
-/* Título */
-.service-container h2 {
+/* ================================
+   HEADER
+================================ */
+.section-header {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 45px;
-  color: #1a2a40;
-  font-weight: 700;
-  position: relative;
+  margin-bottom: 40px;
 }
 
-.service-container h2::after {
+.section-header h2 {
+  font-size: clamp(22px, 5vw, 36px);
+  font-weight: 700;
+  color: #1a2a40;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 10px;
+}
+
+.section-header h2::after {
   content: "";
   display: block;
-  width: 70px;
+  width: 60px;
   height: 3px;
-  background-color: #4da6ff; /* Celeste suave */
-  margin: 12px auto 0;
+  background-color: #1A73E8;
+  margin: 10px auto 0;
   border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: clamp(13px, 2vw, 16px);
+  color: #6b7280;
+  margin: 12px 0 0;
+  font-weight: 400;
+  padding: 0 8px;
 }
 
 /* ================================
    TABS
 ================================ */
 .tabs-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 28px;
 }
 
 .tab-button {
   background: #ffffff;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  padding: 14px 22px;
-  font-size: 1rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 8px;
+  font-size: 13px;
+  font-family: 'Lato', sans-serif;
   cursor: pointer;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  color: #333333; /* negro suave */
-  font-weight: 600;
-  transition: all 0.3s ease;
-  min-width: 160px;
   justify-content: center;
+  gap: 6px;
+  color: #374151;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  min-height: 64px;
   text-align: center;
+  line-height: 1.3;
 }
 
-/* Iconos dentro del botón */
-.tab-button .icono {
-  color: inherit; /* toma el color del botón */
-  font-size: 1.3rem;
-  transition: all 0.3s ease;
+.tab-button:hover {
+  border-color: #1A73E8;
+  color: #1A73E8;
+  background: #f0f7ff;
 }
 
-/* Texto del botón */
-.tab-button .tab-text {
-  color: inherit;
-  font-weight: 400;
-  transition: color 0.3s ease;
-}
-
-/* Hover y activo */
-.tab-button:hover,
 .tab-button.active {
-  background: #1A73E8;
+  background: #1a2a40;
+  border-color: #1a2a40;
   color: #ffffff;
 }
 
-.tab-button:hover .icono,
-.tab-button.active .icono,
-.tab-button:hover .tab-text,
-.tab-button.active .tab-text {
-  color: #ffffff;
+.tab-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.tab-text {
+  font-size: 12px;
 }
 
 /* ================================
@@ -96,218 +103,386 @@
 ================================ */
 .info-box {
   background: #ffffff;
-  padding: 35px 30px;
+  padding: 24px 20px;
   border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  text-align: center;
-  margin-top: 25px;
-  color: #1a2a40;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  animation: fadeIn 0.25s ease;
 }
 
-.info-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.info-box h3 {
-  font-size: 1.6rem;
-  color: #1a2a40;
+.info-header {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 14px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.info-icon-wrap {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  background: #eef3fb;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #1A73E8;
+}
+
+.info-header h3 {
+  font-size: clamp(17px, 3.5vw, 24px);
+  color: #1a2a40;
+  margin: 0 0 4px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .subtitulo {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #555;
-  margin-bottom: 20px;
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 0;
+  font-weight: 400;
 }
 
+/* ================================
+   LISTA
+================================ */
 .descripcion {
-  margin: 20px auto;
-  padding-left: 20px;
-  list-style: disc inside;
-  color: #333;
-  text-align: left;
-  max-width: 600px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .descripcion li {
-  margin-bottom: 8px;
-  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.5;
+  padding: 10px 14px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+}
+
+.check-icon {
+  color: #1A73E8;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ================================
+   CONTACTO
+================================ */
+.info-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.contacto-item {
+  background: #f7f8fa;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.contacto-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #9ca3af;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.contacto-item span:last-child,
+.contacto-item a {
+  font-size: 14px;
+  color: #1a2a40;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: right;
+  word-break: break-word;
+}
+
+.contacto-item a:hover {
+  color: #1A73E8;
 }
 
 /* ================================
    PAGO
 ================================ */
 .pago-info {
-  margin-top: 30px;
-  text-align: center;
-  color: #1a2a40;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 24px;
+  margin-bottom: 24px;
+}
+
+.pago-info h4 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+  font-weight: 600;
+  margin: 0 0 14px;
 }
 
 .pago-items {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 12px;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .pago-item {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 5px;
-  font-size: 0.95rem;
+  gap: 12px;
+  background: #f7f8fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 14px;
   color: #1a2a40;
   font-weight: 600;
 }
 
-.pago-item img.mp-logo,
-.pago-item .icono-pago {
-  width: 120px;
-  height: 50px;
+.mp-logo {
+  height: 26px;
+  width: auto;
   object-fit: contain;
+}
+
+.pago-icon-wrap {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #1a2a40;
 }
 
 /* ================================
    TARIFARIO
 ================================ */
 .tarifario-box {
-  margin-top: 35px;
-  padding: 22px;
+  background: #f0f4ff;
   border-radius: 12px;
+  padding: 20px 16px;
   text-align: center;
-  color: #1a2a40;
-  background-color: #f0f4f8;
+  border: 1px solid #dbeafe;
+}
+
+.tarifario-box p {
+  font-size: 14px;
+  color: #374151;
+  margin: 0 0 12px;
+}
+
+.tarifario-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.tarifario-links a {
+  font-size: 14px;
+  color: #1A73E8;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.tarifario-links a:hover {
+  text-decoration: underline;
 }
 
 .btn-ver-tarifas {
-  margin-top: 18px;
-  background: #1A73E8;
+  background: #1a2a40;
   color: #ffffff;
   border: none;
-  padding: 12px 20px;
-  border-radius: 12px;
+  padding: 13px 28px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  transition: background 0.25s ease;
+  min-height: 48px;
+  width: 100%;
 }
 
 .btn-ver-tarifas:hover {
-  background: #1a2a40;
-  transform: translateY(-2px);
+  background: #1A73E8;
 }
-
 
 /* ================================
    MODAL
 ================================ */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.65);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   z-index: 2000;
+  padding: 0;
 }
 
 .modal-content {
   background: #ffffff;
-  padding: 35px;
-  border-radius: 16px;
-  max-width: 600px;
-  width: 90%;
+  padding: 28px 20px 36px;
+  border-radius: 20px 20px 0 0;
+  width: 100%;
   position: relative;
   color: #1a2a40;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  padding-right: 36px;
+}
+
+.modal-block {
+  margin-bottom: 20px;
+}
+
+.modal-block h4 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.modal-block ol {
+  padding-left: 16px;
+  margin: 0;
+}
+
+.modal-block ol li {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.6;
+  margin-bottom: 6px;
 }
 
 .modal-close {
   position: absolute;
-  top: 12px;
-  right: 15px;
-  background: none;
+  top: 14px;
+  right: 16px;
+  background: #f3f4f6;
   border: none;
-  font-size: 1.8rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 1.2rem;
   cursor: pointer;
   color: #1a2a40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.modal-close:hover {
+  background: #e5e7eb;
 }
 
 /* ================================
-   RESPONSIVE
+   DESKTOP — ajustes para pantallas grandes
 ================================ */
-/* ================================
-   RESPONSIVE
-================================ */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+  .service-section {
+    padding: 60px 24px;
+  }
+
   .tabs-container {
-    grid-template-columns: repeat(2, 1fr);
-    display: grid;
-    gap: 12px;
+    grid-template-columns: repeat(5, 1fr);
   }
+
   .tab-button {
-    width: 100%;
-    font-size: 0.9rem; /* más pequeña */
-    padding: 10px 16px; /* más compacta */
+    flex-direction: row;
+    padding: 13px 16px;
+    font-size: 14px;
+    min-height: 52px;
   }
-  .tab-button .icono {
-    font-size: 1.1rem; /* ajusta icono proporcional */
+
+  .tab-text {
+    font-size: 13px;
   }
+
   .info-box {
-    padding: 25px 20px; /* menos padding */
+    padding: 36px 32px;
   }
-  .info-box h3 {
-    font-size: 1.4rem;
+
+  .descripcion {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
-  .descripcion {
-    padding-left: 15px;
-    max-width: 100%;
-  }
-  .pago-item img.mp-logo,
-  .pago-item .icono-pago {
-    width: 80px;
-    height: 40px;
-  }
-  .btn-ver-tarifas {
-    font-size: 0.95rem;
-    padding: 10px 16px; /* más pequeño en móvil */
-  }
-}
 
-@media (max-width: 480px) {
-  #nosotros h2,
-  .service-container h2 { font-size: 26px; }
-  .nosotros-text,
-  .descripcion li { font-size: 15px; }
-  .nosotros-frase { font-size: 17px; }
-  .tab-button {
-    font-size: 0.85rem;
-    padding: 8px 12px;
+  .info-contacto {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
-  .tab-button .icono {
-    font-size: 1rem;
+
+  .contacto-item {
+    flex: 1;
+    min-width: 160px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
-  .info-box {
-    padding: 20px 15px;
+
+  .contacto-item span:last-child,
+  .contacto-item a {
+    text-align: left;
   }
-  .info-box h3 {
-    font-size: 1.2rem;
-    gap: 8px;
+
+  .pago-items {
+    flex-direction: row;
   }
+
+  .modal-overlay {
+    align-items: center;
+    padding: 16px;
+  }
+
+  .modal-content {
+    border-radius: 16px;
+    max-width: 560px;
+    padding: 36px;
+  }
+
   .btn-ver-tarifas {
-    font-size: 0.9rem;
-    padding: 8px 14px;
+    width: auto;
   }
 }
