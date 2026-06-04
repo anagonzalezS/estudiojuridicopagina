@@ -19,7 +19,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  height: 110px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
@@ -35,15 +35,14 @@
   flex-shrink: 0;
 }
 
-/* Desktop — logo horizontal */
-
 .navbar-logo {
-  height: 80px;      /* antes 64px */
-  max-width: 500px;  /* antes 400px */
+  height: 90px;
   width: auto;
   display: block;
   transition: opacity 0.2s;
+  max-width: 520px;
 }
+
 .navbar-brand:hover .navbar-logo {
   opacity: 0.85;
 }
@@ -81,7 +80,7 @@
 }
 
 /* ===========================
-   HAMBURGUESA — oculta por defecto en desktop
+   HAMBURGUESA — oculta por defecto
 =========================== */
 .navbar-toggler {
   display: none;
@@ -176,8 +175,6 @@
 /* ===========================
    RESPONSIVE
 =========================== */
-
-/* TABLET Y MOBILE */
 @media (max-width: 768px) {
   .navbar-nav {
     display: none;
@@ -192,14 +189,12 @@
     padding: 0 20px;
   }
 
-  /* Mobile usa logo cuadrado via JSX — altura cómoda */
   .navbar-logo {
     height: 52px;
     max-width: 200px;
   }
 }
 
-/* MOBILE PEQUEÑO */
 @media (max-width: 480px) {
   .navbar-inner {
     height: 60px;
@@ -210,4 +205,4 @@
     height: 44px;
     max-width: 180px;
   }
-}
+   }
