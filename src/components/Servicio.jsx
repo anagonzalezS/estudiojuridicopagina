@@ -2,59 +2,25 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import './Servicio.css';
 import {
-  FaBalanceScale, FaGavel, FaBriefcase, FaUsers,
-  FaBookOpen, FaUniversity
+  FaBalanceScale, FaBriefcase, FaUniversity
 } from 'react-icons/fa';
 
 const servicios = [
   {
     id: 1,
-    title: 'Derecho Civil',
+    title: 'Derecho Civil y Comercial',
     icon: <FaBalanceScale />,
     description: [
+      'Divorcios',
+      'Sucesiones',
       'Usucapiones en CABA y Provincia de Buenos Aires',
-      'Accidentes de Tránsito',
-      'Incumplimientos Contractuales'
+      'Recupero de Créditos y Ejecuciones',
+      'Daños y Perjuicios',
+      'Medidas Cautelares',
     ]
   },
   {
     id: 2,
-    title: 'Derecho Penal',
-    icon: <FaGavel />,
-    description: [
-      'Asistencia en comisarías y fiscalías',
-      'Defensa en todo tipo de delitos',
-      'Confidencialidad y acompañamiento personalizado'
-    ]
-  },
-  {
-    id: 3,
-    title: 'Derecho de Familia',
-    icon: <FaUsers />,
-    description: [
-      'Divorcios unilaterales',
-      'Divorcio presentación en conjunto',
-      'Alimentos',
-      'Compensación económica',
-      'Adopción',
-      'Determinación de la capacidad'
-    ]
-  },
-  {
-    id: 4,
-    title: 'Derecho Sucesorio',
-    icon: <FaBookOpen />,
-    description: [
-      'Sucesiones Ab intestato y testamentarias',
-      'Partición de Herencia',
-      'Planificación Hereditaria',
-      'Acciones de colación y reducción',
-      'Redacción de Testamentos',
-      'Ampliación de Declaratoria Herederos'
-    ]
-  },
-  {
-    id: 5,
     title: 'Derecho Empresarial',
     icon: <FaBriefcase />,
     description: [
@@ -62,7 +28,8 @@ const servicios = [
       'Acuerdo entre socios',
       'Trámites ante IGJ',
       'Acuerdos laborales',
-      'Contratos'
+      'Contratos',
+      'Incumplimientos Contractuales',
     ]
   },
 ];
@@ -78,7 +45,7 @@ function Servicio() {
         <title>Servicios Legales - Estudio Jurídico Sáenz & Asociados</title>
         <meta
           name="description"
-          content="Servicios legales de Estudio Jurídico Sáenz & Asociados: Civil, Penal, Laboral, Familia, Sucesiones y Derecho Empresarial. Atención en CABA y Provincia de Buenos Aires."
+          content="Servicios legales de Estudio Jurídico Sáenz & Asociados: Derecho Civil y Comercial, Derecho Empresarial. Atención en CABA y Provincia de Buenos Aires."
         />
       </Helmet>
 
@@ -89,7 +56,8 @@ function Servicio() {
           <p className="section-subtitle">Asesoramiento jurídico integral en todas las áreas del derecho</p>
         </div>
 
-        <div className="tabs-container">
+        {/* TABS — solo 2 ahora, se muestran centrados */}
+        <div className="tabs-container tabs-two">
           {servicios.map((serv) => (
             <button
               key={serv.id}
@@ -110,7 +78,7 @@ function Servicio() {
               <div className="info-icon-wrap">{activeService.icon}</div>
               <div>
                 <h3>{activeService.title}</h3>
-                <p className="subtitulo">Estudio Jurídico Sáenz &amp; Asociados</p>
+                <p className="subtitulo">Estudio Jurídico Sáenz <span className="amp">&</span> Asociados</p>
               </div>
             </div>
 
