@@ -69,12 +69,7 @@ function Navbar() {
 
       </div>
 
-      {/* Overlay fondo oscuro mobile */}
-      <div
-        className={`navbar-overlay ${isOpen ? "show" : ""}`}
-        onClick={() => setIsOpen(false)}
-        aria-hidden="true"
-      />
+
 
       <div className={`navbar-dropdown ${isOpen ? "show" : ""}`}>
         <ul>
