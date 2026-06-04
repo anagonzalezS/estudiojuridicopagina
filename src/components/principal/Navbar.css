@@ -133,22 +133,7 @@
   background-color: #0056B3;
 }
 
-/* ===========================
-   OVERLAY FONDO MOBILE
-=========================== */
-.navbar-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: 999;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
 
-.navbar-overlay.show {
-  opacity: 1;
-}
 
 /* ===========================
    DROPDOWN MÓVIL
