@@ -38,7 +38,7 @@ function Navbar() {
           aria-label="Estudio Sáenz & Asociados - Inicio"
         >
           <img
-            src={isMobile ? "/logonav.png" : "/logo.png"}
+            src={isMobile ? "/logonav.png" : "/logonav.png"}
             alt="Estudio Sáenz & Asociados"
             className="navbar-logo"
           />
