@@ -2,12 +2,11 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Header from './components/Header';
 import Navbar from "./components/principal/Navbar";
 import Home from './components/Home';
 import Nosotros from './components/Nosotros';
 import Servicio from './components/Servicio';
-import Testimonios from './components/Testimonios';
+import Contacto from './components/Contacto';
 import AdminTestimonios from './components/AdminTestimonios';
 
 import Footer from './components/Footer';
@@ -32,7 +31,6 @@ function App() {
           element={
             <div>
               <div className="header-navbar-container">
-                <Header />
                 <Navbar />
               </div>
 
@@ -49,7 +47,7 @@ function App() {
               </section>
 
               <section id="testimonios">
-                <Testimonios />
+                <Contacto />
               </section>
 
               <Footer />

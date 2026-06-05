@@ -1,120 +1,115 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet";
-import emailjs from "emailjs-com";
 import "./Contacto.css";
 
 function Contacto() {
-  const [formData, setFormData] = useState({ nombre: "", email: "", mensaje: "" });
-  const [showModal, setShowModal] = useState(false);
-  const [modalMessage, setModalMessage] = useState("");
+  const [copiado, setCopiado] = useState(false);
 
-  const handleChange = (e) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Debug: verificar que las variables de entorno se carguen
-    console.log(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-    );
-
-    emailjs
-      .send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        formData,
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setModalMessage("¡Gracias por tu mensaje, pronto te responderemos!");
-          setShowModal(true);
-          setFormData({ nombre: "", email: "", mensaje: "" });
-        },
-        (error) => {
-          setModalMessage(
-            "Ocurrió un error al enviar el mensaje, intenta nuevamente."
-          );
-          setShowModal(true);
-          console.error(error.text);
-        }
-      );
+  const copiarEmail = () => {
+    navigator.clipboard.writeText("estudio@saenz-asociados.com.ar");
+    setCopiado(true);
+    setTimeout(() => setCopiado(false), 2000);
   };
 
   return (
-    <section className="contacto-section" id="contacto">
-      <Helmet>
-        <title>Contacto - Estudio Jurídico Sáenz & Asociados</title>
-        <meta
-          name="description"
-          content="Formulario de contacto para consultas legales con Estudio Jurídico Sáenz & Asociados. Atención en CABA y Provincia de Buenos Aires."
-        />
-        <meta
-          name="keywords"
-          content="abogados, derecho civil, derecho penal, derecho laboral, usucapión, divorcios, sucesiones, CABA, Buenos Aires"
-        />
-      </Helmet>
+    <section id="contacto" className="contacto-section">
 
-      <div className="contacto-container">
+      <div className="section-header">
         <h2>Contacto</h2>
-        <p className="contacto-intro">
-          Complete el formulario y nos pondremos en contacto a la brevedad.
-        </p>
-
-        <form className="contacto-form" onSubmit={handleSubmit}>
-          <label>
-            Nombre
-            <input
-              type="text"
-              name="nombre"
-              value={formData.nombre}
-              onChange={handleChange}
-              placeholder="Tu nombre completo"
-              required
-            />
-          </label>
-          <label>
-            Email
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Tu correo electrónico"
-              required
-            />
-          </label>
-          <label>
-            Mensaje
-            <textarea
-              name="mensaje"
-              value={formData.mensaje}
-              onChange={handleChange}
-              placeholder="Escribe tu mensaje"
-              required
-            />
-          </label>
-          <button type="submit">Enviar Mensaje</button>
-        </form>
+        <p className="section-subtitle">Consultanos sin compromiso</p>
       </div>
 
-      {/* Modal */}
-      {showModal && (
-        <div className="modal-overlay" onClick={() => setShowModal(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button
-              className="modal-close"
-              onClick={() => setShowModal(false)}
-            >
-              ×
-            </button>
-            <p>{modalMessage}</p>
+      <div className="contacto-lista">
+
+        {/* Ubicación */}
+        <div className="contacto-fila">
+          <div className="contacto-icono">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+              <circle cx="12" cy="9" r="2.5" />
+            </svg>
+          </div>
+          <div className="contacto-contenido">
+            <span className="contacto-etiqueta">Zona de atención</span>
+            <span className="contacto-dato">Ciudad Autónoma de Buenos Aires</span>
+            <span className="contacto-dato">Provincia de Buenos Aires</span>
           </div>
         </div>
-      )}
+
+        <div className="contacto-divider" />
+
+        {/* WhatsApp */}
+        <a
+          href="https://wa.me/5491162087349"
+          className="contacto-fila contacto-fila--link"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Contactar por WhatsApp"
+        >
+          <div className="contacto-icono">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+            </svg>
+          </div>
+          <div className="contacto-contenido">
+            <span className="contacto-etiqueta">WhatsApp</span>
+            <span className="contacto-dato">11-6208-7349</span>
+          </div>
+          <svg className="contacto-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </a>
+
+        <div className="contacto-divider" />
+
+        {/* Email */}
+        <button
+          className="contacto-fila contacto-fila--link"
+          onClick={copiarEmail}
+          aria-label="Copiar dirección de email"
+        >
+          <div className="contacto-icono">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <polyline points="2 6 12 13 22 6" />
+            </svg>
+          </div>
+          <div className="contacto-contenido">
+            <span className="contacto-etiqueta">Correo electrónico</span>
+            <span className="contacto-dato contacto-dato--small">estudio@saenz-asociados.com.ar</span>
+          </div>
+          <span className={`contacto-copy-badge ${copiado ? "copiado" : ""}`} aria-live="polite">
+            {copiado ? "Copiado" : "Copiar"}
+          </span>
+        </button>
+
+        <div className="contacto-divider" />
+
+        {/* Instagram */}
+        <a
+          href="https://www.instagram.com/estudio.saenz/"
+          className="contacto-fila contacto-fila--link"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Seguirnos en Instagram"
+        >
+          <div className="contacto-icono">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+          </div>
+          <div className="contacto-contenido">
+            <span className="contacto-etiqueta">Instagram</span>
+            <span className="contacto-dato">@estudio.saenz</span>
+          </div>
+          <svg className="contacto-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </a>
+
+      </div>
+
     </section>
   );
 }

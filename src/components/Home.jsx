@@ -67,8 +67,8 @@ function Home() {
             Derecho Civil &nbsp;·&nbsp; Penal Tributario &nbsp;·&nbsp; Empresarial
           </p>
 
-          <a href="#nosotros" className="btn-bienvenido">
-            Conocenos
+          <a href="#contacto" className="btn-bienvenido">
+            Contacto
           </a>
 
         </div>
