@@ -1,20 +1,50 @@
 /* ===========================
-   HEADER TOP BAR
+   HEADER — fondo blanco
 =========================== */
 .header-section {
-  background-color: #1A2A40;
+  background-color: #ffffff;
   width: 100%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid #E8EBF0;
 }
 
 .header-inner {
   display: flex;
-  justify-content: center;
-  align-items: stretch;
-  height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 48px;
+}
+
+/* ===========================
+   LOGO
+=========================== */
+.header-logo-wrap {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.header-logo {
+  height: 74px;
+  width: auto;
+  display: block;
+  transition: opacity 0.2s;
+}
+
+.header-logo-wrap:hover .header-logo {
+  opacity: 0.85;
+}
+
+/* ===========================
+   CONTACTO
+=========================== */
+.header-contact {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
 }
 
 .header-item {
@@ -22,40 +52,35 @@
   align-items: center;
   gap: 7px;
   padding: 0 20px;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 1px solid #E8EBF0;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 12px;
+  color: #4B5563;
+  font-size: 13px;
   font-family: 'Lato', sans-serif;
-  letter-spacing: 0.3px;
-  min-height: 40px;
+  letter-spacing: 0.2px;
   transition: color 0.2s, background-color 0.2s;
   white-space: nowrap;
 }
 
-.header-item:last-child { border-right: none; }
-
 .header-item:hover {
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.05);
+  color: #1A2A40;
+  background-color: #F8F9FC;
 }
 
 .header-icon {
-  width: 13px;
-  height: 13px;
+  width: 14px;
+  height: 14px;
   flex-shrink: 0;
 }
 
-.header-item--wa { color: rgba(255, 255, 255, 0.7); }
 .header-item--wa .header-icon { color: #25D366; }
-.header-item--wa:hover { color: #ffffff; }
+.header-item--wa:hover { color: #1A2A40; }
 
-.header-item--email { color: rgba(255, 255, 255, 0.6); }
-.header-item--email:hover { color: #ffffff; }
+.header-item--email { color: #4B5563; }
+.header-item--email:hover { color: #1A2A40; }
 
-.header-item--ig { color: rgba(255, 255, 255, 0.7); }
 .header-item--ig .header-icon { color: #E1306C; }
-.header-item--ig:hover { color: #ffffff; }
+.header-item--ig:hover { color: #1A2A40; }
 
 /* ===========================
    MOBILE
@@ -63,22 +88,35 @@
 @media (max-width: 768px) {
   .header-inner {
     height: auto;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    padding: 0;
+    flex-direction: column;
+    padding: 12px 16px 0;
+  }
+
+  .header-logo {
+    height: 56px;
+    margin-bottom: 8px;
+  }
+
+  .header-contact {
+    width: 100%;
+    height: auto;
+    border-top: 1px solid #E8EBF0;
   }
 
   .header-item {
     flex: 1;
     justify-content: center;
-    padding: 8px 4px;
+    padding: 10px 4px;
+    border-left: none;
+    border-right: 1px solid #E8EBF0;
     flex-direction: column;
     gap: 4px;
     min-height: 52px;
     font-size: 10px;
     text-align: center;
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
   }
+
+  .header-item:last-child { border-right: none; }
 
   .header-label--email { display: none; }
 
@@ -91,5 +129,15 @@
   .header-icon {
     width: 18px;
     height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-inner {
+    padding: 10px 12px 0;
+  }
+
+  .header-logo {
+    height: 46px;
   }
 }
