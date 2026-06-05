@@ -4,7 +4,7 @@
 .navbar-custom {
   background-color: #021936;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -12,22 +12,22 @@
 }
 
 .navbar-scrolled {
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
 }
 
+/* ===========================
+   DESKTOP Y NOTEBOOK
+=========================== */
 .navbar-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 110px;
+  height: 120px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 48px;
 }
 
-/* ===========================
-   LOGO
-=========================== */
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -36,11 +36,11 @@
 }
 
 .navbar-logo {
-  height: 90px;
+  height: 100px;
   width: auto;
   display: block;
   transition: opacity 0.2s;
-  max-width: 520px;
+  max-width: 560px;
 }
 
 .navbar-brand:hover .navbar-logo {
@@ -62,7 +62,7 @@
 
 .nav-link {
   color: rgba(255, 255, 255, 0.8);
-  font-size: 13px;
+  font-size: 14px;
   font-family: 'Lato', sans-serif;
   font-weight: 600;
   text-decoration: none;
@@ -80,12 +80,12 @@
 }
 
 /* ===========================
-   HAMBURGUESA — oculta por defecto
+   HAMBURGUESA — oculta en desktop
 =========================== */
 .navbar-toggler {
   display: none;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   background: none;
   border: none;
   cursor: pointer;
@@ -93,7 +93,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   border-radius: 6px;
   transition: background-color 0.2s;
   flex-shrink: 0;
@@ -105,7 +105,7 @@
 
 .navbar-toggler span {
   display: block;
-  width: 22px;
+  width: 24px;
   height: 2px;
   background-color: #ffffff;
   border-radius: 2px;
@@ -114,7 +114,7 @@
 }
 
 .navbar-toggler.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
 }
 
 .navbar-toggler.open span:nth-child(2) {
@@ -123,7 +123,7 @@
 }
 
 .navbar-toggler.open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* ===========================
@@ -151,11 +151,11 @@
 
 .navbar-dropdown li a {
   display: block;
-  padding: 15px 24px;
+  padding: 16px 24px;
   color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
   font-family: 'Lato', sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.8px;
@@ -171,9 +171,9 @@
 }
 
 /* ===========================
-   RESPONSIVE
+   TABLET (768px - 992px)
 =========================== */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .navbar-nav {
     display: none;
   }
@@ -183,24 +183,42 @@
   }
 
   .navbar-inner {
-    height: 72px;
+    height: 100px;
+    padding: 0 32px;
+  }
+
+  .navbar-logo {
+    height: 80px;
+    max-width: 460px;
+  }
+}
+
+/* ===========================
+   MOBILE (hasta 768px)
+=========================== */
+@media (max-width: 768px) {
+  .navbar-inner {
+    height: 80px;
     padding: 0 20px;
   }
 
   .navbar-logo {
-    height: 60px;
-    max-width: 240px;
+    height: 64px;
+    max-width: 320px;
   }
 }
 
+/* ===========================
+   MOBILE PEQUEÑO (hasta 480px)
+=========================== */
 @media (max-width: 480px) {
   .navbar-inner {
-    height: 64px;
+    height: 72px;
     padding: 0 16px;
   }
 
   .navbar-logo {
-    height: 88px;
-    max-width: 200px;
+    height: 56px;
+    max-width: 260px;
   }
 }
