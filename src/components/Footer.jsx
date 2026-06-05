@@ -76,7 +76,7 @@ function Footer() {
       {/* BARRA INFERIOR */}
       <div className="footer-bottom">
         <p className="footer-copy">
-          © {currentYear} Estudio Sáenz <span className="amp">&</span> Asociados. Todos los derechos reservados.
+          © {new Date().getFullYear()} Estudio Sáenz & Asociados. Todos los derechos reservados.
         </p>
         <p className="footer-credit">
           Desarrollado por <strong>Ana Sánchez</strong>
