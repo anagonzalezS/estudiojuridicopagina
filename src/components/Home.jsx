@@ -53,7 +53,10 @@ function Home() {
         <div className="hero-overlay" />
 
         <div className="hero-content">
-          <h1 className="hero-title">Sáenz <span className="amp">&amp;</span> Asociados</h1>
+
+          <h1 className="hero-title">
+            Sáenz <span className="amp">&amp;</span> Asociados
+          </h1>
 
           <p className="hero-subtitle">
             {typedText}
@@ -61,12 +64,13 @@ function Home() {
           </p>
 
           <p className="hero-especialidades">
-            Derecho Civil · Penal Tributario · Empresarial
+            Derecho Civil &nbsp;·&nbsp; Penal Tributario &nbsp;·&nbsp; Empresarial
           </p>
 
           <a href="#nosotros" className="btn-bienvenido">
             Conocenos
           </a>
+
         </div>
       </section>
     </div>
