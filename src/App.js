@@ -24,7 +24,6 @@ function App() {
       </Helmet>
 
       <Routes>
-        {/* Ruta pública */}
         <Route
           path="/"
           element={
@@ -45,7 +44,7 @@ function App() {
                 <Servicio />
               </section>
 
-              <section id="testimonios">
+              <section id="contacto">
                 <Contacto />
               </section>
 
@@ -54,7 +53,6 @@ function App() {
             </div>
           }
         />
-
       </Routes>
     </Router>
   );
