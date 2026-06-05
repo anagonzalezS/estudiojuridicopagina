@@ -1,17 +1,20 @@
+/* ===========================
+   HEADER TOP BAR
+=========================== */
 .header-section {
   background-color: #1A2A40;
   width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .header-inner {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  gap: 0;
   height: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 48px;
 }
 
 .header-item {
@@ -19,41 +22,38 @@
   align-items: center;
   gap: 7px;
   padding: 0 20px;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
   font-family: 'Lato', sans-serif;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
   min-height: 40px;
   transition: color 0.2s, background-color 0.2s;
   white-space: nowrap;
 }
 
-.header-item:last-child {
-  border-right: none;
-}
+.header-item:last-child { border-right: none; }
 
 .header-item:hover {
   color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.06);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .header-icon {
-  width: 14px;
-  height: 14px;
+  width: 13px;
+  height: 13px;
   flex-shrink: 0;
-  transition: color 0.2s;
 }
 
-.header-item--wa { color: rgba(255, 255, 255, 0.75); }
+.header-item--wa { color: rgba(255, 255, 255, 0.7); }
 .header-item--wa .header-icon { color: #25D366; }
 .header-item--wa:hover { color: #ffffff; }
 
-.header-item--email { color: rgba(255, 255, 255, 0.65); }
+.header-item--email { color: rgba(255, 255, 255, 0.6); }
 .header-item--email:hover { color: #ffffff; }
 
-.header-item--ig { color: rgba(255, 255, 255, 0.75); }
+.header-item--ig { color: rgba(255, 255, 255, 0.7); }
 .header-item--ig .header-icon { color: #E1306C; }
 .header-item--ig:hover { color: #ffffff; }
 
@@ -63,33 +63,29 @@
 @media (max-width: 768px) {
   .header-inner {
     height: auto;
-    flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
     padding: 0;
-    gap: 0;
   }
 
   .header-item {
     flex: 1;
     justify-content: center;
-    padding: 10px 4px;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 4px;
     flex-direction: column;
     gap: 4px;
     min-height: 52px;
-    font-size: 11px;
-    letter-spacing: 0;
+    font-size: 10px;
     text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  .header-label--email {
-    display: none;
-  }
+  .header-label--email { display: none; }
 
   .header-item--email::after {
     content: "Email";
-    font-size: 11px;
+    font-size: 10px;
+    font-family: 'Lato', sans-serif;
   }
 
   .header-icon {
