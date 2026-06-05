@@ -54,6 +54,11 @@ function Navbar() {
               Servicios
             </a>
           </li>
+          <li className="nav-item">
+          <a className="nav-link" href="#testimonios" onClick={(e) => handleScroll(e, "#testimonios")}>
+            Reseñas
+          </a>
+        </li>
         </ul>
 
         <button
@@ -75,6 +80,7 @@ function Navbar() {
             { href: "#inicio", label: "Inicio" },
             { href: "#nosotros", label: "Nosotros" },
             { href: "#servicios", label: "Servicios" },
+            { href: "#testimonios", label: "Reseñas" },
           ].map(({ href, label }) => (
             <li key={href}>
               <a href={href} onClick={(e) => handleScroll(e, href)}>
