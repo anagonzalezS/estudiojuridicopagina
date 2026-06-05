@@ -6,16 +6,7 @@ function Header() {
     <header className="header-section">
       <div className="header-inner">
 
-        {/* LOGO */}
-        <a href="#inicio" className="header-logo-wrap" aria-label="Inicio">
-          <img
-            src="/logo-nav.png"
-            alt="Estudio Sáenz & Asociados"
-            className="header-logo"
-          />
-        </a>
 
-        {/* CONTACTO */}
         <div className="header-contact">
           <a
             href="https://wa.me/5491162087349"
