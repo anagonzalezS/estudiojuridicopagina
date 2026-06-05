@@ -16,7 +16,7 @@ function Nosotros() {
       <div className="nosotros-container">
 
         <div className="nosotros-header">
-          <h2>Nosotros</h2>
+          <h2>NOSOTROS</h2>
         </div>
 
         <div className="nosotros-body">
