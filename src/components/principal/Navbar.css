@@ -2,7 +2,7 @@
    NAVBAR BASE
 =========================== */
 .navbar-custom {
-  background-color: #1A2A40;
+  background-color: #021936;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
   position: sticky;
@@ -133,7 +133,7 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease;
-  background-color: #152233;
+  background-color: #010f22;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
   z-index: 1001;
