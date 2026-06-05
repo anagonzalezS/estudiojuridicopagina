@@ -14,7 +14,6 @@ function Home() {
 
     const typeAndErase = () => {
       if (cancelled) return;
-
       if (currentIndex === textoVisible.length) isTyping = false;
       else if (currentIndex === 0) isTyping = true;
 
@@ -30,7 +29,6 @@ function Home() {
     };
 
     timeoutId = setTimeout(typeAndErase, 300);
-
     return () => {
       cancelled = true;
       clearTimeout(timeoutId);
@@ -43,7 +41,7 @@ function Home() {
         <title>Inicio - Estudio Jurídico Sáenz & Asociados</title>
         <meta
           name="description"
-          content="Estudio Jurídico Sáenz & Asociados, especialistas en Derecho Civil, Penal, Laboral, Familia y Sucesiones."
+          content="Estudio Jurídico Sáenz & Asociados, especialistas en Derecho Civil, Penal Tributario y Empresarial. CABA y Provincia de Buenos Aires."
         />
       </Helmet>
 
@@ -55,13 +53,19 @@ function Home() {
         <div className="hero-overlay" />
 
         <div className="hero-content">
-          <h1 className="hero-title">Sáenz &amp; Asociados</h1>
+          <h1 className="hero-title">Sáenz <span className="amp">&amp;</span> Asociados</h1>
+
           <p className="hero-subtitle">
             {typedText}
             <span className="typing-cursor" />
           </p>
+
+          <p className="hero-especialidades">
+            Derecho Civil · Penal Tributario · Empresarial
+          </p>
+
           <a href="#nosotros" className="btn-bienvenido">
-            Bienvenido
+            Conocenos
           </a>
         </div>
       </section>
