@@ -7,7 +7,6 @@ import Home from './components/Home';
 import Nosotros from './components/Nosotros';
 import Servicio from './components/Servicio';
 import Contacto from './components/Contacto';
-import AdminTestimonios from './components/AdminTestimonios';
 
 import Footer from './components/Footer';
 import WhatsappIcon from './components/WhatsappIcon';
@@ -56,8 +55,6 @@ function App() {
           }
         />
 
-        {/* Ruta privada para la abogada */}
-        <Route path="/admin-testimonios" element={<AdminTestimonios />} />
       </Routes>
     </Router>
   );
