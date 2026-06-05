@@ -1,5 +1,5 @@
 /* ===========================
-   HEADER — fondo blanco
+   HEADER — fondo blanco, solo contactos
 =========================== */
 .header-section {
   background-color: #ffffff;
@@ -9,38 +9,14 @@
 
 .header-inner {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 90px;
+  justify-content: center;
+  align-items: stretch;
+  height: 44px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 48px;
 }
 
-/* ===========================
-   LOGO
-=========================== */
-.header-logo-wrap {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  flex-shrink: 0;
-}
-
-.header-logo {
-  height: 74px;
-  width: auto;
-  display: block;
-  transition: opacity 0.2s;
-}
-
-.header-logo-wrap:hover .header-logo {
-  opacity: 0.85;
-}
-
-/* ===========================
-   CONTACTO
-=========================== */
 .header-contact {
   display: flex;
   align-items: stretch;
@@ -50,9 +26,9 @@
 .header-item {
   display: flex;
   align-items: center;
-  gap: 7px;
-  padding: 0 20px;
-  border-left: 1px solid #E8EBF0;
+  gap: 8px;
+  padding: 0 24px;
+  border-right: 1px solid #E8EBF0;
   text-decoration: none;
   color: #4B5563;
   font-size: 13px;
@@ -61,6 +37,8 @@
   transition: color 0.2s, background-color 0.2s;
   white-space: nowrap;
 }
+
+.header-item:last-child { border-right: none; }
 
 .header-item:hover {
   color: #1A2A40;
@@ -75,10 +53,8 @@
 
 .header-item--wa .header-icon { color: #25D366; }
 .header-item--wa:hover { color: #1A2A40; }
-
 .header-item--email { color: #4B5563; }
 .header-item--email:hover { color: #1A2A40; }
-
 .header-item--ig .header-icon { color: #E1306C; }
 .header-item--ig:hover { color: #1A2A40; }
 
@@ -88,27 +64,21 @@
 @media (max-width: 768px) {
   .header-inner {
     height: auto;
-    flex-direction: column;
-    padding: 12px 16px 0;
-  }
-
-  .header-logo {
-    height: 56px;
-    margin-bottom: 8px;
+    padding: 0;
+    justify-content: space-around;
   }
 
   .header-contact {
     width: 100%;
     height: auto;
-    border-top: 1px solid #E8EBF0;
   }
 
   .header-item {
     flex: 1;
     justify-content: center;
     padding: 10px 4px;
-    border-left: none;
     border-right: 1px solid #E8EBF0;
+    border-left: none;
     flex-direction: column;
     gap: 4px;
     min-height: 52px;
@@ -129,15 +99,5 @@
   .header-icon {
     width: 18px;
     height: 18px;
-  }
-}
-
-@media (max-width: 480px) {
-  .header-inner {
-    padding: 10px 12px 0;
-  }
-
-  .header-logo {
-    height: 46px;
   }
 }
