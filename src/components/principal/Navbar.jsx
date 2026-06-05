@@ -80,7 +80,7 @@ function Navbar() {
             { href: "#inicio", label: "Inicio" },
             { href: "#nosotros", label: "Nosotros" },
             { href: "#servicios", label: "Servicios" },
-            { href: "#testimonios", label: "Reseñas" },
+            { href: "#contacto", label: "Reseñas" },
           ].map(({ href, label }) => (
             <li key={href}>
               <a href={href} onClick={(e) => handleScroll(e, href)}>

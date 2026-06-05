@@ -25,10 +25,10 @@ function Home() {
         currentIndex--;
       }
 
-      timeoutId = setTimeout(typeAndErase, isTyping ? 55 : 35);
+      timeoutId = setTimeout(typeAndErase, isTyping ? 110 : 60);
     };
 
-    timeoutId = setTimeout(typeAndErase, 300);
+    timeoutId = setTimeout(typeAndErase, 800);
     return () => {
       cancelled = true;
       clearTimeout(timeoutId);
