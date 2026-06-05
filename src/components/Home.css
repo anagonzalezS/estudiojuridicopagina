@@ -4,7 +4,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -119,7 +119,6 @@
 =========================== */
 @media (max-width: 768px) {
   .hero-section {
-    background-attachment: scroll;
     min-height: 100svh;
   }
 
@@ -132,24 +131,5 @@
     display: block;
     font-size: 12px;
     letter-spacing: 0.08em;
-  }
-}
-@media (max-width: 390px) {
-  .hero-content {
-    margin-top: -60px;
-  }
-
-  .hero-title {
-    font-size: clamp(24px, 8vw, 32px);
-  }
-
-  .hero-especialidades {
-    font-size: 10px;
-    letter-spacing: 0.05em;
-  }
-
-  .btn-bienvenido {
-    padding: 10px 28px;
-    font-size: 12px;
   }
 }
