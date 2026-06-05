@@ -34,6 +34,7 @@
   padding: 0 24px;
   width: 100%;
   max-width: 860px;
+  margin-top: -120px; /* sube el bloque hacia el centro visual */
 }
 
 /* Línea decorativa arriba del título */
@@ -115,16 +116,14 @@
    MOBILE
 =========================== */
 @media (max-width: 768px) {
-  .hero-section {
-    background-attachment: scroll; /* fixed no funciona bien en iOS */
-    min-height: 100svh; /* safe viewport height en mobile */
-  }
-
   .hero-content {
+    margin-top: -80px;
     padding: 0 20px;
   }
 
+  /* Mostrar especialidades en mobile también */
   .hero-especialidades {
-    display: none; /* muy chico en mobile, mejor no mostrarlo */
+    display: block;
+    font-size: 12px;
   }
 }
