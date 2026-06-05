@@ -32,7 +32,7 @@ function Navbar() {
         >
           {/* logo-nav.png = logo blanco para fondo navy */}
           <img
-            src="/logoazul.png"
+            src="/logo-azul.png"
             alt="Estudio Sáenz & Asociados"
             className="navbar-logo"
           />
