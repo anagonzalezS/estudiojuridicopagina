@@ -10,15 +10,14 @@
   justify-content: center;
 }
 
-/* Overlay con gradiente — más elegante que color plano */
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(2, 25, 54, 0.65) 0%,
-    rgba(2, 25, 54, 0.45) 50%,
-    rgba(2, 25, 54, 0.70) 100%
+    rgba(2, 25, 54, 0.6) 0%,
+    rgba(2, 25, 54, 0.4) 50%,
+    rgba(2, 25, 54, 0.65) 100%
   );
 }
 
@@ -34,7 +33,7 @@
   padding: 0 24px;
   width: 100%;
   max-width: 860px;
-  margin-top: -120px; /* sube el bloque hacia el centro visual */
+  margin-top: -120px;
 }
 
 /* Línea decorativa arriba del título */
@@ -43,8 +42,8 @@
   display: block;
   width: 48px;
   height: 2px;
-  background-color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 24px;
+  background-color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 28px;
 }
 
 .hero-title {
@@ -57,23 +56,17 @@
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
+.amp {
+  font-family: Georgia, serif;
+}
+
 .hero-subtitle {
   font-size: clamp(15px, 2.5vw, 22px);
   font-weight: 300;
   letter-spacing: 0.1em;
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   min-height: 2em;
   color: rgba(255, 255, 255, 0.9);
-}
-
-/* Especialidades debajo del typing */
-.hero-especialidades {
-  font-size: clamp(11px, 1.4vw, 14px);
-  color: rgba(255, 255, 255, 0.55);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin: 0 0 40px;
-  font-weight: 400;
 }
 
 .typing-cursor {
@@ -89,6 +82,15 @@
 @keyframes blink {
   from, to { background-color: transparent; }
   50% { background-color: #fff; }
+}
+
+.hero-especialidades {
+  font-size: clamp(11px, 1.4vw, 14px);
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 40px;
+  font-weight: 400;
 }
 
 .btn-bienvenido {
@@ -116,14 +118,38 @@
    MOBILE
 =========================== */
 @media (max-width: 768px) {
+  .hero-section {
+    background-attachment: scroll;
+    min-height: 100svh;
+  }
+
   .hero-content {
     margin-top: -80px;
     padding: 0 20px;
   }
 
-  /* Mostrar especialidades en mobile también */
   .hero-especialidades {
     display: block;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+}
+@media (max-width: 390px) {
+  .hero-content {
+    margin-top: -60px;
+  }
+
+  .hero-title {
+    font-size: clamp(24px, 8vw, 32px);
+  }
+
+  .hero-especialidades {
+    font-size: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-bienvenido {
+    padding: 10px 28px;
     font-size: 12px;
   }
 }
