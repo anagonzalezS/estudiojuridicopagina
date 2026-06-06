@@ -55,9 +55,9 @@ function Contacto() {
 
         {/* Email */}
         <a
-          href="mailto:estudio@saenz-asociados.com.ar"
+          href="https://mail.google.com/mail/?view=cm&to=estudio@saenz-asociados.com.ar"
           className="contacto-fila contacto-fila--link"
-          aria-label="Enviar email al estudio"
+          aria-label="Enviar email al estudio" target="_blank" rel="noopener noreferrer"
         >
           <div className="contacto-icono">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -102,8 +102,7 @@ function Contacto() {
 
       </div>
 
-  
-
+      
     </section>
   );
 }
