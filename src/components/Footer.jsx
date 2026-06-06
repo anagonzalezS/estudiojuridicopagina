@@ -2,8 +2,6 @@ import React from 'react';
 import "./Footer.css";
 
 function Footer() {
-  const currentYear = new Date().getFullYear();
-
   const scrollTo = (e, id) => {
     e.preventDefault();
     const section = document.querySelector(id);
