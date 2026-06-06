@@ -20,6 +20,13 @@ function Navbar() {
     setIsOpen(false);
   };
 
+  const navLinks = [
+    { href: "#inicio", label: "Inicio" },
+    { href: "#nosotros", label: "Nosotros" },
+    { href: "#servicios", label: "Servicios" },
+    { href: "#contacto", label: "Contacto" },
+  ];
+
   return (
     <nav className={`navbar-custom ${scrolled ? "navbar-scrolled" : ""}`}>
       <div className="navbar-inner">
@@ -30,7 +37,6 @@ function Navbar() {
           onClick={(e) => handleScroll(e, "#inicio")}
           aria-label="Estudio Sáenz & Asociados - Inicio"
         >
-          {/* logo-nav.png = logo blanco para fondo navy */}
           <img
             src="/logo-azul.png"
             alt="Estudio Sáenz & Asociados"
@@ -39,26 +45,13 @@ function Navbar() {
         </a>
 
         <ul className="navbar-nav">
-          <li className="nav-item">
-            <a className="nav-link" href="#inicio" onClick={(e) => handleScroll(e, "#inicio")}>
-              Inicio
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#nosotros" onClick={(e) => handleScroll(e, "#nosotros")}>
-              Nosotros
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#servicios" onClick={(e) => handleScroll(e, "#servicios")}>
-              Servicios
-            </a>
-          </li>
-          <li className="nav-item">
-          <a className="nav-link" href="#contacto" onClick={(e) => handleScroll(e, "#testimonios")}>
-           Contacto
-          </a>
-        </li>
+          {navLinks.map(({ href, label }) => (
+            <li className="nav-item" key={href}>
+              <a className="nav-link" href={href} onClick={(e) => handleScroll(e, href)}>
+                {label}
+              </a>
+            </li>
+          ))}
         </ul>
 
         <button
@@ -76,12 +69,7 @@ function Navbar() {
 
       <div className={`navbar-dropdown ${isOpen ? "show" : ""}`}>
         <ul>
-          {[
-            { href: "#inicio", label: "Inicio" },
-            { href: "#nosotros", label: "Nosotros" },
-            { href: "#servicios", label: "Servicios" },
-            { href: "#contacto", label: "Contacto" },
-          ].map(({ href, label }) => (
+          {navLinks.map(({ href, label }) => (
             <li key={href}>
               <a href={href} onClick={(e) => handleScroll(e, href)}>
                 {label}

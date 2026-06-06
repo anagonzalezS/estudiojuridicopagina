@@ -61,7 +61,7 @@
 }
 
 .nav-link {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 14px;
   font-family: 'Lato', sans-serif;
   font-weight: 600;
@@ -74,9 +74,10 @@
   white-space: nowrap;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:focus {
   color: #ffffff;
-  border-bottom-color: rgba(255, 255, 255, 0.6);
+  border-bottom-color: #4da6ff;
 }
 
 /* ===========================
@@ -152,7 +153,7 @@
 .navbar-dropdown li a {
   display: block;
   padding: 16px 24px;
-  color: rgba(255, 255, 255, 0.75);
+  color: #ffffff;
   text-decoration: none;
   font-family: 'Lato', sans-serif;
   font-size: 14px;
@@ -165,8 +166,8 @@
 
 .navbar-dropdown li a:hover,
 .navbar-dropdown li a:active {
-  background-color: rgba(255, 255, 255, 0.06);
-  border-left-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.08);
+  border-left-color: #4da6ff;
   color: #ffffff;
 }
 
