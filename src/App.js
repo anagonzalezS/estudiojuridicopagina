@@ -28,9 +28,7 @@ function App() {
           path="/"
           element={
             <div>
-              <div className="header-navbar-container">
-                <Navbar />
-              </div>
+              <Navbar />
 
               <section id="inicio">
                 <Home />

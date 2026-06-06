@@ -1,15 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Contacto.css";
 
 function Contacto() {
-  const [copiado, setCopiado] = useState(false);
-
-  const copiarEmail = () => {
-    navigator.clipboard.writeText("estudio@saenz-asociados.com.ar");
-    setCopiado(true);
-    setTimeout(() => setCopiado(false), 2000);
-  };
-
   return (
     <section id="contacto" className="contacto-section">
 
@@ -29,8 +21,8 @@ function Contacto() {
             </svg>
           </div>
           <div className="contacto-contenido">
-            <span className="contacto-etiqueta">Zona de atención</span>
-            <span className="contacto-dato">Ciudad Autónoma de Buenos Aires</span>
+            <span className="contacto-etiqueta">Cobertura</span>
+            <span className="contacto-dato">CABA</span>
             <span className="contacto-dato">Provincia de Buenos Aires</span>
           </div>
         </div>
@@ -62,10 +54,10 @@ function Contacto() {
         <div className="contacto-divider" />
 
         {/* Email */}
-        <button
+        <a
+          href="mailto:estudio@saenz-asociados.com.ar"
           className="contacto-fila contacto-fila--link"
-          onClick={copiarEmail}
-          aria-label="Copiar dirección de email"
+          aria-label="Enviar email al estudio"
         >
           <div className="contacto-icono">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -77,10 +69,10 @@ function Contacto() {
             <span className="contacto-etiqueta">Correo electrónico</span>
             <span className="contacto-dato contacto-dato--small">estudio@saenz-asociados.com.ar</span>
           </div>
-          <span className={`contacto-copy-badge ${copiado ? "copiado" : ""}`} aria-live="polite">
-            {copiado ? "Copiado" : "Copiar"}
-          </span>
-        </button>
+          <svg className="contacto-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </a>
 
         <div className="contacto-divider" />
 
@@ -109,6 +101,8 @@ function Contacto() {
         </a>
 
       </div>
+
+  
 
     </section>
   );

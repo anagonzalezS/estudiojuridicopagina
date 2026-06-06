@@ -14,8 +14,19 @@ function Home() {
 
     const typeAndErase = () => {
       if (cancelled) return;
-      if (currentIndex === textoVisible.length) isTyping = false;
-      else if (currentIndex === 0) isTyping = true;
+
+      // Pausa larga al terminar de escribir
+      if (currentIndex === textoVisible.length && isTyping) {
+        isTyping = false;
+        timeoutId = setTimeout(typeAndErase, 2200);
+        return;
+      }
+      // Pausa larga al terminar de borrar
+      if (currentIndex === 0 && !isTyping) {
+        isTyping = true;
+        timeoutId = setTimeout(typeAndErase, 1000);
+        return;
+      }
 
       if (isTyping) {
         setTypedText(textoVisible.slice(0, currentIndex + 1));
@@ -25,10 +36,10 @@ function Home() {
         currentIndex--;
       }
 
-      timeoutId = setTimeout(typeAndErase, isTyping ? 110 : 60);
+      timeoutId = setTimeout(typeAndErase, isTyping ? 160 : 100);
     };
 
-    timeoutId = setTimeout(typeAndErase, 800);
+    timeoutId = setTimeout(typeAndErase, 1200);
     return () => {
       cancelled = true;
       clearTimeout(timeoutId);
