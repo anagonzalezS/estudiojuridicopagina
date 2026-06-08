@@ -130,13 +130,15 @@ function Servicio() {
                 <a href="https://www.cajaabogados.org.ar/noticia.php?n=24" target="_blank" rel="noopener noreferrer">
                   Provincia de Buenos Aires
                 </a>
+                <span className="tarifario-sep">—</span>
                 <a href="https://www.cpacf.org.ar/noticia/5201/valores-uma-pjn-ley-27423" target="_blank" rel="noopener noreferrer">
                   CABA
                 </a>
               </div>
-              <button className="btn-ver-tarifas" onClick={() => setShowModal(true)}>
-                Ver tarifas orientativas
+              <button className="link-ver-tarifas" onClick={() => setShowModal(true)}>
+                Ver tarifas orientativas →
               </button>
+
             </div>
 
           </div>

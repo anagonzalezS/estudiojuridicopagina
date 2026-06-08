@@ -304,6 +304,12 @@
   flex-wrap: wrap;
 }
 
+.tarifario-sep {
+  color: #d1d5db;
+  font-size: 14px;
+  user-select: none;
+}
+
 .tarifario-links a {
   font-size: 14px;
   color: #1a2a40;
@@ -315,23 +321,25 @@
   text-decoration: underline;
 }
 
-.btn-ver-tarifas {
-  background: #1a2a40;
-  color: #ffffff;
+.link-ver-tarifas {
+  background: none;
   border: none;
-  padding: 13px 28px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 14px;
+  padding: 0;
   font-family: 'Lato', sans-serif;
-  transition: background 0.25s ease;
-  min-height: 48px;
-  width: 100%;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a2a40;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: #9ca3af;
+  transition: color 0.2s, text-decoration-color 0.2s;
+  display: inline-block;
 }
 
-.btn-ver-tarifas:hover {
-  background: #0056B3;
+.link-ver-tarifas:hover {
+  color: #0056B3;
+  text-decoration-color: #0056B3;
 }
 
 /* ================================
@@ -453,7 +461,5 @@
     padding: 36px;
   }
 
-  .btn-ver-tarifas {
-    width: auto;
-  }
+
 }
