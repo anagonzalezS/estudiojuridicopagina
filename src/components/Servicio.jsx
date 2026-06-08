@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import './Servicio.css';
 import {
-  FaBalanceScale, FaBriefcase, FaUniversity
+  FaBalanceScale, FaBriefcase, FaUniversity, FaExchangeAlt
 } from 'react-icons/fa';
 
 const servicios = [
@@ -67,7 +67,6 @@ function Servicio() {
           <p className="section-subtitle">Asesoramiento jurídico integral en todas las áreas del derecho</p>
         </div>
 
-        {/* TABS — solo 2 ahora, se muestran centrados */}
         <div className="tabs-container tabs-two">
           {servicios.map((serv) => (
             <button
@@ -102,41 +101,29 @@ function Servicio() {
               ))}
             </ul>
 
-            <div className="info-contacto">
-              <div className="contacto-item">
-                <span className="contacto-label">Horario</span>
-                <span>Lunes a Viernes · 8 a 16 hs</span>
-              </div>
-              <div className="contacto-item">
-                <span className="contacto-label">Turnos</span>
-                <a href="https://wa.me/5491162087349" target="_blank" rel="noopener noreferrer">
-                  11-6208-7349
-                </a>
-              </div>
-              <div className="contacto-item">
-                <span className="contacto-label">Email</span>
-                <a href="mailto:estudio@saenz-asociados.com.ar">
-                  estudio@saenz-asociados.com.ar
-                </a>
-              </div>
-            </div>
-
+            {/* PAGO */}
             <div className="pago-info">
-              <h4>Formas de pago</h4>
+              <h4>Medios de pago aceptados</h4>
               <div className="pago-items">
                 <div className="pago-item">
                   <img src="/mp.png" alt="Mercado Pago" className="mp-logo" />
-                  <span>estudio.saenz</span>
+                  <div className="pago-texto">
+                    <span className="pago-nombre">Mercado Pago</span>
+                  </div>
                 </div>
                 <div className="pago-item">
-                  <div className="pago-icon-wrap">
-                    <FaUniversity />
+                  <div className="pago-icon-wrap pago-icon-transfer">
+                    <FaExchangeAlt />
                   </div>
-                  <span>Transferencia: s.saenz</span>
+                  <div className="pago-texto">
+                    <span className="pago-nombre">Transferencia bancaria</span>
+                    <span className="pago-desc">CBU / Alias disponible al consultar</span>
+                  </div>
                 </div>
               </div>
             </div>
 
+            {/* TARIFARIO */}
             <div className="tarifario-box">
               <p>Consulte el cuadro tarifario según su jurisdicción:</p>
               <div className="tarifario-links">
