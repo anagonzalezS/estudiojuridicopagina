@@ -24,10 +24,11 @@ const servicios = [
     title: 'Derecho Penal Tributario',
     icon: <FaUniversity />,
     description: [
-      'Asesoramiento y Planificación',
-      'Inspecciones Fiscales',
-      'Determinaciones de Oficio tendientes al cobro de tributos',
-      'Defensas Penales Tributarias',
+      'Asesoramiento impositivo',
+      'Planificación fiscal',
+      'Defensa frente a inspecciones',
+      'Litigios con organismos tributarios',
+      'Estrategias para reducir riesgos fiscales',
     ]
   },
   {
@@ -36,11 +37,11 @@ const servicios = [
     icon: <FaBriefcase />,
     description: [
       'Constitución de Sociedades',
-      'Acuerdo entre socios',
       'Trámites ante IGJ',
-      'Acuerdos laborales',
-      'Contratos',
-      'Incumplimientos Contractuales',
+      'Redacción de contratos comerciales',
+      'Asesoramiento a Directores y Accionistas',
+      'Asesoramiento frente a incumplimientos contractuales',
+      'Intervención en procesos de expansión empresarial',
     ]
   },
 ];
