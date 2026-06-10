@@ -59,7 +59,7 @@ function Home() {
       <section
         id="inicio"
         className="hero-section"
-        style={{ backgroundImage: 'url("/portada1.png")' }}
+        style={{ backgroundImage: 'url("/portada.webp")' }}
       >
         <div className="hero-overlay" />
 
